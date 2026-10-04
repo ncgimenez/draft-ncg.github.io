@@ -206,7 +206,7 @@
 
   function _updateThemeIcons() {
     document.querySelectorAll('.theme-icon').forEach(function (el) {
-      el.textContent = _isDark() ? '☀' : '☾';
+      el.textContent = _isDark() ? '☀️' : '🌙';
     });
   }
 
