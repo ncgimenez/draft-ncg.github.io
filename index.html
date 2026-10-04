@@ -13,51 +13,113 @@
     }
 
     :root {
-      --text: #1a1a1a;
-      --bg: #fafafa;
+      --fond: #faf7f2;
+      --fond-carte: #ffffff;
+      --texte: #1f2430;
+      --texte-doux: #5b6272;
       --accent: #b4502d;
-      --border: #e0e0e0;
+      --accent-fonce: #8f3d20;
+      --ligne: #e6dfd3;
     }
 
     @media (prefers-color-scheme: dark) {
-      :root {
-        --text: #f0f0f0;
-        --bg: #0d0d0d;
-        --border: #333;
+      :root:not([data-theme="light"]) {
+        --fond: #16181d;
+        --fond-carte: #1f232b;
+        --texte: #ece8e1;
+        --texte-doux: #a3a9b7;
+        --accent: #e0825c;
+        --accent-fonce: #f0a283;
+        --ligne: #2f3440;
       }
     }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.6;
+    :root[data-theme="dark"] {
+      --fond: #16181d;
+      --fond-carte: #1f232b;
+      --texte: #ece8e1;
+      --texte-doux: #a3a9b7;
+      --accent: #e0825c;
+      --accent-fonce: #f0a283;
+      --ligne: #2f3440;
     }
 
-    header {
-      padding: 2rem 1.5rem;
-      border-bottom: 1px solid var(--border);
+    body {
+      margin: 0;
+      background: var(--fond);
+      color: var(--texte);
+      font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, nav, .etiquette, .bouton, footer {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    a {
+      color: var(--accent);
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: var(--accent-fonce);
+    }
+
+    header.site {
+      border-bottom: 1px solid var(--ligne);
+    }
+
+    header.site .interieur {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 18px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px 16px;
+    }
+
+    .marque {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      color: var(--texte);
+      text-decoration: none;
+    }
+
+    .controles-header {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .theme-toggle, .lang-toggle {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 4px 8px;
+      color: var(--texte);
+    }
+
+    .theme-toggle:hover, .lang-toggle:hover {
+      opacity: 0.7;
+    }
+
+    .lang-sep {
+      opacity: 0.5;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 760px;
       margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    .brand {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .tagline {
-      font-size: 0.95rem;
-      opacity: 0.8;
+      padding: 0 20px;
     }
 
     main {
-      padding: 3rem 1.5rem;
+      padding: 2rem 20px;
     }
 
     h1 {
@@ -88,8 +150,9 @@
 
     .section-card {
       padding: 1.5rem;
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      border: 1px solid var(--ligne);
+      border-radius: 14px;
+      background: var(--fond-carte);
       text-decoration: none;
       color: inherit;
       transition: all 0.2s;
@@ -102,10 +165,10 @@
     }
 
     .section-label {
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--accent);
+      letter-spacing: 0.06em;
+      color: var(--texte-doux);
       margin-bottom: 0.5rem;
       font-weight: 600;
     }
@@ -123,11 +186,11 @@
     }
 
     footer {
-      padding: 2rem 1.5rem;
+      border-top: 1px solid var(--ligne);
+      padding: 2rem 20px;
       text-align: center;
-      border-top: 1px solid var(--border);
-      opacity: 0.8;
       font-size: 0.9rem;
+      color: var(--texte-doux);
     }
 
     footer a {
@@ -136,15 +199,22 @@
     }
 
     footer a:hover {
-      text-decoration: underline;
+      color: var(--accent-fonce);
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="brand">Nadia Cañadas Giménez</div>
-      <div class="tagline">Functional Analyst · UX thinker · Course architect</div>
+  <header class="site">
+    <div class="interieur">
+      <a class="marque" href="./">Nadia Cañadas Giménez</a>
+      <div class="controles-header">
+        <button class="theme-toggle" aria-label="Switch theme"><span class="theme-icon">🌙</span></button>
+        <button class="lang-toggle" aria-label="Switch language">
+          <span class="lang-opt lang-opt--en">EN</span>
+          <span class="lang-sep">|</span>
+          <span class="lang-opt lang-opt--fr">FR</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -183,5 +253,7 @@
       </p>
     </div>
   </footer>
+
+  <script src="pro/lang.js"></script>
 </body>
 </html>
