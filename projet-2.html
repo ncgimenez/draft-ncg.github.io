@@ -53,10 +53,7 @@
 
     <p class="bandeau">
       Personal concept. Not affiliated with any existing product.
-      This concept grew out of three years of managing overlapping work and personal calendars
-      across two jobs and a daily commute — and consistently finding the week view useless for
-      anything beyond knowing I was busy. Informed by daily use of Apple Calendar, Google Calendar,
-      Sunsama and Fantastical, and conversations with colleagues who described the same pattern.
+      I built this out of frustration. Three years of juggling overlapping calendars — work, personal, commute — and the week view never told me what I actually needed to know: what kind of week am I building? This came from real conversations with people who felt the same thing: calendar apps show you when things happen, but not the rhythm underneath.
     </p>
 
     <dl class="meta">
@@ -65,30 +62,20 @@
       <div><dt>Tools</dt><dd>[Figma / to be completed]</dd></div>
     </dl>
 
-    <h2>The user problem</h2>
+    <h2>The friction I saw</h2>
     <p>
-      Open any calendar app and you see a wall of coloured blocks — but the colours mean nothing
-      consistent. A blue block might be a dentist appointment in one calendar, a work meeting in
-      another. Over time you accumulate dozens of calendars, each colour assigned more or less
-      randomly, and the week view becomes noise rather than signal.
+      Open any calendar app and you get a grid of coloured blocks. But those colours mean nothing consistent — a blue square might be a dentist in one calendar, a standup in another. Over time you accumulate a dozen calendars, each colour assigned randomly, and the week view becomes noise.
     </p>
     <p>
-      Worse: managing which calendars are visible requires toggling each one individually. If you
-      want to show "everything personal" or "everything related to travel" before a trip, you
-      click through a long list one by one.
+      There's a second layer of friction: managing visibility. Want to hide everything work-related before a vacation? You toggle each calendar individually. Want to see "everything personal only"? Click through a list, one by one.
     </p>
     <p>
-      The result is a calendar that tells you <em>when</em> things happen, but not <em>what kind
-      of week</em> you're building. Is this week heavy on commuting? Am I spending enough time
-      outside? Is everything pro and nothing personal? The grid can't answer that.
+      But the real gap: a calendar tells you <em>when</em> things happen. It doesn't tell you what your week actually looks like. Is it heavy on commuting? Am I spending enough time outside work? Is the personal stuff getting squeezed out? The grid can't answer that — and you have to do the analysis yourself every Sunday.
     </p>
 
-    <h2>My hypothesis</h2>
+    <h2>The insight</h2>
     <p>
-      If a calendar app shipped with a <strong>default colour structure by life category</strong>
-      — and let users group their calendars into those categories — the week view would become
-      meaningful at a glance, without requiring any new behaviour from the user. The structure
-      does the work; the user just looks.
+      What if a calendar shipped with a <strong>default opinion</strong> about what a week is made of? Not arbitrary colours per calendar, but a structure by life category: how much commute, how much outside, how much work, how much personal? The structure does the categorization automatically — the user just looks and understands what kind of week they're building.
     </p>
 
     <h2>The proposed structure</h2>
@@ -264,16 +251,15 @@
       done anything.
     </p>
 
-    <h2>Why existing apps don't solve this</h2>
+    <h2>Why existing apps don't own this</h2>
     <ul class="liste">
-      <li><strong>Apple Calendar / Google Calendar</strong> — any colour, any calendar. Zero default structure; the user does all the work.</li>
-      <li><strong>Fantastical</strong> — best-in-class UI, but still colour = calendar name, no semantic layer.</li>
-      <li><strong>Sunsama</strong> — close in spirit, but task-manager framing, not calendar-first. No mobile-first design.</li>
-      <li><strong>Structured</strong> — beautiful daily view, no week-level category balance.</li>
+      <li><strong>Apple / Google Calendar</strong> — colour = calendar name. Zero structure. You do all the mental math.</li>
+      <li><strong>Fantastical</strong> — beautiful UI, but still no semantic layer. Colour remains arbitrary.</li>
+      <li><strong>Sunsama</strong> — closest in spirit, but task-manager framed. Not calendar-first. Not mobile-optimized.</li>
+      <li><strong>Structured</strong> — thoughtful daily view, but no week-level category balance — no sense of rhythm.</li>
     </ul>
     <p>
-      The gap: a calendar that has a <em>point of view</em> about what a week is made of, ships
-      that structure by default, and gets out of the way once the user's week is loaded.
+      The opportunity: a calendar with an actual opinion. One that says "here's what a week is made of" and ships that structure by default. Then gets out of the way.
     </p>
 
     <h2>How to measure success</h2>
@@ -315,20 +301,15 @@
       Week view with balance bar, folder sidebar, and colour grid editor. Currently being designed.
     </div>
 
-    <h2>Limits and next steps</h2>
+    <h2>What I'd validate first</h2>
     <p>
-      The main risk is that the default categories don't fit everyone's life — a freelancer's week
-      has no "commute", a student's has no "work" in the usual sense. The category set may need to
-      be configurable at onboarding, with the default as a starting point rather than a fixed map.
+      The risk: default categories don't fit everyone. A freelancer has no commute. A student's week looks different. So the categories need to be configurable at onboarding — the structure is the default, but people can remix it to their life.
     </p>
     <p>
-      The folder toggle is powerful but needs careful UX: toggling off "Work" should not silently
-      hide a critical reminder. An "always visible" flag per event could protect non-negotiables.
+      The second risk: toggling off "Work" could hide something critical. Solution: an "always visible" flag per event, so critical reminders don't vanish when you hide a category.
     </p>
     <p>
-      Next steps: prototype in Figma — week view with balance bar, folder sidebar, colour grid
-      editor. Test with 5 users who manage more than 3 calendars. Key question: does the default
-      structure feel like help or constraint within the first 10 minutes?
+      The real test: does the structure feel like help or like a constraint in the first 10 minutes? That's the metric. Prototype the week view, folder sidebar, and colour editor in Figma. Test with 5 power-users who juggle 3+ calendars. If they feel more clarity in 10 minutes, the model works.
     </p>
 
     <a class="retour" href="index.html#projects" data-i18n="proj.back">← Back to projects</a>
