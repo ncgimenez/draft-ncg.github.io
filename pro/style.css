@@ -609,7 +609,7 @@ ul.nav-dropdown {
 
 .cle-secrete {
   font-size: 1.1rem;
-  opacity: 0.25;
+  opacity: 0.45;
   text-decoration: none;
   display: inline-block;
   transition: opacity 0.25s, transform 0.25s;
