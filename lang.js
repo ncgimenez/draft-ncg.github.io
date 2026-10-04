@@ -146,6 +146,14 @@
     'p5.s8.body': 'L\'implémentation technique était simple. Le travail difficile était de convaincre des équipes que bien utiliser le système — plutôt que trouver des raccourcis — était la vraie solution. Les contournements de l\'équipe commerciale n\'étaient pas de la négligence : c\'étaient des adaptations à un processus qui n\'avait jamais été bien conçu. Odoo nous a fourni l\'outil ; les ateliers nous ont donné l\'adoption.',
     // Home — card 5
     'card5.label': 'Étude de cas',
+    // Home — card 6
+    'card6.label': 'Design pédagogique',
+    'card6.title': 'De l\'expert à l\'enseignant : structurer un cours qui tient',
+    'card6.desc': 'Transformer un corpus de savoir expert en cours structuré et scalable — avec une progression explicite, des points d\'entrée définis et des résultats mesurables.',
+    // Project 6 — Course architecture
+    'p6.label': 'Design pédagogique',
+    'p6.h1': 'De l\'expert à l\'enseignant : structurer un cours qui tient',
+    'p6.sub': 'Reconcevoir un cours d\'espagnol débutant à partir d\'un savoir expert vers un contenu structuré et enseignable — avec une progression explicite, des points d\'entrée définis et des résultats mesurables.',
     'card5.title': 'Odoo : trois outils déconnectés, un flux cohérent',
     'card5.desc': 'Implémentation Ventes, Stocks et Comptabilité pour une PME belge — et résoudre le problème de stock sur-engagé.',
     // About — personal statement
