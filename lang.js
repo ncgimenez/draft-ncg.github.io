@@ -141,7 +141,7 @@
   function updateThemeButtons() {
     const dark = isDark();
     document.querySelectorAll('.theme-toggle').forEach(function (btn) {
-      btn.textContent = dark ? '☀' : '☾';
+      btn.textContent = dark ? '☀️' : '🌙';
       btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
     });
   }

@@ -413,6 +413,15 @@ ul.nav-dropdown {
   margin-top: 1px;
 }
 
+/* ---------- Contrôles header ---------- */
+
+.controles-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
 /* ---------- Bouton thème ---------- */
 
 .theme-toggle {
