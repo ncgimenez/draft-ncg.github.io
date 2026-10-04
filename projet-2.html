@@ -31,6 +31,7 @@
         </ul>
       </nav>
       <div class="controles-header">
+        <a class="email-toggle" href="mailto:ncgimenez@proton.me" aria-label="Send email"><span class="email-icon">✉️</span></a>
         <button class="theme-toggle" aria-label="Switch theme"><span class="theme-icon">🌙</span></button>
         <button class="lang-toggle" aria-label="Switch language">
           <span class="lang-opt lang-opt--en">EN</span>
@@ -99,13 +100,29 @@
     </p>
 
     <figure>
-      <svg viewBox="0 0 620 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" aria-label="Colour grid showing five life categories with their default colours">
+      <svg viewBox="0 0 620 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" aria-label="Colour grid showing five life categories with their default colours" class="svg-adaptive">
+        <style>
+          .svg-bg { fill: var(--fond-carte); stroke: var(--ligne); }
+          .svg-text-light { fill: var(--texte-doux); }
+          .svg-text-main { fill: var(--texte); }
+          .cat-bg-red { fill: #fde8e8; }
+          .cat-bg-blue { fill: #ddeeff; }
+          .cat-bg-purple { fill: #ede8f8; }
+          .cat-bg-green { fill: #e8f5e9; }
+          .cat-bg-yellow { fill: #fff8e1; }
+          .cat-header { fill: white; }
+          .cat-text-red { fill: #c0392b; }
+          .cat-text-blue { fill: #2d5a80; }
+          .cat-text-purple { fill: #5a3f80; }
+          .cat-text-green { fill: #2e7d32; }
+          .cat-text-yellow { fill: #b07d00; }
+        </style>
         <defs>
           <filter id="sh2">
-            <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#1f2430" flood-opacity="0.10"/>
+            <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="currentColor" flood-opacity="0.10"/>
           </filter>
         </defs>
-        <rect width="620" height="200" fill="#ffffff" rx="10" stroke="#e6dfd3" stroke-width="1"/>
+        <rect width="620" height="200" class="svg-bg" rx="10" stroke-width="1"/>
 
         <!-- Category tiles -->
         <!-- Commute -->
