@@ -210,7 +210,7 @@
     });
   }
 
-  document.addEventListener('DOMContentLoaded', function () {
+  function setupTheme() {
     document.querySelectorAll('.lang-toggle').forEach(function (btn) {
       btn.addEventListener('click', function () {
         apply(localStorage.getItem('ncg-lang') === 'fr' ? 'en' : 'fr');
@@ -228,5 +228,11 @@
 
     _updateThemeIcons();
     apply(saved);
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupTheme);
+  } else {
+    setupTheme();
+  }
 })();
