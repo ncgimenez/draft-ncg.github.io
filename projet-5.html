@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SuccessFactors UX Teardown | Nadia Cañadas Giménez</title>
+  <meta name="description" content="UX teardown: why SAP SuccessFactors' candidate portal causes qualified applicants to abandon mid-process — and what a better experience would look like.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site">
+    <div class="interieur">
+      <a class="marque" href="index.html">Nadia Cañadas Giménez</a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#projects" aria-current="page">Projects</a></li>
+          <li><a href="a-propos.html">About</a></li>
+        </ul>
+      </nav>
+      <button class="lang-toggle" aria-label="Switch language">
+        <span class="lang-opt lang-opt--en">EN</span>
+        <span class="lang-sep">|</span>
+        <span class="lang-opt lang-opt--fr">FR</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <span class="etiquette">UX teardown</span>
+    <h1>SuccessFactors: Why Good Candidates Stop Mid-Application</h1>
+    <p class="chapo">
+      SAP SuccessFactors is used by thousands of companies to manage recruitment.
+      Its candidate portal reliably drives qualified applicants away before they finish.
+      The friction is avoidable — and I know because I've quit myself.
+    </p>
+
+    <p class="bandeau">
+      Personal analysis based on direct experience as a candidate and knowledge of the SAP ecosystem.
+      Not affiliated with SAP or any specific employer using SuccessFactors.
+    </p>
+
+    <dl class="meta">
+      <div><dt>Product</dt><dd>SAP SuccessFactors Recruiting (candidate portal)</dd></div>
+      <div><dt>Type</dt><dd>UX teardown</dd></div>
+      <div><dt>Perspective</dt><dd>Candidate + SAP practitioner</dd></div>
+    </dl>
+
+    <h2>The problem — in the first person</h2>
+    <p>
+      I have stopped in the middle of a job application more than once because of SuccessFactors.
+      Not because I changed my mind about the role. Because I was on step 4 of an unlabelled process,
+      had already re-typed my entire work history from scratch, and still had no idea how much further
+      it went.
+    </p>
+    <p>
+      At some point the calculation shifts: the effort required to finish outweighs the motivation
+      to apply. And I close the tab.
+    </p>
+    <p>
+      This is not an edge case. A 2023 Greenhouse report found that
+      <strong>60% of candidates abandon applications they started</strong>, with process length and
+      repetitive form-filling cited as the top two reasons. SuccessFactors' candidate portal
+      systematically produces both.
+    </p>
+
+    <div class="emplacement-image">
+      [Screenshot: SuccessFactors application form — manual fields for work history, no CV upload parsing]
+    </div>
+
+    <h2>Why it matters to the business</h2>
+    <p>
+      Every abandoned application is a candidate the company paid to attract (job board, LinkedIn ad,
+      agency) and then lost to its own process. The cost isn't just the lost hire — it's the signal
+      it sends: a painful application experience correlates with a painful onboarding experience.
+      Candidates make inferences.
+    </p>
+    <p>
+      For high-demand profiles — analysts, engineers, bilingual candidates — the drop-off is steeper.
+      The better the candidate, the more options they have, and the less likely they are to finish a
+      form that treats their time as worthless.
+    </p>
+
+    <h2>Three friction points in detail</h2>
+
+    <h3>1. The CV exists. The system ignores it.</h3>
+    <p>
+      Most SuccessFactors implementations ask candidates to upload a CV — and then require them to
+      manually re-enter every piece of information from it: dates, job titles, company names,
+      responsibilities. Field by field.
+    </p>
+    <p>
+      CV parsing technology has been available for over a decade. Tools like Ashby, Greenhouse,
+      and even LinkedIn's own Easy Apply extract structured data from a PDF and pre-fill the form.
+      SuccessFactors supports parsing — but it is not enabled by default, and many implementations
+      never configure it. The result: the candidate does the work the system should do.
+    </p>
+
+    <h3>2. No progress indicator. No end in sight.</h3>
+    <p>
+      SuccessFactors' standard application flow gives no indication of how many steps remain.
+      There is no progress bar, no "Step 3 of 6", no estimated time to complete. You finish one
+      section and another appears. For a motivated candidate, this is annoying. For a borderline
+      one, it's the moment they close the tab.
+    </p>
+    <p>
+      Progress indicators are a UX baseline — not a feature. Their absence in a recruitment tool
+      used by major employers in 2025 is a genuine design failure.
+    </p>
+
+    <h3>3. Sessions expire. Drafts don't save.</h3>
+    <p>
+      Some SuccessFactors configurations time out the session after a period of inactivity.
+      If you stepped away to look up a contract end date, your answers may be gone when you
+      return. There is no automatic draft save. The application starts over.
+    </p>
+    <p>
+      This is a critical failure for anyone applying from a phone, during a commute, or between
+      meetings — which is to say, most people applying for jobs in 2025.
+    </p>
+
+    <h2>What a better experience looks like</h2>
+    <p>
+      None of this requires reinventing the product. The gap between SuccessFactors' current
+      candidate experience and a reasonable baseline is three configuration and design decisions:
+    </p>
+    <ul class="liste">
+      <li><strong>Enable CV parsing by default</strong> — pre-fill structured fields from the uploaded document, let candidates correct rather than re-enter.</li>
+      <li><strong>Add a progress indicator</strong> — "Step 2 of 4 · about 5 minutes remaining" — visible on every page of the flow.</li>
+      <li><strong>Auto-save drafts</strong> — every field change persisted server-side, session resumable from any device.</li>
+    </ul>
+    <p>
+      All three exist in competing ATS platforms. Greenhouse and Ashby ship them out of the box.
+      LinkedIn Easy Apply completes a structured application in under two minutes. SuccessFactors
+      could close this gap without a product rewrite — mostly through default configuration choices
+      and a front-end update to the progress flow.
+    </p>
+
+    <div class="emplacement-image">
+      [Comparison: SuccessFactors flow (steps, no progress bar) vs Ashby / Greenhouse (progress indicator + parsed CV fields)]
+    </div>
+
+    <h2>A note on the SAP angle</h2>
+    <p>
+      I have spent three years implementing SAP and Odoo for operations and finance teams. One of
+      the recurring arguments for SAP is that a unified platform reduces friction: one system,
+      one truth, fewer handoffs. That argument is harder to make when the same platform's
+      candidate-facing product creates friction that drives people away.
+    </p>
+    <p>
+      The gap between SAP's back-office experience and its front-facing candidate portal isn't a
+      technical constraint — it's a product prioritisation choice. And it has a measurable cost.
+    </p>
+
+    <h2>How to measure success</h2>
+    <ul class="liste">
+      <li>Application completion rate (started vs. submitted) — target: above 50%.</li>
+      <li>Time-to-complete for a standard application (target: under 10 minutes with CV parsing enabled).</li>
+      <li>Candidate satisfaction score on the application experience (targeted CSAT post-submission).</li>
+      <li>Drop-off rate by step — to identify which screen loses the most candidates.</li>
+    </ul>
+
+    <h2>Limits</h2>
+    <p>
+      This analysis is based on candidate experience and public information about SuccessFactors —
+      not on internal configuration data. Some implementations may have addressed one or more of
+      these issues. The core argument holds: the default configuration, as most candidates encounter
+      it, produces unnecessary friction that drives measurable abandonment.
+    </p>
+
+    <a class="retour" href="index.html#projects">← Back to projects</a>
+  </main>
+
+  <footer>
+    <p>© 2026 Nadia Cañadas Giménez ·
+      <a href="https://www.linkedin.com/in/ncgimenez">LinkedIn</a>
+    </p>
+  </footer>
+
+  <script src="lang.js"></script>
+</body>
+</html>
