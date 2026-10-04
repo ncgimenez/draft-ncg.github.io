@@ -21,10 +21,10 @@
     'card2.label': 'Concept produit',
     'card2.title': 'Un calendrier qui dit quel genre de semaine vous vivez',
     'card2.desc': 'Imposer une structure de couleurs par catégorie de vie — pour que votre semaine soit lisible d\'un coup d\'œil, sans effort.',
-    'card3.label': 'Concept UX',
+    'card3.label': 'Teardown UX',
     'card3.title': 'Sélection multiple dans Google Agenda',
     'card3.desc': 'Déplacer plusieurs événements en une action — parce qu\'un imprévu ne devrait pas prendre 10 minutes à gérer.',
-    'card4.label': 'Concept UX',
+    'card4.label': 'Teardown UX',
     'card4.title': 'SNCB : savoir où descendre avant d\'arriver',
     'card4.desc': 'Afficher le quai d\'arrivée et le côté de sortie pour les correspondances — une donnée qui existe, mais reste cachée.',
     // Home — coming soon cards
@@ -103,11 +103,11 @@
     'p2.tools': 'Outils',
     'p2.tools.v': '[Figma / à compléter]',
     // Project 3 — Google Calendar
-    'p3.label': 'Concept UX',
+    'p3.label': 'Teardown UX',
     'p3.h1': 'Sélection multiple d\'événements dans Google Agenda',
     'p3.sub': 'Google Agenda force les utilisateurs à déplacer leurs événements un à un — une friction inutile quand un imprévu bouleverse tout un planning.',
     // Project 4 — SNCB
-    'p4.label': 'Concept UX',
+    'p4.label': 'Teardown UX',
     'p4.h1': 'SNCB : savoir où descendre avant d\'arriver',
     'p4.sub': 'Un voyageur en correspondance ne sait pas sur quel quai il arrive, ni de quel côté sortir. La donnée existe — elle n\'est juste pas au bon endroit.',
   };
