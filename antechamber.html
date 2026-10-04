@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Antechamber | Nadia Cañadas Giménez</title>
+  <link rel="stylesheet" href="pro/style.css">
+  <style>
+    :root {
+      --fond: #f5f0ff;
+      --fond-carte: #ffffff;
+      --texte: #0e0c1e;
+      --texte-doux: #5e5b8a;
+      --accent: #7c3aed;
+      --accent-fonce: #6d28d9;
+      --ligne: #ddd6fe;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --fond: #0e0c1e;
+        --fond-carte: #1c1a35;
+        --texte: #f0eeff;
+        --texte-doux: #8b89b5;
+        --accent: #a78bfa;
+        --accent-fonce: #c4b5fd;
+        --ligne: #2d2b50;
+      }
+    }
+    :root[data-theme="dark"] {
+      --fond: #0e0c1e;
+      --fond-carte: #1c1a35;
+      --texte: #f0eeff;
+      --texte-doux: #8b89b5;
+      --accent: #a78bfa;
+      --accent-fonce: #c4b5fd;
+      --ligne: #2d2b50;
+    }
+    :root[data-theme="light"] {
+      --fond: #f5f0ff;
+      --fond-carte: #ffffff;
+      --texte: #0e0c1e;
+      --texte-doux: #5e5b8a;
+      --accent: #7c3aed;
+      --accent-fonce: #6d28d9;
+      --ligne: #ddd6fe;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site">
+    <div class="interieur">
+      <a class="marque" href="/">Nadia Cañadas Giménez</a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/pro/">Professional</a></li>
+          <li><a href="/blog/">Notes</a></li>
+          <li><a href="/pro/a-propos.html">About</a></li>
+        </ul>
+      </nav>
+      <div class="controles-header">
+        <button class="theme-toggle" aria-label="Switch theme"><span class="theme-icon">🌙</span></button>
+        <button class="lang-toggle" aria-label="Switch language">
+          <span class="lang-opt lang-opt--en">EN</span>
+          <span class="lang-sep">|</span>
+          <span class="lang-opt lang-opt--fr">FR</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <span class="etiquette">Antechamber</span>
+    <h1>The other room.</h1>
+    <p class="chapo">
+      Things that don't have a project number. The rest of what I'm made of.
+    </p>
+
+    <p>
+      The portfolio is accurate but incomplete. It says what I've worked on.
+      It doesn't say that I spent a Saturday afternoon prying open a phone with a suction cup
+      and a spudger, or that I've been learning Logic Pro in the least linear way possible,
+      or that I find most complex systems — technical, organisational, musical — are basically
+      the same problem wearing different clothes.
+    </p>
+    <p>
+      This is where that side lives.
+    </p>
+
+    <h2 id="projects">Concepts &amp; Ideas</h2>
+    <p style="color: var(--texte-doux); margin-bottom: 1.5rem; font-size: 0.95rem;">
+      Product thinking outside a client brief. Things I built because the gap annoyed me.
+    </p>
+    <div class="grille">
+      <a class="carte" href="creative/projet-2.html">
+        <span class="etiquette">Product concept</span>
+        <h3>A Calendar That Tells You What Kind of Week You're Having</h3>
+        <p>Imposing a default colour structure by life category — so your week is legible at a glance.</p>
+      </a>
+      <a class="carte" href="creative/projet-3.html">
+        <span class="etiquette">Product concept</span>
+        <h3>Voma: Planning &amp; Focus Suite</h3>
+        <p>Two apps that close the gap between what you plan and what you actually do — a calendar and a task timer that speak the same language.</p>
+      </a>
+    </div>
+
+    <h2>Things I take apart</h2>
+    <div class="grille">
+      <div class="carte">
+        <span class="etiquette">Music</span>
+        <h3>Logic Pro</h3>
+        <p>Learning it slowly, non-linearly, by doing things wrong. The interface says <em>maybe this isn't for you</em>. I'm learning it anyway.</p>
+      </div>
+      <div class="carte">
+        <span class="etiquette">Hardware</span>
+        <h3>Things not meant to be opened</h3>
+        <p>I've replaced the battery in my phone myself. Industrial adhesive, hidden screws, instructions that assume prior experience. I wanted to understand what was inside.</p>
+      </div>
+      <div class="carte">
+        <span class="etiquette">Process</span>
+        <h3>The same instinct, elsewhere</h3>
+        <p>When a team says "this is just how we do it", I want to know what's under that. Whether it's a deliberate choice, a forgotten constraint, or a workaround that outlived its problem.</p>
+      </div>
+    </div>
+
+    <h2>Currently</h2>
+    <ul class="liste">
+      <li>Working through Logic Pro — mixer routing, plugin chains, automation lanes.</li>
+      <li>Building this page.</li>
+    </ul>
+
+    <a class="retour" href="/pro/a-propos.html">← Back</a>
+  </main>
+
+  <footer>
+    <p>© 2026 Nadia Cañadas Giménez</p>
+  </footer>
+
+  <script src="pro/lang.js"></script>
+</body>
+</html>
