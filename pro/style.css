@@ -492,6 +492,28 @@ ul.nav-dropdown {
   flex-shrink: 0;
 }
 
+/* ---------- Email icon ---------- */
+
+.email-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--fond-carte);
+  border: 1px solid var(--ligne);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  color: var(--texte-doux);
+  text-decoration: none;
+  line-height: 1;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.email-toggle:hover {
+  border-color: var(--accent);
+  color: var(--texte);
+}
+
 /* ---------- Bouton thème ---------- */
 
 .theme-toggle {

@@ -52,7 +52,10 @@
     // About
     'about.label': 'À propos',
     'about.h1': 'Qui je suis',
-    'about.intro': 'Analyste fonctionnelle avec 3 ans d\'expérience ERP — SAP S/4HANA Public Cloud et Odoo. Je travaille à l\'interface entre les équipes métier et techniques pour transformer des processus opérationnels en flux qui fonctionnent vraiment. Mon point de départ : comprendre ce qui coince avant de proposer quoi que ce soit.',
+    'about.intro': 'Analyste fonctionnelle avec 3 ans entre SAP S/4HANA et Odoo. Je construis le pont entre ce dont les équipes métier ont besoin et ce que les systèmes techniques peuvent réellement faire — et je commence par écouter où ça casse.',
+    'about.drives.h': 'Ce qui m\'anime',
+    'about.drives': 'Je construis pour résoudre, pas pour impressionner. Quand je vois une équipe commerciale contourner un système six fois par jour, ce n\'est pas de l\'incompétence — c\'est un signal que le processus était cassé dès le départ. Je pars de là. J\'aime transformer les frictions invisibles en flux qui marchent du premier coup, des flux que les gens choisissent d\'utiliser parce qu\'ils rendent leur travail plus facile, pas plus difficile.',
+    'about.three.years': 'Trois ans dans deux mondes ERP différents m\'ont appris une chose : la technologie de l\'implémentation n\'est presque jamais le goulot. C\'est la conversation. Comprendre ce qu\'une équipe fait réellement (vs. ce que l\'organigramme dit), cartographier exactement où un système crée des frictions, et construire un argumentaire pour le standard qui soit assez convaincant pour que les gens le préfèrent à leurs contournements.',
     'about.approach.h': 'Mon approche',
     'about.ap1': 'Fit-to-standard d\'abord — challenger les exigences face au standard SAP ou Odoo avant d\'accepter une exception.',
     'about.ap2': 'BPMN As-Is / To-Be systématique — pour que tout le monde, technique ou non, comprenne le processus.',
@@ -210,7 +213,7 @@
     });
   }
 
-  document.addEventListener('DOMContentLoaded', function () {
+  function setupTheme() {
     document.querySelectorAll('.lang-toggle').forEach(function (btn) {
       btn.addEventListener('click', function () {
         apply(localStorage.getItem('ncg-lang') === 'fr' ? 'en' : 'fr');
@@ -228,5 +231,11 @@
 
     _updateThemeIcons();
     apply(saved);
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupTheme);
+  } else {
+    setupTheme();
+  }
 })();

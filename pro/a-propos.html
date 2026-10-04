@@ -31,6 +31,7 @@
         </ul>
       </nav>
       <div class="controles-header">
+        <a class="email-toggle" href="mailto:ncgimenez@proton.me" aria-label="Send email"><span class="email-icon">✉️</span></a>
         <button class="theme-toggle" aria-label="Switch theme"><span class="theme-icon">🌙</span></button>
         <button class="lang-toggle" aria-label="Switch language">
           <span class="lang-opt lang-opt--en">EN</span>
@@ -46,17 +47,15 @@
     <h1 data-i18n="about.h1">Who I am</h1>
 
     <p data-i18n="about.intro">
-      Functional Analyst with 3 years of ERP experience — SAP S/4HANA Public Cloud and Odoo.
-      I work at the intersection of business and technical teams to turn complex operational processes
-      into flows that actually work. My starting point: understand what's broken before proposing anything.
+      Functional Analyst with 3 years across SAP S/4HANA and Odoo. I build the bridge between what business teams need and what technical systems can actually do — and I start by listening for where things break down.
     </p>
 
-    <p data-i18n="about.statement">
-      Three years across two very different ERP ecosystems — SAP at scale, Odoo in depth — have reinforced
-      one conviction: the technical side of an implementation is rarely what determines its success.
-      What matters is the conversation: understanding what a team actually does (not what the process map
-      says they do), mapping where the system creates friction, and making the case for the standard clearly
-      enough that people choose it over the workaround they built.
+    <h2 data-i18n="about.drives.h">What drives me</h2>
+    <p data-i18n="about.drives">
+      I build to solve, not to impress. When I watch a sales team bypass a system six times a day, that's not incompetence — it's a signal the process was broken from the start. I start there. I love turning invisible friction into flows that work on day one, flows people actually choose to use because they make their work easier, not harder.
+    </p>
+    <p data-i18n="about.three.years">
+      Three years in two different ERP worlds taught me one thing: the implementation technology is almost never the bottleneck. It's the conversation. Understanding what a team actually does (vs. what the org chart says), mapping exactly where a system creates friction, and building a case for the standard that's compelling enough people prefer it to their workarounds.
     </p>
 
     <h2 data-i18n="about.approach.h">My approach</h2>
@@ -113,33 +112,47 @@
     </div>
 
     <figure>
-      <svg viewBox="0 0 620 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" aria-label="Language skills: French native, English fluent, Spanish conversational, German basic">
-        <rect width="620" height="130" fill="#ffffff" rx="10" stroke="#e6dfd3" stroke-width="1"/>
-        <text x="310" y="24" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#5b6272" text-transform="uppercase" letter-spacing="0.06em">LANGUAGES</text>
+      <svg viewBox="0 0 620 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" aria-label="Language skills: French native, English fluent, Spanish conversational, German basic" class="svg-adaptive">
+        <style>
+          .svg-bg { fill: var(--fond-carte); stroke: var(--ligne); }
+          .svg-text-header { fill: var(--texte-doux); }
+          .svg-text-main { fill: var(--texte); }
+          .french-accent { stroke: #b4502d; }
+          .french-text { fill: #b4502d; }
+          .english-accent { stroke: #4a86b4; }
+          .english-text { fill: #4a86b4; }
+          .spanish-accent { stroke: #4caf6b; }
+          .spanish-text { fill: #4caf6b; }
+          .german-accent { stroke: var(--ligne); }
+          .german-text { fill: var(--texte-doux); }
+        </style>
+
+        <rect width="620" height="130" class="svg-bg" rx="10" stroke-width="1"/>
+        <text x="310" y="24" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" class="svg-text-header" text-transform="uppercase" letter-spacing="0.06em">LANGUAGES</text>
 
         <!-- French -->
-        <rect x="16" y="36" width="134" height="76" rx="8" fill="#faf7f2" stroke="#b4502d" stroke-width="1.5"/>
-        <text x="83" y="60" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1f2430">French</text>
-        <text x="83" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#b4502d" font-weight="600">Native</text>
-        <text x="83" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#b4502d">●●●●●</text>
+        <rect x="16" y="36" width="134" height="76" rx="8" class="svg-bg french-accent" stroke-width="1.5"/>
+        <text x="83" y="60" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" class="svg-text-main">French</text>
+        <text x="83" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" class="french-text" font-weight="600">Native</text>
+        <text x="83" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" class="french-text">●●●●●</text>
 
         <!-- English -->
-        <rect x="162" y="36" width="134" height="76" rx="8" fill="#faf7f2" stroke="#4a86b4" stroke-width="1.5"/>
-        <text x="229" y="60" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1f2430">English</text>
-        <text x="229" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#4a86b4" font-weight="600">Fluent — C1</text>
-        <text x="229" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#4a86b4">●●●●○</text>
+        <rect x="162" y="36" width="134" height="76" rx="8" class="svg-bg english-accent" stroke-width="1.5"/>
+        <text x="229" y="60" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" class="svg-text-main">English</text>
+        <text x="229" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" class="english-text" font-weight="600">Fluent — C1</text>
+        <text x="229" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" class="english-text">●●●●○</text>
 
         <!-- Spanish -->
-        <rect x="308" y="36" width="134" height="76" rx="8" fill="#faf7f2" stroke="#4caf6b" stroke-width="1.5"/>
-        <text x="375" y="60" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1f2430">Spanish</text>
-        <text x="375" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#4caf6b" font-weight="600">Conversational — B1</text>
-        <text x="375" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#4caf6b">●●●○○</text>
+        <rect x="308" y="36" width="134" height="76" rx="8" class="svg-bg spanish-accent" stroke-width="1.5"/>
+        <text x="375" y="60" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" class="svg-text-main">Spanish</text>
+        <text x="375" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" class="spanish-text" font-weight="600">Conversational — B1</text>
+        <text x="375" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" class="spanish-text">●●●○○</text>
 
         <!-- German -->
-        <rect x="454" y="36" width="150" height="76" rx="8" fill="#faf7f2" stroke="#e6dfd3" stroke-width="1.5"/>
-        <text x="529" y="60" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1f2430">German</text>
-        <text x="529" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#a3a9b7" font-weight="600">Basic — A2</text>
-        <text x="529" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#a3a9b7">●●○○○</text>
+        <rect x="454" y="36" width="150" height="76" rx="8" class="svg-bg german-accent" stroke-width="1.5"/>
+        <text x="529" y="60" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" class="svg-text-main">German</text>
+        <text x="529" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" class="german-text" font-weight="600">Basic — A2</text>
+        <text x="529" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" class="german-text">●●○○○</text>
       </svg>
       <figcaption>Language levels</figcaption>
     </figure>
