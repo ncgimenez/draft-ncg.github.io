@@ -277,8 +277,9 @@ ul.liste li { margin-bottom: 6px; }
   word-break: break-word;
 }
 .stat-val--text {
-  font-size: 0.95rem;
+  font-size: 1.5rem;
   letter-spacing: 0.03em;
+  font-weight: 700;
 }
 .stat-lbl {
   font-size: 0.75rem;
