@@ -12,6 +12,16 @@
     'hero.cta2': 'Me connaître',
     // Home — sections
     'section.projects': 'Projets',
+    'section.notes': 'Notes',
+    'note1.label': 'Note',
+    'note1.title': 'Quand la consultante est aussi l'utilisatrice',
+    'note1.desc': 'Sur ce que ça change d'avoir été du mauvais côté des outils qu'on implémente.',
+    'note2.label': 'Note',
+    'note2.title': 'Je démonte les choses',
+    'note2.desc': 'Sur l'instinct d'ouvrir, de comprendre ce qu'il y a dedans, et de ne pas être rebutée par ce qu'on trouve.',
+    'note3.label': 'Note',
+    'note3.title': 'Ce qui rend un document d'exigences vraiment utile',
+    'note3.desc': 'Sur l'écart entre un document qui existe et un document qui fait son travail.',
     'section.soon': 'En préparation',
     'section.soon.sub': 'Projets en cours de rédaction.',
     // Home — project cards
