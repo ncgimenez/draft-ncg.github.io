@@ -1,84 +1,157 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projet 1 | Nadia Cañadas Giménez</title>
-  <meta name="description" content="Étude de cas : [résume en une phrase].">
+  <title>O2C Without the Chaos | Nadia Cañadas Giménez</title>
+  <meta name="description" content="Case study: standardising an SAP S/4HANA Order-to-Cash process for a B2B sales team during a greenfield implementation.">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 </head>
 <body>
 
   <header class="site">
     <div class="interieur">
       <a class="marque" href="index.html">Nadia Cañadas Giménez</a>
-      <nav aria-label="Navigation principale">
+      <nav aria-label="Main navigation">
         <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="a-propos.html">À propos</a></li>
-          <li><a href="projet-1.html" aria-current="page">Projet 1</a></li>
-          <li><a href="projet-2.html">Projet 2</a></li>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="index.html#projects" aria-current="page" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="a-propos.html" data-i18n="nav.about">About</a></li>
         </ul>
       </nav>
+      <button class="lang-toggle" aria-label="Switch language">
+        <span class="lang-opt lang-opt--en">EN</span>
+        <span class="lang-sep">|</span>
+        <span class="lang-opt lang-opt--fr">FR</span>
+      </button>
     </div>
   </header>
 
   <main>
-    <span class="etiquette">Étude de cas</span>
-    <h1>[Titre du projet 1]</h1>
-    <p class="chapo">[Une phrase qui résume le problème et ta contribution.]</p>
+    <span class="etiquette" data-i18n="p1.label">Case study</span>
+    <h1 data-i18n="p1.h1">O2C Without the Chaos: Standardising SAP SD for a B2B Team</h1>
+    <p class="chapo" data-i18n="p1.sub">
+      Mapping and fixing a broken order management process during a greenfield SAP S/4HANA Public Cloud implementation.
+    </p>
 
-    <!-- Utile si le projet vient d'une mission réelle : anonymise clients et chiffres -->
-    <p class="bandeau">
-      Les noms et chiffres ont été anonymisés ou modifiés pour respecter la confidentialité.
+    <p class="bandeau" data-i18n="proj.note.anon">
+      Names and data have been anonymised to respect confidentiality.
     </p>
 
     <dl class="meta">
-      <div><dt>Rôle</dt><dd>[Ton rôle]</dd></div>
-      <div><dt>Contexte</dt><dd>[Type d'entreprise ou de secteur]</dd></div>
-      <div><dt>Durée</dt><dd>[Durée]</dd></div>
-      <div><dt>Outils</dt><dd>[Outils utilisés]</dd></div>
+      <div><dt data-i18n="p1.role">Role</dt><dd data-i18n="p1.role.v">SAP SD Business Analyst</dd></div>
+      <div><dt data-i18n="p1.context">Context</dt><dd data-i18n="p1.context.v">Tech scale-up, hardware e-commerce</dd></div>
+      <div><dt data-i18n="p1.duration">Duration</dt><dd data-i18n="p1.duration.v">18 months (go-live + rollout)</dd></div>
+      <div><dt data-i18n="p1.tools">Tools</dt><dd data-i18n="p1.tools.v">SAP S/4HANA Public Cloud, Jira, Confluence, Visio</dd></div>
     </dl>
 
-    <h2>Contexte</h2>
-    <p>[Dans quelle situation es-tu intervenue ? Qui étaient les parties prenantes ?]</p>
+    <h2 data-i18n="p1.s1">Context</h2>
+    <p data-i18n="p1.s1.body">
+      Greenfield SAP S/4HANA Public Cloud implementation for a Nordic tech scale-up. The B2B sales team
+      managed strategic accounts with custom orders, negotiated discounts and specific delivery timelines.
+      Stakeholders: Sales Operations, Customer Success, Finance, and the Deloitte project team.
+    </p>
 
-    <h2>Problème</h2>
-    <p>[Quel était le problème concret à résoudre, et pourquoi il comptait pour l'équipe ou l'entreprise.]</p>
+    <h2 data-i18n="p1.s2">Problem</h2>
+    <p data-i18n="p1.s2.body">
+      B2B orders were managed entirely outside SAP — through emails and spreadsheets. No Sales Order was
+      created before shipment. Consequences: no credit check, no pricing validation, no order status
+      visibility, invoices sometimes forgotten, and no audit trail in case of dispute.
+    </p>
 
-    <h2>Analyse</h2>
-    <p>[Comment as-tu analysé la situation : entretiens, cartographie du processus, données, etc.]</p>
+    <h2 data-i18n="p1.s3">Analysis</h2>
+    <p data-i18n="p1.s3.body">
+      Fit-gap workshops with Sales Operations and Customer Success. AS-IS process mapping: from customer
+      request to delivery. Key gaps identified: no systematic Sales Order, manual credit check (or none),
+      pricing conditions applied from memory.
+    </p>
 
-    <!-- Pour ajouter une image : mets ton fichier dans le dossier "images",
-         puis remplace le bloc "emplacement-image" ci-dessous par :
-         <figure>
-           <img src="images/nom-du-fichier.png" alt="Description de l'image">
-           <figcaption>Légende de l'image</figcaption>
-         </figure>
-    -->
-    <div class="emplacement-image">
-      [Emplacement pour un schéma de processus ou une capture]
+    <h2 data-i18n="p1.s4">AS-IS Process</h2>
+    <div class="bpmn-wrap">
+      <div class="mermaid">
+flowchart LR
+    A([Customer request]) --> B[Email to\nSales Rep]
+    B --> C[Manual check\nspreadsheet]
+    C --> D{Stock OK?}
+    D -- Yes --> E[Shipment\narranged]
+    D -- No --> F[Back to\ncustomer]
+    E --> G[Invoice\nsent — maybe]
+
+    style A fill:var(--fond-carte),stroke:var(--accent),color:var(--texte)
+    style G fill:var(--fond-carte),stroke:#c0392b,color:var(--texte)
+    style D fill:var(--fond-carte),stroke:var(--ligne),color:var(--texte)
+      </div>
     </div>
+    <p class="bpmn-note">Pain points: no credit check · no pricing validation · invoicing manual and error-prone · zero traceability</p>
 
-    <h2>Solution proposée</h2>
+    <h2 data-i18n="p1.s5">Proposed solution</h2>
     <ul class="liste">
-      <li>[Recommandation 1]</li>
-      <li>[Recommandation 2]</li>
-      <li>[Recommandation 3]</li>
+      <li data-i18n="p1.s5.b1">Adopt the standard SAP O2C flow: Quotation → Sales Order → Credit check → Delivery → Goods Issue → Invoice → Payment.</li>
+      <li data-i18n="p1.s5.b2">Configure pricing conditions (B2B discounts by customer and product) in SAP.</li>
+      <li data-i18n="p1.s5.b3">Set up credit memo and debit memo management for post-billing adjustments.</li>
+      <li data-i18n="p1.s5.b4">Process documentation and key-user training for Sales Operations and Customer Success.</li>
     </ul>
 
-    <h2>Résultat</h2>
-    <p>[Ce qui a changé. Si tu n'as pas de chiffre fiable, décris le changement sans en inventer.]</p>
+    <h2 data-i18n="p1.s6">TO-BE Process (SAP standard)</h2>
+    <div class="bpmn-wrap">
+      <div class="mermaid">
+flowchart LR
+    A([Customer\nrequest]) --> B[Quotation\nVA21]
+    B --> C[Sales Order\nVA01]
+    C --> D{Credit\ncheck}
+    D -- Pass --> E[Delivery\nVL01N]
+    D -- Block --> F[Credit mgmt\nreview]
+    F --> C
+    E --> G[Goods Issue\nVL02N]
+    G --> H[Invoice\nVF01]
+    H --> I([Payment\nreceived])
 
-    <h2>Ce que j'en retiens</h2>
-    <p>[Un apprentissage ou ce que tu ferais différemment.]</p>
+    style A fill:var(--fond-carte),stroke:var(--accent),color:var(--texte)
+    style I fill:var(--fond-carte),stroke:#27ae60,color:var(--texte)
+    style D fill:var(--fond-carte),stroke:var(--ligne),color:var(--texte)
+      </div>
+    </div>
+    <p class="bpmn-note">Every step leaves a trace in SAP · credit and pricing validated automatically · full visibility for all teams</p>
 
-    <a class="retour" href="index.html">← Retour à l'accueil</a>
+    <h2 data-i18n="p1.s7">Outcome</h2>
+    <p data-i18n="p1.s7.body">
+      Full traceability for every order in SAP. B2B discounts are systematically validated through
+      pricing conditions rather than from memory. Credit check automatically blocks orders exceeding
+      defined limits. Customer Success can check any order's status in real time without asking Sales.
+    </p>
+
+    <h2 data-i18n="p1.s8">What I took away</h2>
+    <p data-i18n="p1.s8.body">
+      The resistance to change was stronger than the technical gaps. The real challenge was convincing
+      a sales team used to its workarounds that the SAP standard would give them more visibility, not
+      less flexibility. Fit-gap workshops only deliver value if you genuinely challenge exceptions —
+      and can explain why the standard is worth it.
+    </p>
+
+    <a class="retour" href="index.html#projects" data-i18n="proj.back">← Back to projects</a>
   </main>
 
   <footer>
-    <p>© 2026 Nadia Cañadas Giménez</p>
+    <p>© 2026 Nadia Cañadas Giménez ·
+      <a href="https://www.linkedin.com/in/ncgimenez" data-i18n="footer.linkedin">LinkedIn</a>
+    </p>
   </footer>
 
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#ffffff',
+        primaryTextColor: '#1f2430',
+        primaryBorderColor: '#e6dfd3',
+        lineColor: '#5b6272',
+        background: '#faf7f2',
+        fontSize: '13px'
+      }
+    });
+  </script>
+  <script src="lang.js"></script>
 </body>
 </html>
