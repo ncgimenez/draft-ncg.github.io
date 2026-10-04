@@ -324,7 +324,7 @@ ul.nav-dropdown {
   display: flex;
 }
 
-.nav-dropdown li { margin: 0; padding: 0; }
+.nav-dropdown li { margin: 0; padding: 0; cursor: pointer; }
 
 .nav-dropdown a {
   display: block;
