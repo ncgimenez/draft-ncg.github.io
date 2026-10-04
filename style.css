@@ -257,6 +257,37 @@ ul.liste li { margin-bottom: 6px; }
   padding: 2px 8px;
 }
 
+/* ---------- Gap analysis table ---------- */
+
+.gap-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin: 0 0 24px;
+}
+
+.gap-table th {
+  text-align: left;
+  padding: 10px 12px;
+  background: var(--fond-carte);
+  border-bottom: 2px solid var(--accent);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--texte-doux);
+}
+
+.gap-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--ligne);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.gap-table tr:last-child td { border-bottom: none; }
+
+.gap-table td:first-child { white-space: nowrap; }
+
 .retour { display: inline-block; margin-top: 36px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
 
 /* ---------- Widget langue ---------- */

@@ -66,6 +66,63 @@
       request to delivery. Key gaps identified: no systematic Sales Order, manual credit check (or none),
       pricing conditions applied from memory.
     </p>
+    <p>
+      The B2B team was the most challenging stakeholder: accustomed to email and spreadsheets, they
+      felt that moving into SAP would mean losing the flexibility they relied on for strategic accounts.
+      Addressing that concern was as much a part of the analysis as mapping the process gaps.
+    </p>
+
+    <h2>Gap Analysis</h2>
+    <div style="overflow-x:auto;">
+      <table class="gap-table">
+        <thead>
+          <tr>
+            <th>Process step</th>
+            <th>AS-IS</th>
+            <th>Gap</th>
+            <th>Decision</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Order intake</strong></td>
+            <td>Email to Sales Rep — no Sales Order created in SAP before shipment</td>
+            <td>Zero traceability, no credit check, no pricing validation</td>
+            <td>Fit-to-standard: mandatory SO creation in SAP (VA01) before any fulfilment step</td>
+          </tr>
+          <tr>
+            <td><strong>Pricing</strong></td>
+            <td>Discounts applied from memory or copied from a personal spreadsheet</td>
+            <td>Inconsistent pricing across accounts, no audit trail in case of dispute</td>
+            <td>Fit-to-standard: pricing conditions configured in SAP (VK11) per customer group and product</td>
+          </tr>
+          <tr>
+            <td><strong>Credit check</strong></td>
+            <td>Manual review when remembered, often skipped for known accounts</td>
+            <td>Exposure on overdue B2B accounts — orders shipped despite outstanding balances</td>
+            <td>Fit-to-standard: automatic credit check, orders blocked and released via credit management (FD32)</td>
+          </tr>
+          <tr>
+            <td><strong>B2B order approval</strong></td>
+            <td>No approval step — orders processed directly by Sales Rep</td>
+            <td>Large strategic orders shipped without manager sign-off</td>
+            <td>SAP standard approval workflow configured for orders above a defined amount threshold</td>
+          </tr>
+          <tr>
+            <td><strong>Delivery</strong></td>
+            <td>Arranged by email with the warehouse team</td>
+            <td>No delivery document in SAP — goods issue not recorded, stock not decremented</td>
+            <td>Fit-to-standard: VL01N delivery order, VL02N goods issue before invoice</td>
+          </tr>
+          <tr>
+            <td><strong>Invoicing</strong></td>
+            <td>Manual invoice sent from finance — sometimes forgotten or delayed by weeks</td>
+            <td>Revenue leakage, no dispute trail, Finance unable to reconcile without chasing Sales</td>
+            <td>Fit-to-standard: billing run (VF04) triggered automatically after goods issue</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <h2 data-i18n="p1.s4">AS-IS Process</h2>
     <div class="bpmn-wrap">
@@ -113,6 +170,25 @@ flowchart LR
       </div>
     </div>
     <p class="bpmn-note">Every step leaves a trace in SAP · credit and pricing validated automatically · full visibility for all teams</p>
+
+    <h2>One decision explained</h2>
+    <p>
+      The B2B team's initial position was clear: their accounts were too strategic to go through a
+      standard process. Negotiated pricing, custom delivery timelines, relationships built over years —
+      none of it felt like it could live in a rigid SAP flow.
+    </p>
+    <p>
+      The decision, backed by the project lead, was to implement standard SAP O2C for all orders
+      with no exceptions — including for B2B strategic accounts. The one adaptation added to
+      address the team's concern: a <strong>manager approval step on Sales Orders above a defined
+      amount threshold</strong>, configured within SAP's standard order approval workflow. This
+      gave the team the oversight they needed without creating a parallel process outside the system.
+    </p>
+    <p>
+      In practice, the B2B team still needed time to build confidence in SAP. I personally walked
+      them through their first orders — including returns and credit memo creation — until the flow
+      felt familiar. The resistance didn't disappear on go-live day; it faded order by order.
+    </p>
 
     <h2 data-i18n="p1.s7">Outcome</h2>
     <p data-i18n="p1.s7.body">
