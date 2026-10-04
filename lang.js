@@ -1,4 +1,8 @@
 (function () {
+  // Apply saved theme immediately to avoid flash
+  var _t = localStorage.getItem('ncg-theme');
+  if (_t) document.documentElement.dataset.theme = _t;
+
   const FR = {
     // Navigation
     'nav.home': 'Accueil',
@@ -110,6 +114,47 @@
     'p4.label': 'Concept UX',
     'p4.h1': 'SNCB : savoir où descendre avant d\'arriver',
     'p4.sub': 'Un voyageur en correspondance ne sait pas sur quel quai il arrive, ni de quel côté sortir. La donnée existe — elle n\'est juste pas au bon endroit.',
+    // Project 5 — Odoo
+    'p5.label': 'Étude de cas',
+    'p5.h1': 'Odoo : un flux cohérent à la place de trois outils déconnectés',
+    'p5.sub': 'Implémenter Ventes, Stocks et Comptabilité pour une PME belge — et convaincre l\'équipe commerciale d\'arrêter de court-circuiter le flux de réservation de stock.',
+    'p5.role': 'Rôle',
+    'p5.role.v': 'Analyste fonctionnelle Odoo',
+    'p5.context': 'Contexte',
+    'p5.context.v': 'PME belge, B2B, clients BE/FR/NL',
+    'p5.duration': 'Durée',
+    'p5.duration.v': '~6 mois (implémentation + hypercare)',
+    'p5.tools': 'Outils',
+    'p5.tools.v': 'Odoo 17, Jira, Confluence, Excel (migration)',
+    'p5.s1': 'Contexte',
+    'p5.s1.body': 'PME belge d\'une vingtaine de collaborateurs — vente d\'équipements techniques à des clients B2B en Belgique, France et Pays-Bas. Avant l\'implémentation : QuickBooks pour la comptabilité, un classeur Excel partagé pour le suivi des commandes et des stocks, un outil CRM indépendant pour les données clients. La décision de passer à Odoo est venue d\'un constat simple : le volume de réconciliation manuelle entre les trois outils était devenu insoutenable.',
+    'p5.s2': 'Problème',
+    'p5.s2.body': 'L\'articulation entre ventes et stock était entièrement manuelle — le commercial confirmait un devis, le marquait dans l\'Excel, envoyait un e-mail à l\'entrepôt pour réserver le stock. Sans contrôle automatique, plusieurs commandes pouvaient engager les mêmes références. L\'entrepôt ne découvrait le conflit qu\'au moment de la préparation.',
+    'p5.s2.b2': 'La facturation était le deuxième point de friction : Finance générait les factures manuellement dans QuickBooks à partir du PDF de devis, parfois plusieurs jours après la livraison. Les remises accordées au devis n\'étaient pas toujours répercutées.',
+    'p5.s3': 'Analyse',
+    'p5.s4': 'Processus AS-IS',
+    'p5.s5': 'Solution proposée',
+    'p5.s5.b1': 'Flux standard Odoo : Devis → Confirmation → Réservation de stock automatique → Bon de livraison → Validation → Facture générée → Synchronisation bancaire.',
+    'p5.s5.b2': 'Configuration des règles de réapprovisionnement et des routes de stock pour les références critiques.',
+    'p5.s5.b3': 'Synchronisation bancaire et règles de rapprochement automatique par montant et partenaire.',
+    'p5.s5.b4': 'Documentation des processus et formation des key-users (commercial, entrepôt, comptabilité).',
+    'p5.s6': 'Processus TO-BE (Odoo standard)',
+    'p5.decision.h': 'Deux décisions expliquées',
+    'p5.s7': 'Résultat',
+    'p5.s7.body': 'Les ruptures de stock à la livraison ont été éliminées dans le premier trimestre. La réconciliation de fin de mois est passée d\'une journée complète à moins de deux heures. L\'équipe commerciale a arrêté d\'utiliser l\'Excel dans les six semaines. Finance a fermé le compte QuickBooks quatre mois après le go-live.',
+    'p5.s8': 'Ce que j\'en retiens',
+    'p5.s8.body': 'L\'implémentation technique était simple. Le travail difficile était de convaincre des équipes que bien utiliser le système — plutôt que trouver des raccourcis — était la vraie solution. Les contournements de l\'équipe commerciale n\'étaient pas de la négligence : c\'étaient des adaptations à un processus qui n\'avait jamais été bien conçu. Odoo nous a fourni l\'outil ; les ateliers nous ont donné l\'adoption.',
+    // Home — card 5
+    'card5.label': 'Étude de cas',
+    'card5.title': 'Odoo : trois outils déconnectés, un flux cohérent',
+    'card5.desc': 'Implémentation Ventes, Stocks et Comptabilité pour une PME belge — et résoudre le problème de stock sur-engagé.',
+    // About — personal statement
+    'about.statement': 'Trois ans dans deux écosystèmes ERP très différents — SAP à grande échelle, Odoo en profondeur — ont renforcé une conviction : la partie technique d\'une implémentation est rarement ce qui détermine son succès. Ce qui compte, c\'est la conversation : comprendre ce qu\'une équipe fait réellement (pas ce que la carte de processus dit qu\'elle fait), cartographier là où le système crée des frictions, et défendre le standard assez clairement pour que les gens le choisissent plutôt que leur contournement.',
+    // Footer
+    'footer.email': 'E-mail',
+    'footer.linkedin': 'LinkedIn',
+    // About contact
+    'about.contact.or': ' ou ',
   };
 
   const saved = localStorage.getItem('ncg-lang') || 'en';
@@ -136,12 +181,36 @@
     });
   }
 
+  function _isDark() {
+    var t = document.documentElement.dataset.theme;
+    if (t === 'dark') return true;
+    if (t === 'light') return false;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  function _updateThemeIcons() {
+    document.querySelectorAll('.theme-icon').forEach(function (el) {
+      el.textContent = _isDark() ? '☀' : '☾';
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.lang-toggle').forEach(function (btn) {
       btn.addEventListener('click', function () {
         apply(localStorage.getItem('ncg-lang') === 'fr' ? 'en' : 'fr');
       });
     });
+
+    document.querySelectorAll('.theme-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var newTheme = _isDark() ? 'light' : 'dark';
+        document.documentElement.dataset.theme = newTheme;
+        localStorage.setItem('ncg-theme', newTheme);
+        _updateThemeIcons();
+      });
+    });
+
+    _updateThemeIcons();
     apply(saved);
   });
 })();
