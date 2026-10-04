@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Planning App Concept | Nadia Cañadas Giménez</title>
-  <meta name="description" content="Product concept: a planning app that categorises your week by energy type, not just time slots.">
+  <title>Structured Calendar Concept | Nadia Cañadas Giménez</title>
+  <meta name="description" content="Product concept: a calendar app that imposes a meaningful default colour structure by life category — commute, outside, work, to-do — so your week is legible at a glance.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,10 +29,11 @@
 
   <main>
     <span class="etiquette" data-i18n="p2.label">Product concept</span>
-    <h1 data-i18n="p2.h1">A Planning App That Respects Your Energy</h1>
+    <h1 data-i18n="p2.h1">A Calendar That Tells You What Kind of Week You're Having</h1>
     <p class="chapo" data-i18n="p2.sub">
-      Calendar tools treat every task the same way. This concept rethinks the week around
-      the type of energy each block actually requires.
+      Every calendar looks the same — a grid of coloured blocks. This concept imposes a
+      default structure by life category, so the week is readable at a glance
+      without any extra effort.
     </p>
 
     <p class="bandeau">
@@ -41,105 +42,228 @@
     </p>
 
     <dl class="meta">
-      <div><dt data-i18n="p2.product">Concept</dt><dd>Original mobile application</dd></div>
-      <div><dt data-i18n="p2.type">Type</dt><dd>Personal concept</dd></div>
-      <div><dt data-i18n="p2.tools">Tools</dt><dd>[Figma / to be completed]</dd></div>
+      <div><dt>Concept</dt><dd>Original mobile application</dd></div>
+      <div><dt>Type</dt><dd>Personal concept</dd></div>
+      <div><dt>Tools</dt><dd>[Figma / to be completed]</dd></div>
     </dl>
 
     <h2>The user problem</h2>
     <p>
-      Every time I look at my week in Apple Calendar or Google Calendar, I see a grid of coloured
-      blocks — but they all feel the same. A 1-hour deep work session looks identical to a 1-hour
-      meeting. A personal appointment sits next to an admin task with no visual distinction.
+      Open any calendar app and you see a wall of coloured blocks — but the colours mean nothing
+      consistent. A blue block might be a dentist appointment in one calendar, a work meeting in
+      another. Over time you accumulate dozens of calendars, each colour assigned more or less
+      randomly, and the week view becomes noise rather than signal.
     </p>
     <p>
-      The result: I can plan a "full" week that's actually exhausting, or a "light" week where
-      I've been avoiding the work that matters. The calendar tells me <em>when</em>, never
-      <em>what kind</em> of week I'm building.
+      Worse: managing which calendars are visible requires toggling each one individually. If you
+      want to show "everything personal" or "everything related to travel" before a trip, you
+      click through a long list one by one.
+    </p>
+    <p>
+      The result is a calendar that tells you <em>when</em> things happen, but not <em>what kind
+      of week</em> you're building. Is this week heavy on commuting? Am I spending enough time
+      outside? Is everything pro and nothing personal? The grid can't answer that.
     </p>
 
     <h2>My hypothesis</h2>
     <p>
-      If a planning app categorised blocks by <strong>energy type</strong> — deep work, meetings,
-      admin, personal, rest — and showed a weekly balance at a glance, users would make
-      more intentional scheduling decisions and feel less depleted at the end of the week.
+      If a calendar app shipped with a <strong>default colour structure by life category</strong>
+      — and let users group their calendars into those categories — the week view would become
+      meaningful at a glance, without requiring any new behaviour from the user. The structure
+      does the work; the user just looks.
     </p>
 
-    <h2>The concept</h2>
+    <h2>The proposed structure</h2>
 
-    <h3>Energy types</h3>
+    <h3>Default colour categories</h3>
     <p>
-      Every block is tagged with one of five types, each with its own colour and icon:
+      Every calendar belongs to one of five categories. The app assigns a default colour to each;
+      the user can override it, but there is always a "Reset to default" option:
     </p>
-    <ul class="liste">
-      <li><strong>Focus</strong> — deep work, writing, analysis. Needs uninterrupted time.</li>
-      <li><strong>Meetings</strong> — calls, syncs, workshops. Social and reactive.</li>
-      <li><strong>Admin</strong> — emails, expenses, small tasks. Low-effort but draining if overdone.</li>
-      <li><strong>Personal</strong> — gym, errands, appointments.</li>
-      <li><strong>Rest</strong> — buffer, lunch, intentional empty space.</li>
-    </ul>
 
-    <h3>Screen 1 — Week view</h3>
+    <figure>
+      <svg viewBox="0 0 620 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" aria-label="Colour grid showing five life categories with their default colours">
+        <defs>
+          <filter id="sh2">
+            <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#1f2430" flood-opacity="0.10"/>
+          </filter>
+        </defs>
+        <rect width="620" height="200" fill="#ffffff" rx="10" stroke="#e6dfd3" stroke-width="1"/>
+
+        <!-- Category tiles -->
+        <!-- Commute -->
+        <rect x="16" y="16" width="108" height="80" rx="8" fill="#fde8e8" stroke="#e05c5c" stroke-width="1.5"/>
+        <rect x="16" y="16" width="108" height="14" rx="4" fill="#e05c5c"/>
+        <rect x="16" y="24" width="108" height="6" rx="0" fill="#e05c5c"/>
+        <text x="70" y="27" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="white" font-weight="700">COMMUTE</text>
+        <text x="70" y="50" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#c0392b">Train to Brussels</text>
+        <text x="70" y="65" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#c0392b">Carpool Wed</text>
+        <text x="70" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#c0392b">Brussels → home</text>
+
+        <!-- Outside -->
+        <rect x="136" y="16" width="108" height="80" rx="8" fill="#ddeeff" stroke="#4a86b4" stroke-width="1.5"/>
+        <rect x="136" y="16" width="108" height="14" rx="4" fill="#4a86b4"/>
+        <rect x="136" y="24" width="108" height="6" rx="0" fill="#4a86b4"/>
+        <text x="190" y="27" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="white" font-weight="700">OUTSIDE</text>
+        <text x="190" y="50" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#2d5a80">Lunch with Sarah</text>
+        <text x="190" y="65" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#2d5a80">Gym</text>
+        <text x="190" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#2d5a80">Doctor appointment</text>
+
+        <!-- Pro -->
+        <rect x="256" y="16" width="108" height="80" rx="8" fill="#ede8f8" stroke="#7b5ea7" stroke-width="1.5"/>
+        <rect x="256" y="16" width="108" height="14" rx="4" fill="#7b5ea7"/>
+        <rect x="256" y="24" width="108" height="6" rx="0" fill="#7b5ea7"/>
+        <text x="310" y="27" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="white" font-weight="700">WORK</text>
+        <text x="310" y="50" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#5a3f80">Team sync</text>
+        <text x="310" y="65" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#5a3f80">Focus: report</text>
+        <text x="310" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#5a3f80">1:1 with manager</text>
+
+        <!-- To-do -->
+        <rect x="376" y="16" width="108" height="80" rx="8" fill="#e8f5e9" stroke="#4caf6b" stroke-width="1.5"/>
+        <rect x="376" y="16" width="108" height="14" rx="4" fill="#4caf6b"/>
+        <rect x="376" y="24" width="108" height="6" rx="0" fill="#4caf6b"/>
+        <text x="430" y="27" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="white" font-weight="700">TO-DO</text>
+        <text x="430" y="50" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#2e7d32">Book dentist</text>
+        <text x="430" y="65" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#2e7d32">Renew ID card</text>
+        <text x="430" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#2e7d32">Call landlord</text>
+
+        <!-- Personal -->
+        <rect x="496" y="16" width="108" height="80" rx="8" fill="#fff8e1" stroke="#f0b429" stroke-width="1.5"/>
+        <rect x="496" y="16" width="108" height="14" rx="4" fill="#f0b429"/>
+        <rect x="496" y="24" width="108" height="6" rx="0" fill="#f0b429"/>
+        <text x="550" y="27" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="white" font-weight="700">PERSONAL</text>
+        <text x="550" y="50" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#b07d00">Family dinner</text>
+        <text x="550" y="65" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#b07d00">Weekend trip</text>
+        <text x="550" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#b07d00">Birthday: Léa</text>
+
+        <!-- Legend note -->
+        <text x="16" y="118" font-family="system-ui,sans-serif" font-size="8" fill="#5b6272" font-style="italic">Default colours — each calendar folder is assigned to one category. Override per event if needed, or reset to default.</text>
+
+        <!-- Balance bar label -->
+        <text x="16" y="140" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#1f2430">This week's balance</text>
+        <!-- Balance bar -->
+        <rect x="16" y="148" width="588" height="14" rx="7" fill="#f5f2ed"/>
+        <rect x="16" y="148" width="94" height="14" rx="7" fill="#e05c5c"/>
+        <rect x="110" y="148" width="118" height="14" rx="0" fill="#4a86b4"/>
+        <rect x="228" y="148" width="235" height="14" rx="0" fill="#7b5ea7"/>
+        <rect x="463" y="148" width="71" height="14" rx="0" fill="#4caf6b"/>
+        <rect x="534" y="148" width="70" height="14" rx="7" fill="#f0b429"/>
+        <!-- Bar labels -->
+        <text x="63"  y="158" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="white" font-weight="600">16%</text>
+        <text x="169" y="158" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="white" font-weight="600">20%</text>
+        <text x="345" y="158" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="white" font-weight="600">40%</text>
+        <text x="499" y="158" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="white" font-weight="600">12%</text>
+        <text x="569" y="158" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="white" font-weight="600">12%</text>
+        <!-- Balance annotation -->
+        <text x="16" y="185" font-family="system-ui,sans-serif" font-size="8" fill="#5b6272" font-style="italic">Balance bar at top of week view — colour split reflects actual scheduled time. Heavy on Work this week.</text>
+      </svg>
+      <figcaption>Default colour grid and weekly balance bar — structure imposed by life category, not by calendar name</figcaption>
+    </figure>
+
+    <h3>Calendar folder groups</h3>
     <p>
-      The week view looks like a standard calendar, but each block is colour-coded by energy type.
-      A thin horizontal bar at the top of the screen shows the week's energy balance — how much
-      of the week is Focus vs Meetings vs Admin. If meetings dominate, the bar turns orange.
-    </p>
-
-    <div class="emplacement-image">
-      [Mockup: week view with colour-coded energy blocks + balance bar at top]
-    </div>
-
-    <h3>Screen 2 — Adding a block</h3>
-    <p>
-      When creating an event, the app asks for the energy type first — before title or time.
-      It then suggests the best available slot based on the type: Focus blocks in the morning,
-      meetings mid-day, admin at the end of the afternoon.
+      Instead of toggling calendars one by one, the app lets you group them into <strong>folders</strong>
+      and toggle the entire folder at once. One tap on "All travel" hides commute calendars, ride-share
+      bookings, and hotel confirmations simultaneously. One tap on "Personal only" removes everything
+      work-related from the view.
     </p>
     <p>
-      A "Protect" toggle lets you mark any block as non-negotiable: the app won't suggest
-      filling it and flags any conflict immediately.
+      Folders can be created and named freely. They can also belong to a colour category — so a
+      "Travel" folder inherits the Commute red, and a "Side projects" folder inherits Work purple,
+      unless overridden.
     </p>
 
-    <div class="emplacement-image">
-      [Mockup: new event screen — energy type picker at top, smart slot suggestion below]
-    </div>
+    <figure>
+      <svg viewBox="0 0 620 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" aria-label="Calendar folder sidebar showing grouped calendars with toggle switches">
+        <rect width="620" height="200" fill="#ffffff" rx="10" stroke="#e6dfd3" stroke-width="1"/>
 
-    <h3>Screen 3 — Weekly review (Sunday evening)</h3>
+        <!-- Sidebar -->
+        <rect x="16" y="16" width="180" height="168" rx="8" fill="#faf7f2" stroke="#e6dfd3" stroke-width="1"/>
+        <text x="106" y="34" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#1f2430">My Calendars</text>
+
+        <!-- Folder: Travel -->
+        <rect x="26" y="42" width="160" height="52" rx="6" fill="#fff"/>
+        <rect x="26" y="42" width="4" height="52" rx="2" fill="#e05c5c"/>
+        <text x="38" y="55" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#1f2430">Travel</text>
+        <!-- toggle on -->
+        <rect x="158" y="46" width="22" height="12" rx="6" fill="#e05c5c"/>
+        <circle cx="174" cy="52" r="5" fill="white"/>
+        <text x="38" y="68" font-family="system-ui,sans-serif" font-size="8" fill="#5b6272">Train commute</text>
+        <text x="38" y="80" font-family="system-ui,sans-serif" font-size="8" fill="#5b6272">Carpool</text>
+
+        <!-- Folder: Work -->
+        <rect x="26" y="100" width="160" height="52" rx="6" fill="#fff"/>
+        <rect x="26" y="100" width="4" height="52" rx="2" fill="#7b5ea7"/>
+        <text x="38" y="113" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#1f2430">Work</text>
+        <!-- toggle off -->
+        <rect x="158" y="104" width="22" height="12" rx="6" fill="#e6dfd3"/>
+        <circle cx="162" cy="110" r="5" fill="white"/>
+        <text x="38" y="126" font-family="system-ui,sans-serif" font-size="8" fill="#a3a9b7">Meetings</text>
+        <text x="38" y="138" font-family="system-ui,sans-serif" font-size="8" fill="#a3a9b7">Focus blocks</text>
+
+        <!-- Arrow + annotation -->
+        <text x="216" y="75" font-family="system-ui,sans-serif" font-size="9" fill="#1f2430" font-weight="600">One tap toggles the whole folder.</text>
+        <text x="216" y="90" font-family="system-ui,sans-serif" font-size="9" fill="#5b6272">Travel folder is ON → red events</text>
+        <text x="216" y="104" font-family="system-ui,sans-serif" font-size="9" fill="#5b6272">visible in week view.</text>
+        <line x1="200" y1="78" x2="210" y2="78" stroke="#e05c5c" stroke-width="1.5" marker-end="url(#arr)"/>
+
+        <text x="216" y="135" font-family="system-ui,sans-serif" font-size="9" fill="#1f2430" font-weight="600">Work folder is OFF → purple events</text>
+        <text x="216" y="150" font-family="system-ui,sans-serif" font-size="9" fill="#5b6272">hidden. Week shows personal time only.</text>
+        <line x1="200" y1="138" x2="210" y2="138" stroke="#7b5ea7" stroke-width="1.5"/>
+
+        <!-- Reset note -->
+        <text x="16" y="194" font-family="system-ui,sans-serif" font-size="8" fill="#5b6272" font-style="italic">Each folder's colour can be overridden — a "Reset to default" button restores the category colour.</text>
+      </svg>
+      <figcaption>Folder sidebar — toggle an entire group with one tap, override colours per folder</figcaption>
+    </figure>
+
+    <h3>The default is the differentiator</h3>
     <p>
-      A brief review screen compares planned vs actual: which blocks moved, which were skipped,
-      and what the real energy distribution looked like. One question: "What would you protect
-      next week that you didn't this week?"
+      Most calendar apps let you assign any colour to any calendar — which means users end up
+      with arbitrary choices they never revisit. This concept flips it: the default structure is
+      the product's opinion. Commute is red because it costs you something. Outside is blue because
+      it opens up. Work is purple because it's distinct. To-do is green because it moves forward.
     </p>
-
-    <div class="emplacement-image">
-      [Mockup: weekly review — planned vs actual side by side, one reflection prompt]
-    </div>
+    <p>
+      Users can override everything — colours, category assignments, folder membership — but the
+      defaults are opinionated on purpose. The goal is a week view that is legible before you've
+      done anything.
+    </p>
 
     <h2>Why existing apps don't solve this</h2>
     <ul class="liste">
-      <li><strong>Apple Calendar / Google Calendar</strong> — great for scheduling, no concept of energy or intention.</li>
-      <li><strong>Sunsama</strong> — close, but heavy and work-focused. No mobile-first design.</li>
-      <li><strong>Motion / Reclaim</strong> — AI-driven rescheduling, but takes control away from the user.</li>
-      <li><strong>Fantastical</strong> — best-in-class UI, but still time-only, no energy dimension.</li>
+      <li><strong>Apple Calendar / Google Calendar</strong> — any colour, any calendar. Zero default structure; the user does all the work.</li>
+      <li><strong>Fantastical</strong> — best-in-class UI, but still colour = calendar name, no semantic layer.</li>
+      <li><strong>Sunsama</strong> — close in spirit, but task-manager framing, not calendar-first. No mobile-first design.</li>
+      <li><strong>Structured</strong> — beautiful daily view, no week-level category balance.</li>
     </ul>
     <p>
-      The gap: a lightweight, visually calm app (Apple design principles — clarity, deference, depth)
-      that adds <em>intention</em> to scheduling without becoming another productivity system to maintain.
+      The gap: a calendar that has a <em>point of view</em> about what a week is made of, ships
+      that structure by default, and gets out of the way once the user's week is loaded.
     </p>
 
     <h2>How to measure success</h2>
     <ul class="liste">
-      <li>Weekly retention rate (do users come back to plan the following week?).</li>
-      <li>Reported stress level at end of week (self-assessment, 1–5 scale).</li>
-      <li>Ratio of Focus blocks protected vs moved (did the app help guard deep work?).</li>
+      <li>Weekly retention rate (do users return to plan the following week?).</li>
+      <li>Rate of default colour overrides (are users fighting the structure, or accepting it?).</li>
+      <li>Time-to-first-useful-view after account setup (how long before the week looks meaningful?).</li>
+      <li>Reported legibility score: "I can tell at a glance what kind of week this is" (1–5 CSAT).</li>
     </ul>
 
     <h2>Limits and next steps</h2>
     <p>
-      This concept assumes users are willing to tag their events — a significant behaviour change.
-      Next step: prototype 3 screens in Figma and test with 5 people who already use a digital
-      calendar daily. Key question: does the energy type picker feel helpful or like extra friction?
+      The main risk is that the default categories don't fit everyone's life — a freelancer's week
+      has no "commute", a student's has no "work" in the usual sense. The category set may need to
+      be configurable at onboarding, with the default as a starting point rather than a fixed map.
+    </p>
+    <p>
+      The folder toggle is powerful but needs careful UX: toggling off "Work" should not silently
+      hide a critical reminder. An "always visible" flag per event could protect non-negotiables.
+    </p>
+    <p>
+      Next steps: prototype in Figma — week view with balance bar, folder sidebar, colour grid
+      editor. Test with 5 users who manage more than 3 calendars. Key question: does the default
+      structure feel like help or constraint within the first 10 minutes?
     </p>
 
     <a class="retour" href="index.html#projects" data-i18n="proj.back">← Back to projects</a>

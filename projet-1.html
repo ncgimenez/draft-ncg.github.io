@@ -71,16 +71,17 @@
     <div class="bpmn-wrap">
       <div class="mermaid">
 flowchart LR
-    A([Customer request]) --> B[Email to\nSales Rep]
-    B --> C[Manual check\nspreadsheet]
+    A([Start]) --> B[Email to Sales Rep]
+    B --> C[Manual check in spreadsheet]
     C --> D{Stock OK?}
-    D -- Yes --> E[Shipment\narranged]
-    D -- No --> F[Back to\ncustomer]
-    E --> G[Invoice\nsent — maybe]
+    D -- Yes --> E[Shipment arranged]
+    D -- No --> F[Back to customer]
+    E --> G[Invoice sent - maybe]
+    G --> H([End])
 
-    style A fill:var(--fond-carte),stroke:var(--accent),color:var(--texte)
-    style G fill:var(--fond-carte),stroke:#c0392b,color:var(--texte)
-    style D fill:var(--fond-carte),stroke:var(--ligne),color:var(--texte)
+    style A fill:#faf7f2,stroke:#b4502d,color:#1f2430
+    style H fill:#faf7f2,stroke:#c0392b,color:#1f2430
+    style D fill:#faf7f2,stroke:#e6dfd3,color:#1f2430
       </div>
     </div>
     <p class="bpmn-note">Pain points: no credit check · no pricing validation · invoicing manual and error-prone · zero traceability</p>
@@ -97,19 +98,19 @@ flowchart LR
     <div class="bpmn-wrap">
       <div class="mermaid">
 flowchart LR
-    A([Customer\nrequest]) --> B[Quotation\nVA21]
-    B --> C[Sales Order\nVA01]
-    C --> D{Credit\ncheck}
-    D -- Pass --> E[Delivery\nVL01N]
-    D -- Block --> F[Credit mgmt\nreview]
+    A([Start]) --> B[Quotation VA21]
+    B --> C[Sales Order VA01]
+    C --> D{Credit check}
+    D -- Pass --> E[Delivery VL01N]
+    D -- Block --> F[Credit mgmt review]
     F --> C
-    E --> G[Goods Issue\nVL02N]
-    G --> H[Invoice\nVF01]
-    H --> I([Payment\nreceived])
+    E --> G[Goods Issue VL02N]
+    G --> H[Invoice VF01]
+    H --> I([Payment received])
 
-    style A fill:var(--fond-carte),stroke:var(--accent),color:var(--texte)
-    style I fill:var(--fond-carte),stroke:#27ae60,color:var(--texte)
-    style D fill:var(--fond-carte),stroke:var(--ligne),color:var(--texte)
+    style A fill:#faf7f2,stroke:#b4502d,color:#1f2430
+    style I fill:#faf7f2,stroke:#27ae60,color:#1f2430
+    style D fill:#faf7f2,stroke:#e6dfd3,color:#1f2430
       </div>
     </div>
     <p class="bpmn-note">Every step leaves a trace in SAP · credit and pricing validated automatically · full visibility for all teams</p>
