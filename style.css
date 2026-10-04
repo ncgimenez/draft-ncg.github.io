@@ -247,6 +247,83 @@ figcaption { font-size: 0.88rem; color: var(--texte-doux); margin-top: 8px; font
 ul.liste { padding-left: 1.2em; margin: 0 0 16px; }
 ul.liste li { margin-bottom: 6px; }
 
+/* ---------- Stats strip ---------- */
+.stats-strip {
+  display: flex;
+  gap: 0;
+  margin: 32px 0 0;
+  border: 1px solid var(--ligne);
+  border-radius: var(--rayon);
+  overflow: hidden;
+  background: var(--fond-carte);
+}
+.stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px 12px;
+  border-right: 1px solid var(--ligne);
+}
+.stat:last-child { border-right: none; }
+.stat-val {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-lbl {
+  font-size: 0.75rem;
+  color: var(--texte-doux);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+/* ---------- Card accent bar ---------- */
+.carte-barre {
+  height: 3px;
+  border-radius: 2px 2px 0 0;
+  margin: -22px -22px 16px -22px;
+}
+
+/* ---------- Mockup placeholder ---------- */
+.mockup-placeholder {
+  border: 2px dashed var(--ligne);
+  border-radius: var(--rayon);
+  padding: 32px 20px;
+  text-align: center;
+  color: var(--texte-doux);
+  font-size: 0.9rem;
+  margin: 16px 0;
+  background: var(--fond-carte);
+}
+.mockup-placeholder strong { display: block; margin-bottom: 4px; color: var(--texte); }
+
+/* ---------- Skills chart ---------- */
+.skills-chart { margin: 20px 0; }
+.skill-row { margin-bottom: 12px; }
+.skill-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  margin-bottom: 4px;
+}
+.skill-label span:last-child { color: var(--texte-doux); }
+.skill-bar-bg {
+  height: 6px;
+  background: var(--ligne);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--accent);
+  transition: width 0.6s ease;
+}
+
 .carte--bientot {
   opacity: 0.55;
   cursor: default;

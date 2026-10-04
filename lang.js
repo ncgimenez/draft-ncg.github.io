@@ -166,6 +166,11 @@
     'footer.linkedin': 'LinkedIn',
     // About contact
     'about.contact.or': ' ou ',
+    // Home — stats strip
+    'stat.years': 'ans ERP',
+    'stat.erp': 'écosystèmes',
+    'stat.markets': 'marchés',
+    'stat.projects': 'projets',
   };
 
   const saved = localStorage.getItem('ncg-lang') || 'en';
