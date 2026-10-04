@@ -22,20 +22,20 @@
               <li><a href="projet-2.html">Structured Calendar</a></li>
               <li><a href="projet-3.html">Google Calendar Redesign</a></li>
               <li><a href="projet-4.html">SNCB Connection</a></li>
-              <li><a href="projet-5.html">SuccessFactors Teardown</a></li>
+              <li><a href="projet-5.html">Odoo Implementation</a></li>
+              <li><a href="projet-6.html">Course Architecture</a></li>
             </ul>
           </li>
-          <li><a href="notes.html" data-i18n="nav.notes">Notes</a></li>
           <li><a href="a-propos.html" aria-current="page" data-i18n="nav.about">About</a></li>
         </ul>
       </nav>
       <div class="controles-header">
+        <button class="theme-toggle" aria-label="Switch to dark mode">🌙</button>
         <button class="lang-toggle" aria-label="Switch language">
           <span class="lang-opt lang-opt--en">EN</span>
           <span class="lang-sep">|</span>
           <span class="lang-opt lang-opt--fr">FR</span>
         </button>
-        <button class="theme-toggle" aria-label="Switch to dark mode">🌙</button>
       </div>
     </div>
   </header>
@@ -50,10 +50,18 @@
       into flows that actually work. My starting point: understand what's broken before proposing anything.
     </p>
 
+    <p data-i18n="about.statement">
+      Three years across two very different ERP ecosystems — SAP at scale, Odoo in depth — have reinforced
+      one conviction: the technical side of an implementation is rarely what determines its success.
+      What matters is the conversation: understanding what a team actually does (not what the process map
+      says they do), mapping where the system creates friction, and making the case for the standard clearly
+      enough that people choose it over the workaround they built.
+    </p>
+
     <h2 data-i18n="about.approach.h">My approach</h2>
     <ul class="liste">
-      <li data-i18n="about.ap1">Fit-to-standard first — challenge requirements against the SAP or Odoo standard before accepting an exception. In practice: adapt the process to the tool, not the other way around.</li>
-      <li data-i18n="about.ap2">Systematic AS-IS / TO-BE process mapping (BPMN diagrams) — so that everyone, technical or not, can follow the logic and spot what changes.</li>
+      <li data-i18n="about.ap1">Fit-to-standard first — challenge requirements against the SAP or Odoo standard before accepting an exception.</li>
+      <li data-i18n="about.ap2">Systematic AS-IS / TO-BE BPMN mapping — so that everyone, technical or not, understands the process.</li>
       <li data-i18n="about.ap3">Between business and technical — I translate in both directions without losing the nuance.</li>
     </ul>
 
@@ -68,20 +76,72 @@
 
     <h3 data-i18n="about.p2title">SAP S/4HANA Business Analyst, Deloitte — Brussels &amp; Oslo · 2023–2025</h3>
     <p data-i18n="about.p2">
-      Core member of the SD (Sales &amp; Distribution) workstream on a greenfield SAP S/4HANA Public Cloud
-      implementation for a Norwegian tech scale-up. Full Order-to-Cash scope — from quote to invoice —
-      with integrations across CRM, e-commerce, logistics (3PL) and payment services. Covered master data
-      migration, user acceptance testing (UAT) and change management for B2B Sales Operations and Customer Success.
+      Core member of the SD workstream on a greenfield SAP S/4HANA Public Cloud implementation for a
+      Norwegian tech scale-up. Full Order-to-Cash scope, integrations with CRM / e-commerce / 3PL /
+      payment services, master data migration (Business Partners, products, pricing), UAT and change
+      management for B2B Sales Operations and Customer Success.
     </p>
 
     <h2 data-i18n="about.skills.h">Skills</h2>
-    <ul class="liste">
-      <li><strong>ERP</strong> — SAP S/4HANA Public Cloud (SD / Order-to-Cash, SD-FI) · Odoo (Sales, Inventory, Accounting, Website)</li>
-      <li><strong>Methods</strong> — SAP Activate / Fit-to-Standard · AS-IS/TO-BE BPMN · Fit-Gap Analysis · Agile / Scrum · UAT · Change Management</li>
-      <li><strong>Deliverables</strong> — BRD · Functional Specs · User Stories · Data Migration &amp; Mapping · Interface Requirements</li>
-      <li><strong>Tools</strong> — Jira · Confluence · Visio · Excel · Notion · Google Workspace · Microsoft 365</li>
-      <li><strong>Languages</strong> — French (native) · English (fluent) · German (basic)</li>
-    </ul>
+
+    <div class="skills-chart">
+      <div class="skill-row">
+        <div class="skill-label"><span>SAP S/4HANA — Order-to-Cash (SD)</span><span>●●●●●</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:92%"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label"><span>Process mapping — AS-IS / TO-BE BPMN</span><span>●●●●●</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:88%"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label"><span>Fit-gap analysis &amp; workshops</span><span>●●●●○</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:82%"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label"><span>UAT &amp; change management</span><span>●●●●○</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:78%"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label"><span>Jira · Confluence · Visio</span><span>●●●●○</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:75%"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label"><span>Data migration &amp; mapping</span><span>●●●○○</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:65%"></div></div>
+      </div>
+    </div>
+
+    <figure>
+      <svg viewBox="0 0 620 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" aria-label="Language skills: French native, English fluent, Spanish conversational, German basic">
+        <rect width="620" height="130" fill="#ffffff" rx="10" stroke="#e6dfd3" stroke-width="1"/>
+        <text x="310" y="24" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#5b6272" text-transform="uppercase" letter-spacing="0.06em">LANGUAGES</text>
+
+        <!-- French -->
+        <rect x="16" y="36" width="134" height="76" rx="8" fill="#faf7f2" stroke="#b4502d" stroke-width="1.5"/>
+        <text x="83" y="60" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1f2430">French</text>
+        <text x="83" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#b4502d" font-weight="600">Native</text>
+        <text x="83" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#b4502d">●●●●●</text>
+
+        <!-- English -->
+        <rect x="162" y="36" width="134" height="76" rx="8" fill="#faf7f2" stroke="#4a86b4" stroke-width="1.5"/>
+        <text x="229" y="60" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1f2430">English</text>
+        <text x="229" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#4a86b4" font-weight="600">Fluent — C1</text>
+        <text x="229" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#4a86b4">●●●●○</text>
+
+        <!-- Spanish -->
+        <rect x="308" y="36" width="134" height="76" rx="8" fill="#faf7f2" stroke="#4caf6b" stroke-width="1.5"/>
+        <text x="375" y="60" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1f2430">Spanish</text>
+        <text x="375" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#4caf6b" font-weight="600">Conversational — B1</text>
+        <text x="375" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#4caf6b">●●●○○</text>
+
+        <!-- German -->
+        <rect x="454" y="36" width="150" height="76" rx="8" fill="#faf7f2" stroke="#e6dfd3" stroke-width="1.5"/>
+        <text x="529" y="60" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1f2430">German</text>
+        <text x="529" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#a3a9b7" font-weight="600">Basic — A2</text>
+        <text x="529" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#a3a9b7">●●○○○</text>
+      </svg>
+      <figcaption>Language levels</figcaption>
+    </figure>
 
     <h2 data-i18n="about.contact.h">Get in touch</h2>
     <p>

@@ -23,20 +23,20 @@
               <li><a href="projet-2.html">Structured Calendar</a></li>
               <li><a href="projet-3.html">Google Calendar Redesign</a></li>
               <li><a href="projet-4.html">SNCB Connection</a></li>
-              <li><a href="projet-5.html">SuccessFactors Teardown</a></li>
+              <li><a href="projet-5.html">Odoo Implementation</a></li>
+              <li><a href="projet-6.html">Course Architecture</a></li>
             </ul>
           </li>
-          <li><a href="notes.html" data-i18n="nav.notes">Notes</a></li>
           <li><a href="a-propos.html" data-i18n="nav.about">About</a></li>
         </ul>
       </nav>
       <div class="controles-header">
+        <button class="theme-toggle" aria-label="Switch to dark mode">🌙</button>
         <button class="lang-toggle" aria-label="Switch language">
           <span class="lang-opt lang-opt--en">EN</span>
           <span class="lang-sep">|</span>
           <span class="lang-opt lang-opt--fr">FR</span>
         </button>
-        <button class="theme-toggle" aria-label="Switch to dark mode">🌙</button>
       </div>
     </div>
   </header>
@@ -84,6 +84,57 @@
       felt that moving into SAP would mean losing the flexibility they relied on for strategic accounts.
       Addressing that concern was as much a part of the analysis as mapping the process gaps.
     </p>
+
+    <figure>
+      <svg viewBox="0 0 620 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" aria-label="SAP S/4HANA integration landscape: SD module connects to FI, MM, and external systems">
+        <rect width="620" height="200" fill="#ffffff" rx="10" stroke="#e6dfd3" stroke-width="1"/>
+
+        <!-- Central SD module -->
+        <rect x="230" y="70" width="160" height="60" rx="8" fill="#b4502d"/>
+        <text x="310" y="97" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="white">SAP SD</text>
+        <text x="310" y="113" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#fde8e8">Sales &amp; Distribution</text>
+
+        <!-- FI module -->
+        <rect x="20" y="70" width="130" height="60" rx="8" fill="#faf7f2" stroke="#b4502d" stroke-width="1.5"/>
+        <text x="85" y="97" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1f2430">SAP FI</text>
+        <text x="85" y="113" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#5b6272">Financial Accounting</text>
+
+        <!-- MM module -->
+        <rect x="470" y="70" width="130" height="60" rx="8" fill="#faf7f2" stroke="#b4502d" stroke-width="1.5"/>
+        <text x="535" y="97" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1f2430">SAP MM</text>
+        <text x="535" y="113" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#5b6272">Materials Management</text>
+
+        <!-- External: CRM -->
+        <rect x="150" y="14" width="130" height="40" rx="6" fill="#ede8f8" stroke="#7b5ea7" stroke-width="1.5"/>
+        <text x="215" y="34" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#5a3f80">CRM</text>
+        <text x="215" y="47" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#5b6272">Customer master data</text>
+
+        <!-- External: 3PL / e-commerce -->
+        <rect x="340" y="14" width="130" height="40" rx="6" fill="#ede8f8" stroke="#7b5ea7" stroke-width="1.5"/>
+        <text x="405" y="34" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#5a3f80">E-commerce / 3PL</text>
+        <text x="405" y="47" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#5b6272">Orders, fulfilment</text>
+
+        <!-- Arrows SD ↔ FI -->
+        <line x1="230" y1="100" x2="150" y2="100" stroke="#b4502d" stroke-width="1.5" marker-end="url(#arr)"/>
+        <text x="192" y="94" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="#b4502d">Invoice → FI</text>
+        <line x1="150" y1="106" x2="230" y2="106" stroke="#b4502d" stroke-width="1" stroke-dasharray="3,2"/>
+        <text x="192" y="116" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="#5b6272">Credit limit</text>
+
+        <!-- Arrows SD ↔ MM -->
+        <line x1="390" y1="100" x2="470" y2="100" stroke="#b4502d" stroke-width="1.5"/>
+        <text x="430" y="94" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="#b4502d">Goods issue</text>
+        <line x1="470" y1="106" x2="390" y2="106" stroke="#b4502d" stroke-width="1" stroke-dasharray="3,2"/>
+        <text x="430" y="116" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="#5b6272">ATP check</text>
+
+        <!-- Arrows CRM / e-com → SD -->
+        <line x1="215" y1="54" x2="265" y2="70" stroke="#7b5ea7" stroke-width="1" stroke-dasharray="3,2"/>
+        <line x1="405" y1="54" x2="360" y2="70" stroke="#7b5ea7" stroke-width="1" stroke-dasharray="3,2"/>
+
+        <!-- Bottom label -->
+        <text x="310" y="180" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#5b6272" font-style="italic">SD is the hub — every order triggers FI (billing, credit) and MM (stock reservation, goods issue)</text>
+      </svg>
+      <figcaption>SAP S/4HANA integration landscape — SD at the centre of Order-to-Cash</figcaption>
+    </figure>
 
     <h2>Gap Analysis</h2>
     <div style="overflow-x:auto;">

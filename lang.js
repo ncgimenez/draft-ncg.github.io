@@ -1,4 +1,8 @@
 (function () {
+  // Apply saved theme immediately to avoid flash
+  var _t = localStorage.getItem('ncg-theme');
+  if (_t) document.documentElement.dataset.theme = _t;
+
   const FR = {
     // Navigation
     'nav.home': 'Accueil',
@@ -10,23 +14,8 @@
     'hero.sub': '3 ans d\'expérience ERP entre les équipes métier et techniques — SAP S/4HANA Public Cloud et Odoo. Je transforme des processus opérationnels complexes en flux qui fonctionnent du premier coup.',
     'hero.cta1': 'Voir les projets',
     'hero.cta2': 'Me connaître',
-    // Nav
-    'nav.notes': 'Notes',
     // Home — sections
     'section.projects': 'Projets',
-    'notes.label': 'Notes',
-    'notes.h1': 'Textes courts sur le travail',
-    'notes.sub': 'Sur les processus, les outils, et la façon dont je pense l'écart entre comment les choses sont censées fonctionner et comment elles fonctionnent vraiment.',
-    'section.notes': 'Notes',
-    'note1.label': 'Note',
-    'note1.title': 'Quand la consultante est aussi l'utilisatrice',
-    'note1.desc': 'Sur ce que ça change d'avoir été du mauvais côté des outils qu'on implémente.',
-    'note2.label': 'Note',
-    'note2.title': 'Je démonte les choses',
-    'note2.desc': 'Sur l'instinct d'ouvrir, de comprendre ce qu'il y a dedans, et de ne pas être rebutée par ce qu'on trouve.',
-    'note3.label': 'Note',
-    'note3.title': 'Ce qui rend un document d'exigences vraiment utile',
-    'note3.desc': 'Sur l'écart entre un document qui existe et un document qui fait son travail.',
     'section.soon': 'En préparation',
     'section.soon.sub': 'Projets en cours de rédaction.',
     // Home — project cards
@@ -36,10 +25,10 @@
     'card2.label': 'Concept produit',
     'card2.title': 'Un calendrier qui dit quel genre de semaine vous vivez',
     'card2.desc': 'Imposer une structure de couleurs par catégorie de vie — pour que votre semaine soit lisible d\'un coup d\'œil, sans effort.',
-    'card3.label': 'Teardown UX',
+    'card3.label': 'Concept UX',
     'card3.title': 'Sélection multiple dans Google Agenda',
     'card3.desc': 'Déplacer plusieurs événements en une action — parce qu\'un imprévu ne devrait pas prendre 10 minutes à gérer.',
-    'card4.label': 'Teardown UX',
+    'card4.label': 'Concept UX',
     'card4.title': 'SNCB : savoir où descendre avant d\'arriver',
     'card4.desc': 'Afficher le quai d\'arrivée et le côté de sortie pour les correspondances — une donnée qui existe, mais reste cachée.',
     // Home — coming soon cards
@@ -49,6 +38,9 @@
     'soon2.label': 'Étude de cas',
     'soon2.title': 'Implémentation Odoo pour une PME internationale',
     'soon2.desc': 'Analyse des besoins, gap analysis et configuration — Ventes, Stocks, Comptabilité.',
+    'soon5.label': 'Concept produit',
+    'soon5.title': 'Sessions de focus liées à votre calendrier',
+    'soon5.desc': 'Un minuteur style Pomodoro qui sait dans quelle catégorie de vie vous travaillez — et qui alimente votre bilan de semaine. Module 2 de la suite calendrier.',
     'soon3.label': 'Analyse de données',
     'soon3.title': 'Données publiques → recommandation',
     'soon3.desc': 'Un dataset ouvert, une synthèse structurée, une recommandation pour un décideur.',
@@ -74,7 +66,6 @@
     'about.contact.h': 'Me contacter',
     'about.contact.text': 'Pour échanger sur un projet ou une opportunité : ',
     'about.contact.link': 'mon profil LinkedIn',
-    'about.contact.or': ' ou ',
     // Project pages — shared
     'proj.back': '← Retour aux projets',
     'proj.note.anon': 'Les noms et données ont été anonymisés pour respecter la confidentialité.',
@@ -119,32 +110,68 @@
     'p2.tools': 'Outils',
     'p2.tools.v': '[Figma / à compléter]',
     // Project 3 — Google Calendar
-    'p3.label': 'Teardown UX',
+    'p3.label': 'Concept UX',
     'p3.h1': 'Sélection multiple d\'événements dans Google Agenda',
     'p3.sub': 'Google Agenda force les utilisateurs à déplacer leurs événements un à un — une friction inutile quand un imprévu bouleverse tout un planning.',
     // Project 4 — SNCB
-    'p4.label': 'Teardown UX',
+    'p4.label': 'Concept UX',
     'p4.h1': 'SNCB : savoir où descendre avant d\'arriver',
     'p4.sub': 'Un voyageur en correspondance ne sait pas sur quel quai il arrive, ni de quel côté sortir. La donnée existe — elle n\'est juste pas au bon endroit.',
+    // Project 5 — Odoo
+    'p5.label': 'Étude de cas',
+    'p5.h1': 'Odoo : un flux cohérent à la place de trois outils déconnectés',
+    'p5.sub': 'Implémenter Ventes, Stocks et Comptabilité pour une PME belge — et convaincre l\'équipe commerciale d\'arrêter de court-circuiter le flux de réservation de stock.',
+    'p5.role': 'Rôle',
+    'p5.role.v': 'Analyste fonctionnelle Odoo',
+    'p5.context': 'Contexte',
+    'p5.context.v': 'PME belge, B2B, clients BE/FR/NL',
+    'p5.duration': 'Durée',
+    'p5.duration.v': '~6 mois (implémentation + hypercare)',
+    'p5.tools': 'Outils',
+    'p5.tools.v': 'Odoo 17, Jira, Confluence, Excel (migration)',
+    'p5.s1': 'Contexte',
+    'p5.s1.body': 'PME belge d\'une vingtaine de collaborateurs — vente d\'équipements techniques à des clients B2B en Belgique, France et Pays-Bas. Avant l\'implémentation : QuickBooks pour la comptabilité, un classeur Excel partagé pour le suivi des commandes et des stocks, un outil CRM indépendant pour les données clients. La décision de passer à Odoo est venue d\'un constat simple : le volume de réconciliation manuelle entre les trois outils était devenu insoutenable.',
+    'p5.s2': 'Problème',
+    'p5.s2.body': 'L\'articulation entre ventes et stock était entièrement manuelle — le commercial confirmait un devis, le marquait dans l\'Excel, envoyait un e-mail à l\'entrepôt pour réserver le stock. Sans contrôle automatique, plusieurs commandes pouvaient engager les mêmes références. L\'entrepôt ne découvrait le conflit qu\'au moment de la préparation.',
+    'p5.s2.b2': 'La facturation était le deuxième point de friction : Finance générait les factures manuellement dans QuickBooks à partir du PDF de devis, parfois plusieurs jours après la livraison. Les remises accordées au devis n\'étaient pas toujours répercutées.',
+    'p5.s3': 'Analyse',
+    'p5.s4': 'Processus AS-IS',
+    'p5.s5': 'Solution proposée',
+    'p5.s5.b1': 'Flux standard Odoo : Devis → Confirmation → Réservation de stock automatique → Bon de livraison → Validation → Facture générée → Synchronisation bancaire.',
+    'p5.s5.b2': 'Configuration des règles de réapprovisionnement et des routes de stock pour les références critiques.',
+    'p5.s5.b3': 'Synchronisation bancaire et règles de rapprochement automatique par montant et partenaire.',
+    'p5.s5.b4': 'Documentation des processus et formation des key-users (commercial, entrepôt, comptabilité).',
+    'p5.s6': 'Processus TO-BE (Odoo standard)',
+    'p5.decision.h': 'Deux décisions expliquées',
+    'p5.s7': 'Résultat',
+    'p5.s7.body': 'Les ruptures de stock à la livraison ont été éliminées dans le premier trimestre. La réconciliation de fin de mois est passée d\'une journée complète à moins de deux heures. L\'équipe commerciale a arrêté d\'utiliser l\'Excel dans les six semaines. Finance a fermé le compte QuickBooks quatre mois après le go-live.',
+    'p5.s8': 'Ce que j\'en retiens',
+    'p5.s8.body': 'L\'implémentation technique était simple. Le travail difficile était de convaincre des équipes que bien utiliser le système — plutôt que trouver des raccourcis — était la vraie solution. Les contournements de l\'équipe commerciale n\'étaient pas de la négligence : c\'étaient des adaptations à un processus qui n\'avait jamais été bien conçu. Odoo nous a fourni l\'outil ; les ateliers nous ont donné l\'adoption.',
+    // Home — card 5
+    'card5.label': 'Étude de cas',
+    // Home — card 6
+    'card6.label': 'Design pédagogique',
+    'card6.title': 'De l\'expert à l\'enseignant : structurer un cours qui tient',
+    'card6.desc': 'Transformer un corpus de savoir expert en cours structuré et scalable — avec une progression explicite, des points d\'entrée définis et des résultats mesurables.',
+    // Project 6 — Course architecture
+    'p6.label': 'Design pédagogique',
+    'p6.h1': 'De l\'expert à l\'enseignant : structurer un cours qui tient',
+    'p6.sub': 'Reconcevoir un cours d\'espagnol débutant à partir d\'un savoir expert vers un contenu structuré et enseignable — avec une progression explicite, des points d\'entrée définis et des résultats mesurables.',
+    'card5.title': 'Odoo : trois outils déconnectés, un flux cohérent',
+    'card5.desc': 'Implémentation Ventes, Stocks et Comptabilité pour une PME belge — et résoudre le problème de stock sur-engagé.',
+    // About — personal statement
+    'about.statement': 'Trois ans dans deux écosystèmes ERP très différents — SAP à grande échelle, Odoo en profondeur — ont renforcé une conviction : la partie technique d\'une implémentation est rarement ce qui détermine son succès. Ce qui compte, c\'est la conversation : comprendre ce qu\'une équipe fait réellement (pas ce que la carte de processus dit qu\'elle fait), cartographier là où le système crée des frictions, et défendre le standard assez clairement pour que les gens le choisissent plutôt que leur contournement.',
+    // Footer
+    'footer.email': 'E-mail',
+    'footer.linkedin': 'LinkedIn',
+    // About contact
+    'about.contact.or': ' ou ',
+    // Home — stats strip
+    'stat.years': 'ans ERP',
+    'stat.erp': 'écosystèmes',
+    'stat.markets': 'marchés',
+    'stat.projects': 'projets',
   };
-
-  const savedTheme = localStorage.getItem('ncg-theme');
-  if (savedTheme) document.documentElement.dataset.theme = savedTheme;
-
-  function isDark() {
-    const th = document.documentElement.dataset.theme;
-    if (th === 'dark') return true;
-    if (th === 'light') return false;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
-
-  function updateThemeButtons() {
-    const dark = isDark();
-    document.querySelectorAll('.theme-toggle').forEach(function (btn) {
-      btn.textContent = dark ? '☀️' : '🌙';
-      btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
-    });
-  }
 
   const saved = localStorage.getItem('ncg-lang') || 'en';
   const originals = new Map();
@@ -170,6 +197,19 @@
     });
   }
 
+  function _isDark() {
+    var t = document.documentElement.dataset.theme;
+    if (t === 'dark') return true;
+    if (t === 'light') return false;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  function _updateThemeIcons() {
+    document.querySelectorAll('.theme-icon').forEach(function (el) {
+      el.textContent = _isDark() ? '☀' : '☾';
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.lang-toggle').forEach(function (btn) {
       btn.addEventListener('click', function () {
@@ -179,14 +219,14 @@
 
     document.querySelectorAll('.theme-toggle').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        const newTheme = isDark() ? 'light' : 'dark';
+        var newTheme = _isDark() ? 'light' : 'dark';
         document.documentElement.dataset.theme = newTheme;
         localStorage.setItem('ncg-theme', newTheme);
-        updateThemeButtons();
+        _updateThemeIcons();
       });
     });
 
-    updateThemeButtons();
+    _updateThemeIcons();
     apply(saved);
   });
 })();
