@@ -10,6 +10,10 @@
     'hero.sub': '3 ans d\'expérience ERP entre les équipes métier et techniques — SAP S/4HANA Public Cloud et Odoo. Je transforme des processus opérationnels complexes en flux qui fonctionnent du premier coup.',
     'hero.cta1': 'Voir les projets',
     'hero.cta2': 'Me connaître',
+    // Home — approach
+    'approach.item1': 'Je pars de ce qui coince, pas de ce qui manque.',
+    'approach.item2': 'Je documente pour la personne qui n\'était pas dans la salle.',
+    'approach.item3': 'Je préfère les solutions qui tiennent à celles qui impressionnent.',
     // Home — sections
     'section.projects': 'Projets',
     'section.soon': 'En préparation',
@@ -19,8 +23,8 @@
     'card1.title': 'O2C sans détours : standardiser SAP SD pour une équipe B2B',
     'card1.desc': 'Cartographier et corriger un processus de commandes défaillant lors d\'une implémentation SAP S/4HANA greenfield.',
     'card2.label': 'Concept produit',
-    'card2.title': 'Une app de planification qui respecte votre énergie',
-    'card2.desc': 'Quand les outils de calendrier traitent toutes les tâches de la même façon — et pourquoi ça pose problème.',
+    'card2.title': 'Un calendrier qui dit quel genre de semaine vous vivez',
+    'card2.desc': 'Imposer une structure de couleurs par catégorie de vie — pour que votre semaine soit lisible d\'un coup d\'œil, sans effort.',
     'card3.label': 'Concept UX',
     'card3.title': 'Sélection multiple dans Google Agenda',
     'card3.desc': 'Déplacer plusieurs événements en une action — parce qu\'un imprévu ne devrait pas prendre 10 minutes à gérer.',

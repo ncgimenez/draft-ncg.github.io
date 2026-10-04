@@ -15,7 +15,15 @@
       <nav aria-label="Main navigation">
         <ul>
           <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-          <li><a href="index.html#projects" data-i18n="nav.projects">Projects</a></li>
+          <li class="nav-item--dropdown">
+            <a href="index.html#projects" data-i18n="nav.projects">Projects <span class="nav-arrow" aria-hidden="true">▾</span></a>
+            <ul class="nav-dropdown" aria-label="Projects">
+              <li><a href="projet-1.html">O2C Without the Chaos</a></li>
+              <li><a href="projet-2.html">Structured Calendar</a></li>
+              <li><a href="projet-3.html">Google Calendar Redesign</a></li>
+              <li><a href="projet-4.html">SNCB Connection</a></li>
+            </ul>
+          </li>
           <li><a href="a-propos.html" aria-current="page" data-i18n="nav.about">About</a></li>
         </ul>
       </nav>

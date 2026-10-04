@@ -15,7 +15,15 @@
       <nav aria-label="Main navigation">
         <ul>
           <li><a href="index.html" aria-current="page" data-i18n="nav.home">Home</a></li>
-          <li><a href="index.html#projects" data-i18n="nav.projects">Projects</a></li>
+          <li class="nav-item--dropdown">
+            <a href="index.html#projects" data-i18n="nav.projects">Projects <span class="nav-arrow" aria-hidden="true">▾</span></a>
+            <ul class="nav-dropdown" aria-label="Projects">
+              <li><a href="projet-1.html">O2C Without the Chaos</a></li>
+              <li><a href="projet-2.html">Structured Calendar</a></li>
+              <li><a href="projet-3.html">Google Calendar Redesign</a></li>
+              <li><a href="projet-4.html">SNCB Connection</a></li>
+            </ul>
+          </li>
           <li><a href="a-propos.html" data-i18n="nav.about">About</a></li>
         </ul>
       </nav>
@@ -40,6 +48,12 @@
       <a class="bouton" href="a-propos.html" data-i18n="hero.cta2">About me</a>
     </div>
 
+    <div class="approche" role="list">
+      <p class="approche-item" role="listitem" data-i18n="approach.item1">I start with what's broken, not what's missing.</p>
+      <p class="approche-item" role="listitem" data-i18n="approach.item2">I document for the person who wasn't in the room.</p>
+      <p class="approche-item" role="listitem" data-i18n="approach.item3">I prefer solutions that hold over solutions that impress.</p>
+    </div>
+
     <h2 id="projects" data-i18n="section.projects">Projects</h2>
     <div class="grille">
       <a class="carte" href="projet-1.html">
@@ -49,8 +63,8 @@
       </a>
       <a class="carte" href="projet-2.html">
         <span class="etiquette" data-i18n="card2.label">Product concept</span>
-        <h3 data-i18n="card2.title">A Planning App That Respects Your Energy</h3>
-        <p data-i18n="card2.desc">When calendar tools treat every task the same — and why that's a problem.</p>
+        <h3 data-i18n="card2.title">A Calendar That Tells You What Kind of Week You're Having</h3>
+        <p data-i18n="card2.desc">Imposing a default colour structure by life category — so your week is legible at a glance, without extra effort.</p>
       </a>
       <a class="carte" href="projet-3.html">
         <span class="etiquette" data-i18n="card3.label">UX concept</span>
