@@ -10,8 +10,13 @@
     'hero.sub': '3 ans d\'expérience ERP entre les équipes métier et techniques — SAP S/4HANA Public Cloud et Odoo. Je transforme des processus opérationnels complexes en flux qui fonctionnent du premier coup.',
     'hero.cta1': 'Voir les projets',
     'hero.cta2': 'Me connaître',
+    // Nav
+    'nav.notes': 'Notes',
     // Home — sections
     'section.projects': 'Projets',
+    'notes.label': 'Notes',
+    'notes.h1': 'Textes courts sur le travail',
+    'notes.sub': 'Sur les processus, les outils, et la façon dont je pense l'écart entre comment les choses sont censées fonctionner et comment elles fonctionnent vraiment.',
     'section.notes': 'Notes',
     'note1.label': 'Note',
     'note1.title': 'Quand la consultante est aussi l'utilisatrice',
