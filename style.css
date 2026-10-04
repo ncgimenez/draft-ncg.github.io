@@ -309,7 +309,7 @@ ul.nav-dropdown {
   background: var(--fond-carte);
   border: 1px solid var(--ligne);
   border-radius: 10px;
-  padding: 14px 0 6px;
+  padding: 6px 0;
   min-width: 210px;
   z-index: 200;
   box-shadow: 0 4px 20px rgba(31,36,48,0.12);
@@ -317,11 +317,21 @@ ul.nav-dropdown {
   margin: 0;
   flex-direction: column;
   gap: 0;
+  cursor: pointer;
 }
 
 .nav-item--dropdown:hover ul.nav-dropdown,
 .nav-item--dropdown:focus-within ul.nav-dropdown {
   display: flex;
+}
+
+.nav-item--dropdown > a::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 12px;
 }
 
 .nav-dropdown li { margin: 0; padding: 0; cursor: pointer; }
