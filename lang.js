@@ -127,6 +127,24 @@
     'p4.sub': 'Un voyageur en correspondance ne sait pas sur quel quai il arrive, ni de quel côté sortir. La donnée existe — elle n\'est juste pas au bon endroit.',
   };
 
+  const savedTheme = localStorage.getItem('ncg-theme');
+  if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+
+  function isDark() {
+    const th = document.documentElement.dataset.theme;
+    if (th === 'dark') return true;
+    if (th === 'light') return false;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  function updateThemeButtons() {
+    const dark = isDark();
+    document.querySelectorAll('.theme-toggle').forEach(function (btn) {
+      btn.textContent = dark ? '☀' : '☾';
+      btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    });
+  }
+
   const saved = localStorage.getItem('ncg-lang') || 'en';
   const originals = new Map();
 
@@ -157,6 +175,17 @@
         apply(localStorage.getItem('ncg-lang') === 'fr' ? 'en' : 'fr');
       });
     });
+
+    document.querySelectorAll('.theme-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const newTheme = isDark() ? 'light' : 'dark';
+        document.documentElement.dataset.theme = newTheme;
+        localStorage.setItem('ncg-theme', newTheme);
+        updateThemeButtons();
+      });
+    });
+
+    updateThemeButtons();
     apply(saved);
   });
 })();
