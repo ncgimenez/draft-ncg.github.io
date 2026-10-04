@@ -296,7 +296,7 @@ ul.liste li { margin-bottom: 6px; }
   position: relative;
 }
 
-.nav-dropdown {
+ul.nav-dropdown {
   display: none;
   position: absolute;
   top: calc(100% + 8px);
@@ -311,11 +311,13 @@ ul.liste li { margin-bottom: 6px; }
   box-shadow: 0 4px 20px rgba(31,36,48,0.12);
   list-style: none;
   margin: 0;
+  flex-direction: column;
+  gap: 0;
 }
 
-.nav-item--dropdown:hover .nav-dropdown,
-.nav-item--dropdown:focus-within .nav-dropdown {
-  display: block;
+.nav-item--dropdown:hover ul.nav-dropdown,
+.nav-item--dropdown:focus-within ul.nav-dropdown {
+  display: flex;
 }
 
 .nav-dropdown li { margin: 0; padding: 0; }

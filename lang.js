@@ -10,10 +10,6 @@
     'hero.sub': '3 ans d\'expérience ERP entre les équipes métier et techniques — SAP S/4HANA Public Cloud et Odoo. Je transforme des processus opérationnels complexes en flux qui fonctionnent du premier coup.',
     'hero.cta1': 'Voir les projets',
     'hero.cta2': 'Me connaître',
-    // Home — approach
-    'approach.item1': 'Je pars de ce qui coince, pas de ce qui manque.',
-    'approach.item2': 'Je documente pour la personne qui n\'était pas dans la salle.',
-    'approach.item3': 'Je préfère les solutions qui tiennent à celles qui impressionnent.',
     // Home — sections
     'section.projects': 'Projets',
     'section.soon': 'En préparation',
