@@ -244,7 +244,7 @@ ul.liste li { margin-bottom: 6px; }
 }
 
 .carte--bientot::after {
-  content: "À venir";
+  content: "Coming soon";
   display: inline-block;
   margin-top: 12px;
   font-size: 0.72rem;
@@ -287,6 +287,10 @@ ul.liste li { margin-bottom: 6px; }
 .gap-table tr:last-child td { border-bottom: none; }
 
 .gap-table td:first-child { white-space: nowrap; }
+
+:lang(fr) .carte--bientot::after {
+  content: "À venir";
+}
 
 .retour { display: inline-block; margin-top: 36px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
 
