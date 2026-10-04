@@ -74,6 +74,7 @@
     'about.contact.h': 'Me contacter',
     'about.contact.text': 'Pour échanger sur un projet ou une opportunité : ',
     'about.contact.link': 'mon profil LinkedIn',
+    'about.contact.or': ' ou ',
     // Project pages — shared
     'proj.back': '← Retour aux projets',
     'proj.note.anon': 'Les noms et données ont été anonymisés pour respecter la confidentialité.',
