@@ -334,6 +334,7 @@ ul.nav-dropdown {
   text-decoration: none;
   border-bottom: 2px solid transparent !important;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .nav-dropdown a:hover {
