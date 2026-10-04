@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multi-select in Google Calendar | Nadia Cañadas Giménez</title>
+  <meta name="description" content="UX concept: adding multi-select for events in Google Calendar to handle unexpected schedule changes without editing one by one.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site">
+    <div class="interieur">
+      <a class="marque" href="index.html">Nadia Cañadas Giménez</a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="index.html#projects" aria-current="page" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="a-propos.html" data-i18n="nav.about">About</a></li>
+        </ul>
+      </nav>
+      <button class="lang-toggle" aria-label="Switch language">
+        <span class="lang-opt lang-opt--en">EN</span>
+        <span class="lang-sep">|</span>
+        <span class="lang-opt lang-opt--fr">FR</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <span class="etiquette" data-i18n="p3.label">UX concept</span>
+    <h1 data-i18n="p3.h1">Multi-select Events in Google Calendar</h1>
+    <p class="chapo" data-i18n="p3.sub">
+      Google Calendar forces users to move events one by one — unnecessary friction
+      when an unexpected day off throws an entire week into disarray.
+    </p>
+
+    <p class="bandeau" data-i18n="proj.note.concept">
+      Personal concept, not affiliated with Google. A UX reflection based on real usage and public information.
+      No validation or collaboration from Google.
+    </p>
+
+    <dl class="meta">
+      <div><dt>Product</dt><dd>Google Calendar (web)</dd></div>
+      <div><dt>Type</dt><dd>Personal concept</dd></div>
+      <div><dt>Tools</dt><dd>[Figma / to be completed]</dd></div>
+    </dl>
+
+    <h2>The user problem</h2>
+    <p>
+      In Google Calendar's week or month view, clicking and dragging on the grid
+      <em>creates a new event</em> — it never selects existing ones. There is no way to
+      select multiple existing events to move, delete or reschedule them together.
+    </p>
+    <p>
+      In practice: an unexpected day off means opening and moving every event individually.
+      For a busy day (5–8 slots), that's 5–10 minutes of repetitive clicks — and a real
+      risk of forgetting something or dropping it in the wrong place.
+    </p>
+
+    <div class="emplacement-image">
+      [Annotated screenshot: current drag gesture → creates new event instead of selecting existing ones]
+    </div>
+
+    <h2>My hypothesis</h2>
+    <p>
+      If Google Calendar offered a <strong>multi-select mode</strong> — similar to a file manager —
+      users could move, reschedule or delete several events in a single action, significantly
+      reducing the time and errors involved in replanning an unexpected change.
+    </p>
+
+    <h2>The proposal</h2>
+    <p>
+      A "Select" button in the toolbar (or keyboard shortcut <kbd>S</kbd>) activates a selection
+      mode, distinct from the default creation mode. Behaviour changes as follows:
+    </p>
+    <ul class="liste">
+      <li>Clicking an event <strong>checks it</strong> (without opening it).</li>
+      <li>Click-dragging on the grid selects <strong>all events within the drawn range</strong>.</li>
+      <li>Shift+click extends the selection to an additional event.</li>
+      <li>Once a selection is made, a contextual menu offers: <strong>Move to…</strong>, <strong>Postpone by X days</strong>, <strong>Delete</strong>.</li>
+      <li>A visible indicator (banner or counter) shows that selection mode is active, with a "Cancel" button to exit.</li>
+    </ul>
+
+    <div class="emplacement-image">
+      [Mockup: week view with 3 checked events + floating contextual menu — "Move to…" / "Postpone 7 days" / "Delete"]
+    </div>
+
+    <h2>How to measure success</h2>
+    <ul class="liste">
+      <li>Average time to reschedule 5 or more events (target: reduce by 3×).</li>
+      <li>Adoption rate of selection mode in planning sessions.</li>
+      <li>Reduction in reported errors (missed event, dropped in wrong slot).</li>
+      <li>Satisfaction score on unexpected change management (NPS or targeted CSAT).</li>
+    </ul>
+
+    <h2>Limits and next steps</h2>
+    <p>
+      This concept doesn't resolve everything: the behaviour for <strong>recurring events</strong>
+      (move one occurrence or the entire series?) still needs definition. Shared calendar
+      permissions also add complexity. On mobile, the selection gesture needs rethinking
+      to avoid conflicting with scrolling.
+    </p>
+    <p>
+      Natural next steps: user testing on the prototype (5 participants, "last-minute change"
+      scenario), then iteration on how selection mode is triggered (button vs shortcut vs long press).
+    </p>
+
+    <a class="retour" href="index.html#projects" data-i18n="proj.back">← Back to projects</a>
+  </main>
+
+  <footer>
+    <p>© 2026 Nadia Cañadas Giménez ·
+      <a href="https://www.linkedin.com/in/ncgimenez" data-i18n="footer.linkedin">LinkedIn</a>
+    </p>
+  </footer>
+
+  <script src="lang.js"></script>
+</body>
+</html>

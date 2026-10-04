@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>À propos | Nadia Cañadas Giménez</title>
-  <meta name="description" content="Parcours et approche de Nadia Cañadas Giménez, Business Analyst.">
+  <title>About | Nadia Cañadas Giménez</title>
+  <meta name="description" content="Functional Analyst with 3 years of ERP experience — SAP S/4HANA Public Cloud and Odoo.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,56 +12,77 @@
   <header class="site">
     <div class="interieur">
       <a class="marque" href="index.html">Nadia Cañadas Giménez</a>
-      <nav aria-label="Navigation principale">
+      <nav aria-label="Main navigation">
         <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="a-propos.html" aria-current="page">À propos</a></li>
-          <li><a href="projet-1.html">Projet 1</a></li>
-          <li><a href="projet-2.html">Projet 2</a></li>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="index.html#projects" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="a-propos.html" aria-current="page" data-i18n="nav.about">About</a></li>
         </ul>
       </nav>
+      <button class="lang-toggle" aria-label="Switch language">
+        <span class="lang-opt lang-opt--en">EN</span>
+        <span class="lang-sep">|</span>
+        <span class="lang-opt lang-opt--fr">FR</span>
+      </button>
     </div>
   </header>
 
   <main>
-    <span class="etiquette">À propos</span>
-    <h1>Qui je suis</h1>
+    <span class="etiquette" data-i18n="about.label">About</span>
+    <h1 data-i18n="about.h1">Who I am</h1>
 
-    <p>
-      [À REMPLACER : 3 à 4 phrases. Qui tu es professionnellement, ce que tu fais le mieux,
-      et ce qui te motive dans ce métier.]
+    <p data-i18n="about.intro">
+      Functional Analyst with 3 years of ERP experience — SAP S/4HANA Public Cloud and Odoo.
+      I work at the intersection of business and technical teams to turn complex operational processes
+      into flows that actually work. My starting point: understand what's broken before proposing anything.
     </p>
 
-    <h2>Mon approche</h2>
+    <h2 data-i18n="about.approach.h">My approach</h2>
     <ul class="liste">
-      <li>[Un principe de travail, par exemple : comprendre le besoin réel avant de proposer une solution.]</li>
-      <li>[Un deuxième principe.]</li>
-      <li>[Un troisième principe.]</li>
+      <li data-i18n="about.ap1">Fit-to-standard first — challenge requirements against the SAP or Odoo standard before accepting an exception.</li>
+      <li data-i18n="about.ap2">Systematic AS-IS / TO-BE BPMN mapping — so that everyone, technical or not, understands the process.</li>
+      <li data-i18n="about.ap3">Between business and technical — I translate in both directions without losing the nuance.</li>
     </ul>
 
-    <h2>Parcours</h2>
-    <p>
-      [À REMPLACER : un résumé de 3 à 5 lignes, ou une courte liste de tes rôles
-      avec les dates. Pas besoin de tout détailler, ton CV s'en charge.]
+    <h2 data-i18n="about.parcours.h">Experience</h2>
+
+    <h3 data-i18n="about.p1title">Functional Analyst, Odoo — Grand-Rosière, Belgium · 2025–2026</h3>
+    <p data-i18n="about.p1">
+      ERP implementation projects for international SMEs: needs analysis, gap analysis and configuration
+      across Sales, Inventory, Accounting and Website. Supported clients through Odoo version migrations
+      and resolved complex functional issues through root-cause analysis.
     </p>
 
-    <h2>Compétences</h2>
+    <h3 data-i18n="about.p2title">SAP S/4HANA Business Analyst, Deloitte — Brussels &amp; Oslo · 2023–2025</h3>
+    <p data-i18n="about.p2">
+      Core member of the SD workstream on a greenfield SAP S/4HANA Public Cloud implementation for a
+      Norwegian tech scale-up. Full Order-to-Cash scope, integrations with CRM / e-commerce / 3PL /
+      payment services, master data migration (Business Partners, products, pricing), UAT and change
+      management for B2B Sales Operations and Customer Success.
+    </p>
+
+    <h2 data-i18n="about.skills.h">Skills</h2>
     <ul class="liste">
-      <li>[Compétence 1]</li>
-      <li>[Compétence 2]</li>
-      <li>[Compétence 3]</li>
+      <li><strong>ERP</strong> — SAP S/4HANA Public Cloud (SD / Order-to-Cash, SD-FI) · Odoo (Sales, Inventory, Accounting, Website)</li>
+      <li><strong>Methods</strong> — SAP Activate / Fit-to-Standard · AS-IS/TO-BE BPMN · Fit-Gap Analysis · Agile / Scrum · UAT · Change Management</li>
+      <li><strong>Deliverables</strong> — BRD · Functional Specs · User Stories · Data Migration &amp; Mapping · Interface Requirements</li>
+      <li><strong>Tools</strong> — Jira · Confluence · Visio · Excel · Notion · Google Workspace · Microsoft 365</li>
+      <li><strong>Languages</strong> — French (native) · English (fluent) · German (basic)</li>
     </ul>
 
-    <h2>Me contacter</h2>
+    <h2 data-i18n="about.contact.h">Get in touch</h2>
     <p>
-      Pour échanger sur un projet ou une opportunité :
-      <a href="https://www.linkedin.com/in/REMPLACE-PAR-TON-PROFIL">mon profil LinkedIn</a>.
+      <span data-i18n="about.contact.text">To discuss a project or opportunity: </span>
+      <a href="https://www.linkedin.com/in/ncgimenez" data-i18n="about.contact.link">my LinkedIn profile</a>.
     </p>
   </main>
 
   <footer>
-    <p>© 2026 Nadia Cañadas Giménez</p>
+    <p>© 2026 Nadia Cañadas Giménez ·
+      <a href="https://www.linkedin.com/in/ncgimenez" data-i18n="footer.linkedin">LinkedIn</a>
+    </p>
   </footer>
 
+  <script src="lang.js"></script>
 </body>
 </html>

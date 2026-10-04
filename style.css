@@ -62,7 +62,7 @@ header.site .interieur {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 10px 24px;
+  gap: 10px 16px;
 }
 
 .marque {
@@ -237,7 +237,72 @@ figcaption { font-size: 0.88rem; color: var(--texte-doux); margin-top: 8px; font
 ul.liste { padding-left: 1.2em; margin: 0 0 16px; }
 ul.liste li { margin-bottom: 6px; }
 
+.carte--bientot {
+  opacity: 0.55;
+  cursor: default;
+  pointer-events: none;
+}
+
+.carte--bientot::after {
+  content: "À venir";
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--texte-doux);
+  border: 1px solid var(--ligne);
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
 .retour { display: inline-block; margin-top: 36px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+
+/* ---------- Widget langue ---------- */
+
+.lang-toggle {
+  background: none;
+  border: 1px solid var(--ligne);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.78rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--texte-doux);
+  transition: border-color 0.15s;
+}
+
+.lang-toggle:hover { border-color: var(--accent); }
+
+.lang-sep { opacity: 0.4; }
+
+.lang-opt {
+  font-weight: 400;
+  color: var(--texte-doux);
+  transition: color 0.15s, font-weight 0.15s;
+}
+
+/* ---------- BPMN / diagrammes ---------- */
+
+.bpmn-wrap {
+  overflow-x: auto;
+  margin: 22px 0 6px;
+  padding: 20px;
+  background: var(--fond-carte);
+  border: 1px solid var(--ligne);
+  border-radius: var(--rayon);
+}
+
+.bpmn-note {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.82rem;
+  color: var(--texte-doux);
+  margin: 0 0 22px;
+}
 
 /* ---------- Pied de page ---------- */
 

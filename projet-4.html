@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SNCB Connection Confidence | Nadia Cañadas Giménez</title>
+  <meta name="description" content="UX concept: showing arrival platform and exit side for train connections in the SNCB app — data that already exists, surfaced at the right moment.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site">
+    <div class="interieur">
+      <a class="marque" href="index.html">Nadia Cañadas Giménez</a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="index.html#projects" aria-current="page" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="a-propos.html" data-i18n="nav.about">About</a></li>
+        </ul>
+      </nav>
+      <button class="lang-toggle" aria-label="Switch language">
+        <span class="lang-opt lang-opt--en">EN</span>
+        <span class="lang-sep">|</span>
+        <span class="lang-opt lang-opt--fr">FR</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <span class="etiquette" data-i18n="p4.label">UX concept</span>
+    <h1 data-i18n="p4.h1">SNCB: Know Which Way to Run Before You Get There</h1>
+    <p class="chapo" data-i18n="p4.sub">
+      A connecting passenger doesn't know which platform they're arriving on, or which side of the
+      train to exit from. The data exists — it's just not shown at the right moment.
+    </p>
+
+    <p class="bandeau" data-i18n="proj.note.concept">
+      Personal concept, not affiliated with SNCB or Infrabel. A UX reflection based on real usage and public information.
+      No validation or collaboration from SNCB.
+    </p>
+
+    <dl class="meta">
+      <div><dt>Product</dt><dd>SNCB app (iOS / Android)</dd></div>
+      <div><dt>Type</dt><dd>Personal concept</dd></div>
+      <div><dt>Tools</dt><dd>[Figma / to be completed]</dd></div>
+    </dl>
+
+    <h2>The user problem</h2>
+    <p>
+      You're on train IC 123, approaching Brussels-Midi. Your connection — IC 456 to Liège —
+      leaves in 9 minutes from platform 8. You know that. What you don't know:
+    </p>
+    <ul class="liste">
+      <li>Which platform your current train is arriving on.</li>
+      <li>Which side of the train to exit from (left door or right door) to head in the right direction.</li>
+      <li>Whether platform 8 is a 30-second walk or a 3-minute sprint through a mezzanine level.</li>
+    </ul>
+    <p>
+      The SNCB app today shows the departure platform at your origin station. It doesn't show where
+      you're about to land. So you exit the train, look at a board, pick a direction — and hope.
+    </p>
+    <p>
+      For a confident traveller this is an annoyance. For someone unfamiliar with the station,
+      running with luggage, or managing a group, it's genuinely stressful — and sometimes,
+      the connection is missed.
+    </p>
+
+    <div class="emplacement-image">
+      [Screenshot: current SNCB journey detail — departure platform shown, no arrival platform information]
+    </div>
+
+    <h2>Why the data is already there</h2>
+    <p>
+      Infrabel (the Belgian rail infrastructure manager) publishes real-time train position and
+      platform assignment data through its open data API. The SNCB app already uses this data
+      to display live departure times. The arrival platform for a given train at a given station
+      is part of the same dataset — it's just not surfaced to the passenger while they're on board.
+    </p>
+
+    <h2>My hypothesis</h2>
+    <p>
+      If the journey detail view showed the <strong>arrival platform of the current train</strong>
+      at the next stop — updated in real time, just like arrival times already are — passengers
+      could position themselves on the train in advance, exit on the correct side, and reach their
+      connection calmly rather than by guessing.
+    </p>
+
+    <h2>The proposal</h2>
+    <p>
+      Within the existing journey detail screen, add a "Connection" card that appears when a
+      transfer is &lt; 20 minutes away. The card shows:
+    </p>
+    <ul class="liste">
+      <li><strong>You're arriving on platform 3</strong> — updated live as the train approaches.</li>
+      <li><strong>Next train: IC 456 → Liège, platform 8</strong> — already shown in the app.</li>
+      <li><strong>Exit: right side of train → platform 8 is to your right</strong> — derived from platform layout data.</li>
+      <li>A colour indicator for connection comfort: green (plenty of time), orange (tight), red (risky).</li>
+    </ul>
+    <p>
+      No new screen. No new interaction. Just the right information, in the right place, at the right time.
+    </p>
+
+    <div class="emplacement-image">
+      [Mockup: journey detail view with connection card — arrival platform + exit direction + time indicator]
+    </div>
+
+    <h2>How to measure success</h2>
+    <ul class="liste">
+      <li>Reduction in connection misses on routes where the feature is active (Infrabel operational data).</li>
+      <li>User satisfaction score on the "connections" section of the app (targeted CSAT).</li>
+      <li>Engagement with the connection card (shown vs tapped for detail).</li>
+    </ul>
+
+    <h2>Limits and next steps</h2>
+    <p>
+      Platform layout data (which side leads where) is not always available in a structured format
+      for all Belgian stations — this would need coordination with Infrabel beyond the existing API.
+      Smaller stations with a single platform make the feature trivial; larger hubs (Brussels-Midi,
+      Bruges, Antwerp-Central) are where it matters most.
+    </p>
+    <p>
+      Next steps: validate the data availability with Infrabel's open data catalogue, prototype
+      the connection card for Brussels-Midi, test with 5 regular commuters who make at least
+      one daily connection.
+    </p>
+
+    <a class="retour" href="index.html#projects" data-i18n="proj.back">← Back to projects</a>
+  </main>
+
+  <footer>
+    <p>© 2026 Nadia Cañadas Giménez ·
+      <a href="https://www.linkedin.com/in/ncgimenez" data-i18n="footer.linkedin">LinkedIn</a>
+    </p>
+  </footer>
+
+  <script src="lang.js"></script>
+</body>
+</html>

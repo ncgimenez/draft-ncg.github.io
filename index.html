@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nadia Cañadas Giménez | Business Analyst</title>
-  <!-- Cette phrase apparaît dans les résultats de recherche et les aperçus de lien -->
-  <meta name="description" content="Portfolio de Nadia Cañadas Giménez, Business Analyst : études de cas et concepts UX.">
+  <title>Nadia Cañadas Giménez | Functional Analyst</title>
+  <meta name="description" content="Portfolio of Nadia Cañadas Giménez, Functional Analyst — SAP S/4HANA, Odoo, process analysis and UX concepts.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,50 +12,90 @@
   <header class="site">
     <div class="interieur">
       <a class="marque" href="index.html">Nadia Cañadas Giménez</a>
-      <nav aria-label="Navigation principale">
+      <nav aria-label="Main navigation">
         <ul>
-          <li><a href="index.html" aria-current="page">Accueil</a></li>
-          <li><a href="a-propos.html">À propos</a></li>
-          <li><a href="projet-1.html">Projet 1</a></li>
-          <li><a href="projet-2.html">Projet 2</a></li>
+          <li><a href="index.html" aria-current="page" data-i18n="nav.home">Home</a></li>
+          <li><a href="index.html#projects" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="a-propos.html" data-i18n="nav.about">About</a></li>
         </ul>
       </nav>
+      <button class="lang-toggle" aria-label="Switch language">
+        <span class="lang-opt lang-opt--en">EN</span>
+        <span class="lang-sep">|</span>
+        <span class="lang-opt lang-opt--fr">FR</span>
+      </button>
     </div>
   </header>
 
   <main>
-    <span class="etiquette">Business Analyst</span>
-    <h1>[À REMPLACER : une phrase qui résume ce que tu apportes]</h1>
-    <p class="chapo">
-      [À REMPLACER : 2 phrases maximum. Ton domaine, le type de problèmes que tu résous,
-      et ce que le visiteur va trouver ici.]
+    <span class="etiquette" data-i18n="hero.label">Functional Analyst</span>
+    <h1 data-i18n="hero.title">I map the friction, clear the clutter, and build flows that hold.</h1>
+    <p class="chapo" data-i18n="hero.sub">
+      3 years of ERP experience bridging business and technical teams — SAP S/4HANA Public Cloud and Odoo.
+      I turn complex operational processes into flows that work the first time.
     </p>
 
     <div class="actions">
-      <a class="bouton plein" href="projet-1.html">Voir mes projets</a>
-      <a class="bouton" href="a-propos.html">Me connaître</a>
+      <a class="bouton plein" href="#projects" data-i18n="hero.cta1">View projects</a>
+      <a class="bouton" href="a-propos.html" data-i18n="hero.cta2">About me</a>
     </div>
 
-    <h2>Projets</h2>
+    <h2 id="projects" data-i18n="section.projects">Projects</h2>
     <div class="grille">
       <a class="carte" href="projet-1.html">
-        <span class="etiquette">Étude de cas</span>
-        <h3>[Titre du projet 1]</h3>
-        <p>[Une phrase : le problème et ce que tu as proposé.]</p>
+        <span class="etiquette" data-i18n="card1.label">Case study</span>
+        <h3 data-i18n="card1.title">O2C Without the Chaos: Standardising SAP SD for a B2B Team</h3>
+        <p data-i18n="card1.desc">Mapping and fixing a broken order management process during a greenfield SAP S/4HANA implementation.</p>
       </a>
       <a class="carte" href="projet-2.html">
-        <span class="etiquette">Concept UX</span>
-        <h3>[Titre du projet 2]</h3>
-        <p>[Une phrase : la fonctionnalité imaginée et pourquoi.]</p>
+        <span class="etiquette" data-i18n="card2.label">Product concept</span>
+        <h3 data-i18n="card2.title">A Planning App That Respects Your Energy</h3>
+        <p data-i18n="card2.desc">When calendar tools treat every task the same — and why that's a problem.</p>
       </a>
+      <a class="carte" href="projet-3.html">
+        <span class="etiquette" data-i18n="card3.label">UX concept</span>
+        <h3 data-i18n="card3.title">Multi-select Events in Google Calendar</h3>
+        <p data-i18n="card3.desc">Moving several events at once — because an unexpected day off shouldn't take 10 minutes to reschedule.</p>
+      </a>
+      <a class="carte" href="projet-4.html">
+        <span class="etiquette" data-i18n="card4.label">UX concept</span>
+        <h3 data-i18n="card4.title">SNCB: Know Which Way to Run Before You Get There</h3>
+        <p data-i18n="card4.desc">Showing arrival platform and exit side for connections — data that exists, but isn't surfaced at the right moment.</p>
+      </a>
+    </div>
+
+    <h2 data-i18n="section.soon">In progress</h2>
+    <p class="chapo" style="font-size:1rem; margin-bottom: 20px;" data-i18n="section.soon.sub">Projects currently being written up.</p>
+    <div class="grille">
+      <div class="carte carte--bientot">
+        <span class="etiquette" data-i18n="soon1.label">SAP concept</span>
+        <h3 data-i18n="soon1.title">Available-to-Promise in O2C</h3>
+        <p data-i18n="soon1.desc">Confirming a delivery date without checking available stock creates cascading problems.</p>
+      </div>
+      <div class="carte carte--bientot">
+        <span class="etiquette" data-i18n="soon2.label">Case study</span>
+        <h3 data-i18n="soon2.title">Odoo Implementation for an International SME</h3>
+        <p data-i18n="soon2.desc">Needs analysis, gap analysis and configuration — Sales, Inventory, Accounting.</p>
+      </div>
+      <div class="carte carte--bientot">
+        <span class="etiquette" data-i18n="soon3.label">Data analysis</span>
+        <h3 data-i18n="soon3.title">Public Data → Actionable Recommendation</h3>
+        <p data-i18n="soon3.desc">An open dataset, a structured synthesis, a recommendation for a decision-maker.</p>
+      </div>
+      <div class="carte carte--bientot">
+        <span class="etiquette" data-i18n="soon4.label">UX teardown</span>
+        <h3 data-i18n="soon4.title">Structured Critique of an App</h3>
+        <p data-i18n="soon4.desc">3 friction points identified, 1 detailed solution with hypothesis and success metrics.</p>
+      </div>
     </div>
   </main>
 
   <footer>
     <p>© 2026 Nadia Cañadas Giménez ·
-      <a href="https://www.linkedin.com/in/REMPLACE-PAR-TON-PROFIL">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/ncgimenez" data-i18n="footer.linkedin">LinkedIn</a>
     </p>
   </footer>
 
+  <script src="lang.js"></script>
 </body>
 </html>

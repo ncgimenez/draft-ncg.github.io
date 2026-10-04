@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projet 2 | Nadia Cañadas Giménez</title>
-  <meta name="description" content="Concept UX personnel : [résume en une phrase].">
+  <title>Planning App Concept | Nadia Cañadas Giménez</title>
+  <meta name="description" content="Product concept: a planning app that categorises your week by energy type, not just time slots.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,69 +12,145 @@
   <header class="site">
     <div class="interieur">
       <a class="marque" href="index.html">Nadia Cañadas Giménez</a>
-      <nav aria-label="Navigation principale">
+      <nav aria-label="Main navigation">
         <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="a-propos.html">À propos</a></li>
-          <li><a href="projet-1.html">Projet 1</a></li>
-          <li><a href="projet-2.html" aria-current="page">Projet 2</a></li>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="index.html#projects" aria-current="page" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="a-propos.html" data-i18n="nav.about">About</a></li>
         </ul>
       </nav>
+      <button class="lang-toggle" aria-label="Switch language">
+        <span class="lang-opt lang-opt--en">EN</span>
+        <span class="lang-sep">|</span>
+        <span class="lang-opt lang-opt--fr">FR</span>
+      </button>
     </div>
   </header>
 
   <main>
-    <span class="etiquette">Concept UX</span>
-    <h1>[Titre : la fonctionnalité imaginée]</h1>
-    <p class="chapo">[Une phrase : pour quel produit, quel problème utilisateur.]</p>
+    <span class="etiquette" data-i18n="p2.label">Product concept</span>
+    <h1 data-i18n="p2.h1">A Planning App That Respects Your Energy</h1>
+    <p class="chapo" data-i18n="p2.sub">
+      Calendar tools treat every task the same way. This concept rethinks the week around
+      the type of energy each block actually requires.
+    </p>
 
-    <!-- À garder : indique clairement que ce n'est pas une page officielle -->
     <p class="bandeau">
-      Concept personnel, non affilié à [nom de l'entreprise]. Il s'agit d'un exercice de réflexion UX
-      réalisé à partir d'informations publiques. Aucune validation ni collaboration de l'entreprise.
+      Personal concept. Not affiliated with any existing product.
+      Inspired by daily use of Apple Calendar, Google Calendar, Sunsama and Fantastical.
     </p>
 
     <dl class="meta">
-      <div><dt>Produit étudié</dt><dd>[Nom du produit ou de l'appli]</dd></div>
-      <div><dt>Type</dt><dd>Concept personnel</dd></div>
-      <div><dt>Outils</dt><dd>[Outils utilisés]</dd></div>
+      <div><dt data-i18n="p2.product">Concept</dt><dd>Original mobile application</dd></div>
+      <div><dt data-i18n="p2.type">Type</dt><dd>Personal concept</dd></div>
+      <div><dt data-i18n="p2.tools">Tools</dt><dd>[Figma / to be completed]</dd></div>
     </dl>
 
-    <h2>Le problème utilisateur</h2>
-    <p>[Quel point de friction as-tu observé ? Qui est concerné ?]</p>
+    <h2>The user problem</h2>
+    <p>
+      Every time I look at my week in Apple Calendar or Google Calendar, I see a grid of coloured
+      blocks — but they all feel the same. A 1-hour deep work session looks identical to a 1-hour
+      meeting. A personal appointment sits next to an admin task with no visual distinction.
+    </p>
+    <p>
+      The result: I can plan a "full" week that's actually exhausting, or a "light" week where
+      I've been avoiding the work that matters. The calendar tells me <em>when</em>, never
+      <em>what kind</em> of week I'm building.
+    </p>
 
-    <h2>Mon hypothèse</h2>
-    <p>[Si on faisait X, alors Y s'améliorerait, parce que Z.]</p>
+    <h2>My hypothesis</h2>
+    <p>
+      If a planning app categorised blocks by <strong>energy type</strong> — deep work, meetings,
+      admin, personal, rest — and showed a weekly balance at a glance, users would make
+      more intentional scheduling decisions and feel less depleted at the end of the week.
+    </p>
 
-    <h2>La proposition</h2>
-    <p>[Décris la fonctionnalité et le parcours utilisateur en quelques phrases.]</p>
+    <h2>The concept</h2>
 
-    <!-- Pour ajouter une maquette : mets le fichier dans le dossier "images",
-         puis remplace le bloc ci-dessous par :
-         <figure>
-           <img src="images/maquette-1.png" alt="Description de la maquette">
-           <figcaption>Légende de la maquette</figcaption>
-         </figure>
-    -->
-    <div class="emplacement-image">
-      [Emplacement pour une maquette ou un avant/après]
-    </div>
-
-    <h2>Comment mesurer le succès</h2>
+    <h3>Energy types</h3>
+    <p>
+      Every block is tagged with one of five types, each with its own colour and icon:
+    </p>
     <ul class="liste">
-      <li>[Indicateur 1]</li>
-      <li>[Indicateur 2]</li>
+      <li><strong>Focus</strong> — deep work, writing, analysis. Needs uninterrupted time.</li>
+      <li><strong>Meetings</strong> — calls, syncs, workshops. Social and reactive.</li>
+      <li><strong>Admin</strong> — emails, expenses, small tasks. Low-effort but draining if overdone.</li>
+      <li><strong>Personal</strong> — gym, errands, appointments.</li>
+      <li><strong>Rest</strong> — buffer, lunch, intentional empty space.</li>
     </ul>
 
-    <h2>Limites et prochaines étapes</h2>
-    <p>[Ce que ce concept ne prouve pas, et ce qu'il faudrait tester ensuite.]</p>
+    <h3>Screen 1 — Week view</h3>
+    <p>
+      The week view looks like a standard calendar, but each block is colour-coded by energy type.
+      A thin horizontal bar at the top of the screen shows the week's energy balance — how much
+      of the week is Focus vs Meetings vs Admin. If meetings dominate, the bar turns orange.
+    </p>
 
-    <a class="retour" href="index.html">← Retour à l'accueil</a>
+    <div class="emplacement-image">
+      [Mockup: week view with colour-coded energy blocks + balance bar at top]
+    </div>
+
+    <h3>Screen 2 — Adding a block</h3>
+    <p>
+      When creating an event, the app asks for the energy type first — before title or time.
+      It then suggests the best available slot based on the type: Focus blocks in the morning,
+      meetings mid-day, admin at the end of the afternoon.
+    </p>
+    <p>
+      A "Protect" toggle lets you mark any block as non-negotiable: the app won't suggest
+      filling it and flags any conflict immediately.
+    </p>
+
+    <div class="emplacement-image">
+      [Mockup: new event screen — energy type picker at top, smart slot suggestion below]
+    </div>
+
+    <h3>Screen 3 — Weekly review (Sunday evening)</h3>
+    <p>
+      A brief review screen compares planned vs actual: which blocks moved, which were skipped,
+      and what the real energy distribution looked like. One question: "What would you protect
+      next week that you didn't this week?"
+    </p>
+
+    <div class="emplacement-image">
+      [Mockup: weekly review — planned vs actual side by side, one reflection prompt]
+    </div>
+
+    <h2>Why existing apps don't solve this</h2>
+    <ul class="liste">
+      <li><strong>Apple Calendar / Google Calendar</strong> — great for scheduling, no concept of energy or intention.</li>
+      <li><strong>Sunsama</strong> — close, but heavy and work-focused. No mobile-first design.</li>
+      <li><strong>Motion / Reclaim</strong> — AI-driven rescheduling, but takes control away from the user.</li>
+      <li><strong>Fantastical</strong> — best-in-class UI, but still time-only, no energy dimension.</li>
+    </ul>
+    <p>
+      The gap: a lightweight, visually calm app (Apple design principles — clarity, deference, depth)
+      that adds <em>intention</em> to scheduling without becoming another productivity system to maintain.
+    </p>
+
+    <h2>How to measure success</h2>
+    <ul class="liste">
+      <li>Weekly retention rate (do users come back to plan the following week?).</li>
+      <li>Reported stress level at end of week (self-assessment, 1–5 scale).</li>
+      <li>Ratio of Focus blocks protected vs moved (did the app help guard deep work?).</li>
+    </ul>
+
+    <h2>Limits and next steps</h2>
+    <p>
+      This concept assumes users are willing to tag their events — a significant behaviour change.
+      Next step: prototype 3 screens in Figma and test with 5 people who already use a digital
+      calendar daily. Key question: does the energy type picker feel helpful or like extra friction?
+    </p>
+
+    <a class="retour" href="index.html#projects" data-i18n="proj.back">← Back to projects</a>
   </main>
 
   <footer>
-    <p>© 2026 Nadia Cañadas Giménez</p>
+    <p>© 2026 Nadia Cañadas Giménez ·
+      <a href="https://www.linkedin.com/in/ncgimenez" data-i18n="footer.linkedin">LinkedIn</a>
+    </p>
   </footer>
 
+  <script src="lang.js"></script>
 </body>
 </html>
