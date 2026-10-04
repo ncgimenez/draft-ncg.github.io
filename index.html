@@ -3,137 +3,177 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nadia Cañadas Giménez | Functional Analyst</title>
-  <meta name="description" content="Portfolio of Nadia Cañadas Giménez, Functional Analyst — SAP S/4HANA, Odoo, process analysis and UX concepts.">
-  <link rel="stylesheet" href="style.css">
+  <title>Nadia Cañadas Giménez</title>
+  <meta name="description" content="Functional Analyst, UX concepts, and more. Explore my professional work, creative projects, and resources.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --text: #1a1a1a;
+      --bg: #fafafa;
+      --accent: #4a86b4;
+      --border: #e0e0e0;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #f0f0f0;
+        --bg: #0d0d0d;
+        --border: #333;
+      }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 2rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .brand {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    main {
+      padding: 3rem 1.5rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .intro {
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+      opacity: 0.9;
+      max-width: 600px;
+    }
+
+    .sections {
+      display: grid;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .section-card {
+      padding: 2rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s;
+      display: block;
+    }
+
+    .section-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .section-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .section-desc {
+      opacity: 0.8;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-
-  <header class="site">
-    <div class="interieur">
-      <a class="marque" href="index.html">Nadia Cañadas Giménez</a>
-      <nav aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html" aria-current="page" data-i18n="nav.home">Home</a></li>
-          <li class="nav-item--dropdown">
-            <a href="index.html#projects"><span data-i18n="nav.projects">Projects</span> <span class="nav-arrow" aria-hidden="true">▾</span></a>
-            <ul class="nav-dropdown" aria-label="Projects">
-              <li><a href="projet-1.html">O2C Without the Chaos</a></li>
-              <li><a href="projet-2.html">Structured Calendar</a></li>
-              <li><a href="projet-3.html">Google Calendar Redesign</a></li>
-              <li><a href="projet-4.html">SNCB Connection</a></li>
-              <li><a href="projet-5.html">Odoo Implementation</a></li>
-              <li><a href="projet-6.html">Course Architecture</a></li>
-            </ul>
-          </li>
-          <li><a href="notes.html" data-i18n="nav.notes">Notes</a></li>
-          <li><a href="a-propos.html" data-i18n="nav.about">About</a></li>
-        </ul>
-      </nav>
-      <div class="controles-header">
-        <button class="theme-toggle" aria-label="Switch theme"><span class="theme-icon">🌙</span></button>
-        <button class="lang-toggle" aria-label="Switch language">
-          <span class="lang-opt lang-opt--en">EN</span>
-          <span class="lang-sep">|</span>
-          <span class="lang-opt lang-opt--fr">FR</span>
-        </button>
-      </div>
+  <header>
+    <div class="container">
+      <div class="brand">Nadia Cañadas Giménez</div>
+      <div class="tagline">Functional Analyst · UX thinker · Course architect</div>
     </div>
   </header>
 
   <main>
-    <span class="etiquette" data-i18n="hero.label">Functional Analyst</span>
-    <h1 data-i18n="hero.title">I map the friction, clear the clutter, and build flows that hold.</h1>
-    <p class="chapo" data-i18n="hero.sub">
-      3 years of ERP experience bridging business and technical teams — SAP S/4HANA Public Cloud and Odoo.
-      I turn complex operational processes into flows that work the first time.
-    </p>
+    <div class="container">
+      <h1>Mapping friction, building flows that hold.</h1>
+      <p class="intro">3 years bridging business and technical teams. Specializing in ERP systems, process design, and making complex operations legible.</p>
 
-    <div class="actions">
-      <a class="bouton plein" href="#projects" data-i18n="hero.cta1">View projects</a>
-      <a class="bouton" href="a-propos.html" data-i18n="hero.cta2">About me</a>
-    </div>
+      <div class="sections">
+        <a href="pro/" class="section-card">
+          <div class="section-label">→ Primary</div>
+          <h2 class="section-title">Professional Portfolio</h2>
+          <p class="section-desc">SAP S/4HANA and Odoo implementations, process mapping, case studies from Belgium, Luxembourg, and Norway.</p>
+        </a>
 
-    <div class="stats-strip">
-      <div class="stat"><span class="stat-val">3</span><span class="stat-lbl" data-i18n="stat.years">years ERP</span></div>
-      <div class="stat"><span class="stat-val">2</span><span class="stat-lbl" data-i18n="stat.erp">ecosystems</span></div>
-      <div class="stat"><span class="stat-val stat-val--text">BE · LU · NO</span><span class="stat-lbl" data-i18n="stat.markets">markets</span></div>
-      <div class="stat"><span class="stat-val">6</span><span class="stat-lbl" data-i18n="stat.projects">projects</span></div>
-    </div>
+        <a href="creative/" class="section-card">
+          <div class="section-label">→ Concepts</div>
+          <h2 class="section-title">Creative Projects</h2>
+          <p class="section-desc">UX concepts and product ideas exploring calendar design, transportation interfaces, and daily workflow optimization.</p>
+        </a>
 
-    <h2 id="projects" data-i18n="section.projects">Projects</h2>
-    <div class="grille">
-      <a class="carte" href="projet-1.html">
-        <div class="carte-barre" style="background:#b4502d"></div>
-        <span class="etiquette" data-i18n="card1.label">Case study</span>
-        <h3 data-i18n="card1.title">O2C Without the Chaos: Standardising SAP SD for a B2B Team</h3>
-        <p data-i18n="card1.desc">Mapping and fixing a broken order management process during a greenfield SAP S/4HANA implementation.</p>
-      </a>
-      <a class="carte" href="projet-2.html">
-        <div class="carte-barre" style="background:#4a86b4"></div>
-        <span class="etiquette" data-i18n="card2.label">Product concept</span>
-        <h3 data-i18n="card2.title">A Calendar That Tells You What Kind of Week You're Having</h3>
-        <p data-i18n="card2.desc">Imposing a default colour structure by life category — so your week is legible at a glance, without extra effort.</p>
-      </a>
-      <a class="carte" href="projet-3.html">
-        <div class="carte-barre" style="background:#7b5ea7"></div>
-        <span class="etiquette" data-i18n="card3.label">UX concept</span>
-        <h3 data-i18n="card3.title">Multi-select Events in Google Calendar</h3>
-        <p data-i18n="card3.desc">Moving several events at once — because an unexpected day off shouldn't take 10 minutes to reschedule.</p>
-      </a>
-      <a class="carte" href="projet-4.html">
-        <div class="carte-barre" style="background:#7b5ea7"></div>
-        <span class="etiquette" data-i18n="card4.label">UX concept</span>
-        <h3 data-i18n="card4.title">SNCB: Know Which Way to Run Before You Get There</h3>
-        <p data-i18n="card4.desc">Showing arrival platform and exit side for connections — data that exists, but isn't surfaced at the right moment.</p>
-      </a>
-      <a class="carte" href="projet-5.html">
-        <div class="carte-barre" style="background:#b4502d"></div>
-        <span class="etiquette" data-i18n="card5.label">Case study</span>
-        <h3 data-i18n="card5.title">Odoo: Three Disconnected Tools, One Coherent Flow</h3>
-        <p data-i18n="card5.desc">Implementing Sales, Inventory and Accounting for a Belgian SME — and solving the over-committed stock problem.</p>
-      </a>
-      <a class="carte" href="projet-6.html">
-        <div class="carte-barre" style="background:#4caf6b"></div>
-        <span class="etiquette" data-i18n="card6.label">Instructional design</span>
-        <h3 data-i18n="card6.title">From Expert to Teacher: Structuring a Language Course That Holds</h3>
-        <p data-i18n="card6.desc">Turning a body of expert knowledge into a structured, scalable course — with explicit progression, defined entry points, and measurable outcomes.</p>
-      </a>
-    </div>
-
-    <h2 data-i18n="section.soon">In progress</h2>
-    <p class="chapo" style="font-size:1rem; margin-bottom: 20px;" data-i18n="section.soon.sub">Projects currently being written up.</p>
-    <div class="grille">
-      <div class="carte carte--bientot">
-        <span class="etiquette" data-i18n="soon1.label">SAP concept</span>
-        <h3 data-i18n="soon1.title">Available-to-Promise in O2C</h3>
-        <p data-i18n="soon1.desc">Confirming a delivery date without checking available stock creates cascading problems.</p>
-      </div>
-      <div class="carte carte--bientot">
-        <span class="etiquette" data-i18n="soon5.label">Product concept</span>
-        <h3 data-i18n="soon5.title">Focus Sessions Tied to Your Calendar</h3>
-        <p data-i18n="soon5.desc">A Pomodoro-style timer that knows which life category you're working in — and feeds back into your weekly balance. Module 2 of the calendar suite.</p>
-      </div>
-      <div class="carte carte--bientot">
-        <span class="etiquette" data-i18n="soon3.label">Data analysis</span>
-        <h3 data-i18n="soon3.title">Public Data → Actionable Recommendation</h3>
-        <p data-i18n="soon3.desc">An open dataset, a structured synthesis, a recommendation for a decision-maker.</p>
-      </div>
-      <div class="carte carte--bientot">
-        <span class="etiquette" data-i18n="soon4.label">UX teardown</span>
-        <h3 data-i18n="soon4.title">Structured Critique of an App</h3>
-        <p data-i18n="soon4.desc">3 friction points identified, 1 detailed solution with hypothesis and success metrics.</p>
+        <a href="blog/" class="section-card">
+          <div class="section-label">→ Resources</div>
+          <h2 class="section-title">Notes & Resources</h2>
+          <p class="section-desc">Thoughts on process design, tools, and things I've learned building systems.</p>
+        </a>
       </div>
     </div>
   </main>
 
   <footer>
-    <p>© 2026 Nadia Cañadas Giménez ·
-      <a href="https://www.linkedin.com/in/ncgimenez" data-i18n="footer.linkedin">LinkedIn</a>
-      · <a href="mailto:ncgimenez@proton.me">ncgimenez@proton.me</a>
-    </p>
+    <div class="container">
+      <p>© 2026 Nadia Cañadas Giménez ·
+        <a href="https://www.linkedin.com/in/ncgimenez">LinkedIn</a>
+        · <a href="mailto:ncgimenez@proton.me">ncgimenez@proton.me</a>
+      </p>
+    </div>
   </footer>
-
-  <script src="lang.js"></script>
 </body>
 </html>
