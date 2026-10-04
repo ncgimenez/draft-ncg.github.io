@@ -135,9 +135,8 @@
       el.innerHTML = (lang === 'fr' && FR[key]) ? FR[key] : originals.get(el);
     });
 
-    document.querySelectorAll('.lang-opt--en, .lang-opt--fr').forEach(function (span) {
-      span.style.fontWeight = span.classList.contains('lang-opt--' + lang) ? '700' : '400';
-      span.style.color = span.classList.contains('lang-opt--' + lang) ? 'var(--texte)' : 'var(--texte-doux)';
+    document.querySelectorAll('.lang-toggle').forEach(function (btn) {
+      btn.dataset.active = lang;
     });
   }
 
