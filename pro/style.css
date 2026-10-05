@@ -289,6 +289,29 @@ ul.liste li { margin-bottom: 6px; }
   text-align: center;
 }
 
+/* ---------- Horizontal project list ---------- */
+.grille--liste {
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+.grille--liste .carte {
+  display: grid;
+  grid-template-columns: 4px 1fr;
+  padding: 0;
+  overflow: hidden;
+}
+.grille--liste .carte > * { grid-column: 2; }
+.grille--liste .carte .carte-barre {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  margin: 0;
+  height: auto;
+  border-radius: 0;
+}
+.grille--liste .carte .etiquette { padding: 12px 18px 2px; margin-bottom: 0; }
+.grille--liste .carte h3 { padding: 0 18px 4px; font-size: 1rem; margin-bottom: 0; }
+.grille--liste .carte p { padding: 0 18px 12px; }
+
 /* ---------- Card accent bar ---------- */
 .carte-barre {
   height: 3px;
