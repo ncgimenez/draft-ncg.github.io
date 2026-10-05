@@ -605,6 +605,40 @@ ul.nav-dropdown {
   margin: 0 0 22px;
 }
 
+/* ---------- CTA Section ---------- */
+
+.cta-section {
+  background: var(--fond-carte);
+  border-top: 1px solid var(--ligne);
+  border-bottom: 1px solid var(--ligne);
+  margin: 60px -20px 0;
+  padding: 40px 20px;
+}
+
+.cta-container {
+  max-width: var(--largeur);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-section h2 {
+  margin: 0 0 12px;
+  font-size: 1.5rem;
+}
+
+.cta-section p {
+  color: var(--texte-doux);
+  margin: 0 0 24px;
+  font-size: 1.05rem;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
 /* ---------- Pied de page ---------- */
 
 footer {

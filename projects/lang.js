@@ -49,6 +49,11 @@
     'soon4.desc': '3 frictions identifiées, 1 solution détaillée avec hypothèse et métriques de succès.',
     // Footer
     'footer.linkedin': 'LinkedIn',
+    // CTA Section
+    'cta.title': 'Parlons',
+    'cta.desc': 'Intéressé par une collaboration ou envie de discuter de vos challenges processus ?',
+    'cta.email': 'M\'envoyer un email',
+    'cta.linkedin': 'Me suivre sur LinkedIn',
     // About
     'about.label': 'À propos',
     'about.h1': 'Qui je suis',
