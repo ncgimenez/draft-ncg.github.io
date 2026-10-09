@@ -14,10 +14,10 @@
       <a class="marque" href="/">NCG</a>
       <nav aria-label="Main navigation">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/projects">Projects</a></li>
-          <li><a href="/blog/">Notes</a></li>
-          <li><a href="/about" aria-current="page">About</a></li>
+          <li><a href="/" data-i18n="nav.home">Home</a></li>
+          <li><a href="/#projects" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="/blog/" data-i18n="nav.notes">Notes</a></li>
+          <li><a href="/about.html" aria-current="page" data-i18n="nav.about">About</a></li>
         </ul>
       </nav>
       <div class="controles-header">
@@ -102,7 +102,7 @@
     </div>
 
     <figure>
-      <svg viewBox="0 0 620 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" aria-label="Language skills: French native, English fluent, Spanish conversational, German basic" class="svg-adaptive">
+      <svg viewBox="0 0 620 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" aria-label="Language skills" class="svg-adaptive">
         <style>
           .svg-bg { fill: var(--fond-carte); stroke: var(--ligne); }
           .svg-text-header { fill: var(--texte-doux); }
@@ -116,29 +116,20 @@
           .german-accent { stroke: var(--ligne); }
           .german-text { fill: var(--texte-doux); }
         </style>
-
         <rect width="620" height="130" class="svg-bg" rx="10" stroke-width="1"/>
         <text x="310" y="24" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" class="svg-text-header" text-transform="uppercase" letter-spacing="0.06em">LANGUAGES</text>
-
-        <!-- French -->
         <rect x="16" y="36" width="134" height="76" rx="8" class="svg-bg french-accent" stroke-width="1.5"/>
         <text x="83" y="60" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" class="svg-text-main">French</text>
         <text x="83" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" class="french-text" font-weight="600">Native</text>
         <text x="83" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" class="french-text">●●●●●</text>
-
-        <!-- English -->
         <rect x="162" y="36" width="134" height="76" rx="8" class="svg-bg english-accent" stroke-width="1.5"/>
         <text x="229" y="60" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" class="svg-text-main">English</text>
         <text x="229" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" class="english-text" font-weight="600">Fluent — C1</text>
         <text x="229" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" class="english-text">●●●●○</text>
-
-        <!-- Spanish -->
         <rect x="308" y="36" width="134" height="76" rx="8" class="svg-bg spanish-accent" stroke-width="1.5"/>
         <text x="375" y="60" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" class="svg-text-main">Spanish</text>
         <text x="375" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" class="spanish-text" font-weight="600">Conversational — B1</text>
         <text x="375" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" class="spanish-text">●●●○○</text>
-
-        <!-- German -->
         <rect x="454" y="36" width="150" height="76" rx="8" class="svg-bg german-accent" stroke-width="1.5"/>
         <text x="529" y="60" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" class="svg-text-main">German</text>
         <text x="529" y="76" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" class="german-text" font-weight="600">Basic — A2</text>
@@ -154,12 +145,6 @@
       <span data-i18n="about.contact.or"> or </span>
       <a href="mailto:ncgimenez@proton.me">ncgimenez@proton.me</a>.
     </p>
-
-    <hr style="margin: 3rem 0; border: none; border-top: 1px solid var(--ligne); opacity: 0.3;">
-
-    <p style="font-size: 0.875rem; color: var(--texte-doux); font-style: italic;">
-      ✨ <a href="/creative/" style="color: var(--accent, #b4502d); text-decoration: none; border-bottom: 1px dashed currentColor;">Also exploring creative ideas</a> — design concepts, product thoughts, and thinking out loud.
-    </p>
   </main>
 
   <footer>
@@ -167,6 +152,7 @@
       <a href="https://www.linkedin.com/in/ncgimenez" data-i18n="footer.linkedin">LinkedIn</a>
       · <a href="mailto:ncgimenez@proton.me">ncgimenez@proton.me</a>
     </p>
+    <p><a class="cle-secrete" href="antechamber.html" title="Enter the antechamber">🗝</a></p>
   </footer>
 
   <script src="projects/lang.js"></script>
