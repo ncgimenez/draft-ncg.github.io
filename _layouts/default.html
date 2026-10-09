@@ -46,8 +46,30 @@
     {% endif %}
   </footer>
 
-  
+  <!------- Scripts ------->
   
   <script src="/assets/lang.js"></script>
+
+  ...
+  <script src="/assets/lang.js"></script>
+
+  {% if page.mermaid %}
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#ffffff',
+        primaryTextColor: '#1f2430',
+        primaryBorderColor: '#e6dfd3',
+        lineColor: '#5b6272',
+        background: '#faf7f2',
+        fontSize: '13px'
+      }
+    });
+  </script>
+  {% endif %}
+  
 </body>
 </html>
