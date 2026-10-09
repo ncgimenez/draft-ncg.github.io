@@ -33,16 +33,21 @@
   <!-- Le contenu spécifique de chaque page viendra s'insérer ici automatiquement -->
   {{ content }}
 
+
   <footer>
     <p>© 2026 Nadia Cañadas Giménez ·
       <a href="https://www.linkedin.com/in/ncgimenez" data-i18n="footer.linkedin">LinkedIn</a>
       · <a href="mailto:ncgimenez@proton.me">ncgimenez@proton.me</a>
     </p>
+    {% if page.title == "About" %}
     <p style="margin-top: 0.75rem; text-align: center;">
-      <a class="cle-secrete" href="/antechamber.html" title="Enter the antechamber" aria-label="Enter the antechamber">🗝</a>
+      <a class="cle-secrete" href="{{ '/antechamber.html' | relative_url }}" title="Enter the antechamber" aria-label="Enter the antechamber">🗝</a>
     </p>
+    {% endif %}
   </footer>
 
+  
+  
   <script src="/assets/lang.js"></script>
 </body>
 </html>
