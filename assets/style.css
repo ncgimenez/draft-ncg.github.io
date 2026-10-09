@@ -631,10 +631,18 @@ footer {
   transform: scale(1.2);
 }
 
-
 /* ---------- Petits écrans ---------- */
 
 @media (max-width: 520px) {
   body { font-size: 1.02rem; }
   main { padding-top: 32px; }
+}
+
+/* ---------- Flèche retour Antichambre ---------- */
+.fleche-section {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.95rem;
+  text-decoration: none;
 }
