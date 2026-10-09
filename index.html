@@ -15,9 +15,9 @@
       <nav aria-label="Main navigation">
         <ul>
           <li><a href="/" aria-current="page" data-i18n="nav.home">Home</a></li>
-          <li><a href="/projects/" data-i18n="nav.projects">Projects</a></li>
-          <li><a href="/blog/">Notes</a></li>
-          <li><a href="/about">About</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="/blog/" data-i18n="nav.notes">Notes</a></li>
+          <li><a href="/about.html" data-i18n="nav.about">About</a></li>
         </ul>
       </nav>
       <div class="controles-header">
@@ -36,12 +36,12 @@
     <h1 data-i18n="hero.title">I map the friction, clear the clutter, and build flows that hold.</h1>
     <p class="chapo" data-i18n="hero.sub">
       3 years of ERP experience bridging business and technical teams — SAP S/4HANA Public Cloud and Odoo.
-      I turn complex operational processes into flows that work the first time.
+      I analyze why systems get bypassed and design flows that people actually use.
     </p>
 
     <div class="actions">
       <a class="bouton plein" href="#projects" data-i18n="hero.cta1">View projects</a>
-      <a class="bouton" href="pro/a-propos.html" data-i18n="hero.cta2">About me</a>
+      <a class="bouton" href="/about.html" data-i18n="hero.cta2">About me</a>
     </div>
 
     <div class="stats-strip">
@@ -51,63 +51,67 @@
       <div class="stat"><span class="stat-val">6</span><span class="stat-lbl" data-i18n="stat.projects">projects</span></div>
     </div>
 
-    <h2 id="projects" data-i18n="section.projects">Projects</h2>
+    <h2 id="projects" data-i18n="section.projects">Projects &amp; Case Studies</h2>
     <div class="grille">
-      <a class="carte" href="pro/projet-1.html">
+      <a class="carte" href="projects/projet-1.html">
         <div class="carte-barre" style="background:#b4502d"></div>
         <span class="etiquette" data-i18n="card1.label">Case study</span>
         <h3 data-i18n="card1.title">O2C Without the Chaos: Standardising SAP SD for a B2B Team</h3>
         <p data-i18n="card1.desc">Mapping and fixing a broken order management process during a greenfield SAP S/4HANA implementation.</p>
       </a>
-      <a class="carte" href="pro/projet-3.html">
-        <div class="carte-barre" style="background:#4a86b4"></div>
-        <span class="etiquette">UX concept</span>
-        <h3>Google Calendar: Rethinking the Interaction Model</h3>
-        <p>Drag to select, click to create — the interaction pattern that works everywhere except Google Calendar.</p>
-      </a>
-      <a class="carte" href="pro/projet-4.html">
-        <div class="carte-barre" style="background:#4a86b4"></div>
-        <span class="etiquette">UX concept</span>
-        <h3>SNCB: Know Which Way to Run Before You Get There</h3>
-        <p>A connecting passenger doesn't know which platform they're arriving on. The data exists — it's just not shown at the right moment.</p>
-      </a>
-      <a class="carte" href="pro/projet-5.html">
+      <a class="carte" href="projects/projet-5.html">
         <div class="carte-barre" style="background:#b4502d"></div>
         <span class="etiquette" data-i18n="card5.label">Case study</span>
         <h3 data-i18n="card5.title">Odoo: Three Disconnected Tools, One Coherent Flow</h3>
         <p data-i18n="card5.desc">Implementing Sales, Inventory and Accounting for a Belgian SME — and solving the over-committed stock problem.</p>
       </a>
-      <a class="carte" href="pro/projet-6.html">
+      <a class="carte" href="projects/projet-3.html">
+        <div class="carte-barre" style="background:#4a86b4"></div>
+        <span class="etiquette" data-i18n="card3.label">UX concept</span>
+        <h3 data-i18n="card3.title">Google Calendar: Rethinking the Interaction Model</h3>
+        <p data-i18n="card3.desc">Drag to select, click to create — applying standard desktop interaction to calendar planning.</p>
+      </a>
+      <a class="carte" href="projects/projet-4.html">
+        <div class="carte-barre" style="background:#4a86b4"></div>
+        <span class="etiquette" data-i18n="card4.label">UX concept</span>
+        <h3 data-i18n="card4.title">SNCB: Know Which Way to Run Before You Get There</h3>
+        <p data-i18n="card4.desc">Surfacing real-time arrival platform and exit doors before reaching connecting stations.</p>
+      </a>
+      <a class="carte" href="projects/projet-6.html">
         <div class="carte-barre" style="background:#4caf6b"></div>
         <span class="etiquette" data-i18n="card6.label">Instructional design</span>
         <h3 data-i18n="card6.title">From Expert to Teacher: Structuring a Language Course That Holds</h3>
-        <p data-i18n="card6.desc">Turning a body of expert knowledge into a structured, scalable course — with explicit progression, defined entry points, and measurable outcomes.</p>
+        <p data-i18n="card6.desc">Turning tacit knowledge into a modular, scalable course with prerequisite mapping.</p>
       </a>
     </div>
 
-    <h2 data-i18n="section.soon">In progress</h2>
-    <p class="chapo" style="font-size:1rem; margin-bottom: 20px;" data-i18n="section.soon.sub">Projects currently being written up.</p>
+    <h2 data-i18n="section.notes.title">Notes &amp; Thinking</h2>
+    <p class="chapo" style="font-size:1rem; margin-bottom: 20px;" data-i18n="section.notes.sub">Short articles on process design, systems and interaction friction.</p>
     <div class="grille">
-      <div class="carte carte--bientot">
+      <a class="carte" href="blog/available-to-promise.html">
+        <div class="carte-barre" style="background:#b4502d"></div>
         <span class="etiquette" data-i18n="soon1.label">SAP concept</span>
-        <h3 data-i18n="soon1.title">Available-to-Promise in O2C</h3>
-        <p data-i18n="soon1.desc">Confirming a delivery date without checking available stock creates cascading problems.</p>
-      </div>
-      <div class="carte carte--bientot">
+        <h3 data-i18n="soon1.title">Available-to-Promise in Order-to-Cash</h3>
+        <p data-i18n="soon1.desc">Why confirming a delivery date without checking available stock creates cascading problems.</p>
+      </a>
+      <a class="carte" href="blog/focus-sessions.html">
+        <div class="carte-barre" style="background:#7c3aed"></div>
         <span class="etiquette" data-i18n="soon5.label">Product concept</span>
         <h3 data-i18n="soon5.title">Focus Sessions Tied to Your Calendar</h3>
-        <p data-i18n="soon5.desc">A Pomodoro-style timer that knows which life category you're working in — and feeds back into your weekly balance. Module 2 of the calendar suite.</p>
-      </div>
-      <div class="carte carte--bientot">
+        <p data-i18n="soon5.desc">A Pomodoro-style timer that knows which life category you're working in.</p>
+      </a>
+      <a class="carte" href="blog/public-data.html">
+        <div class="carte-barre" style="background:#4caf6b"></div>
         <span class="etiquette" data-i18n="soon3.label">Data analysis</span>
         <h3 data-i18n="soon3.title">Public Data → Actionable Recommendation</h3>
         <p data-i18n="soon3.desc">An open dataset, a structured synthesis, a recommendation for a decision-maker.</p>
-      </div>
-      <div class="carte carte--bientot">
+      </a>
+      <a class="carte" href="blog/app-critique.html">
+        <div class="carte-barre" style="background:#4a86b4"></div>
         <span class="etiquette" data-i18n="soon4.label">UX teardown</span>
         <h3 data-i18n="soon4.title">Structured Critique of an App</h3>
         <p data-i18n="soon4.desc">3 friction points identified, 1 detailed solution with hypothesis and success metrics.</p>
-      </div>
+      </a>
     </div>
   </main>
 
