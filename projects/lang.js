@@ -1,209 +1,200 @@
 (function () {
-  // Apply saved theme immediately to avoid flash
-  var _t = localStorage.getItem('ncg-theme');
-  if (_t) document.documentElement.dataset.theme = _t;
+  // 1. Thème (sombre / clair)
+  var savedTheme = localStorage.getItem('ncg-theme');
+  if (savedTheme) {
+    document.documentElement.dataset.theme = savedTheme;
+  }
 
+  // 2. Dictionnaire de traduction Français
   const FR = {
-    // Navigation
+    // --- Navigation générale ---
     'nav.home': 'Accueil',
     'nav.projects': 'Projets',
+    'nav.notes': 'Notes',
     'nav.about': 'À propos',
-    // Home — hero
-    'hero.label': 'Analyste fonctionnelle',
-    'hero.title': 'Je cartographie les frictions, je supprime l\'inutile, et je construis ce qui tient.',
-    'hero.sub': '3 ans d\'expérience ERP entre les équipes métier et techniques — SAP S/4HANA Public Cloud et Odoo. Je transforme des processus opérationnels complexes en flux qui fonctionnent du premier coup.',
+
+    // --- Page d'accueil : Hero ---
+    'hero.label': 'Analyste Fonctionnelle',
+    'hero.title': 'Je cartographie les frictions, supprime l\'inutile et conçois des flux qui tiennent.',
+    'hero.sub': '3 ans d\'expérience ERP entre les équipes métier et techniques — SAP S/4HANA Public Cloud et Odoo. J\'analyse pourquoi les systèmes sont contournés et je conçois des flux adoptés dès le premier jour.',
     'hero.cta1': 'Voir les projets',
-    'hero.cta2': 'Me connaître',
-    // Home — sections
-    'section.projects': 'Projets',
-    'section.soon': 'En préparation',
-    'section.soon.sub': 'Projets en cours de rédaction.',
-    // Home — project cards
+    'hero.cta2': 'Mon parcours',
+
+    // --- Page d'accueil : Statistiques ---
+    'stat.years': 'ans ERP',
+    'stat.erp': 'écosystèmes',
+    'stat.markets': 'marchés',
+    'stat.projects': 'projets',
+
+    // --- Page d'accueil : Sections ---
+    'section.projects': 'Projets & Études de cas',
+    'section.notes.title': 'Notes & Réflexions',
+    'section.notes.sub': 'Courts articles sur la conception de processus, les systèmes et la réduction des frictions.',
+
+    // --- Cartes de projets pro (Accueil & Hub) ---
     'card1.label': 'Étude de cas',
-    'card1.title': 'O2C sans détours : standardiser SAP SD pour une équipe B2B',
+    'card1.title': 'O2C sans détour : standardiser SAP SD pour une équipe B2B',
     'card1.desc': 'Cartographier et corriger un processus de commandes défaillant lors d\'une implémentation SAP S/4HANA greenfield.',
-    'card2.label': 'Concept produit',
-    'card2.title': 'Un calendrier qui dit quel genre de semaine vous vivez',
-    'card2.desc': 'Imposer une structure de couleurs par catégorie de vie — pour que votre semaine soit lisible d\'un coup d\'œil, sans effort.',
+
+    'card5.label': 'Étude de cas',
+    'card5.title': 'Odoo : trois outils déconnectés, un flux cohérent',
+    'card5.desc': 'Implémentation Ventes, Stocks et Comptabilité pour une PME belge — et résolution du conflit de stock sur-engagé.',
+
     'card3.label': 'Concept UX',
-    'card3.title': 'Sélection multiple dans Google Agenda',
-    'card3.desc': 'Déplacer plusieurs événements en une action — parce qu\'un imprévu ne devrait pas prendre 10 minutes à gérer.',
+    'card3.title': 'Google Agenda : repenser le modèle d\'interaction',
+    'card3.desc': 'Glisser pour sélectionner, cliquer pour créer — appliquer les standards du bureau à la planification d\'agenda.',
+
     'card4.label': 'Concept UX',
     'card4.title': 'SNCB : savoir où descendre avant d\'arriver',
-    'card4.desc': 'Afficher le quai d\'arrivée et le côté de sortie pour les correspondances — une donnée qui existe, mais reste cachée.',
-    // Home — coming soon cards
+    'card4.desc': 'Afficher le quai d\'arrivée et la porte de sortie avant d\'atteindre les gares de correspondance.',
+
+    'card6.label': 'Design pédagogique',
+    'card6.title': 'De l\'expert à l\'enseignant : structurer un cours qui tient',
+    'card6.desc': 'Transformer un savoir tacite en cours modulaire et scalable avec cartographie des prérequis.',
+
+    // --- Cartes d'articles / Notes (Accueil & Blog) ---
     'soon1.label': 'Concept SAP',
-    'soon1.title': 'Available-to-Promise en O2C',
-    'soon1.desc': 'Confirmer une date de livraison sans vérifier le stock disponible crée des problèmes en cascade.',
-    'soon2.label': 'Étude de cas',
-    'soon2.title': 'Implémentation Odoo pour une PME internationale',
-    'soon2.desc': 'Analyse des besoins, gap analysis et configuration — Ventes, Stocks, Comptabilité.',
+    'soon1.title': 'Available-to-Promise en Order-to-Cash',
+    'soon1.desc': 'Pourquoi confirmer une date sans vérifier le stock réel crée des problèmes en cascade.',
+
     'soon5.label': 'Concept produit',
     'soon5.title': 'Sessions de focus liées à votre calendrier',
-    'soon5.desc': 'Un minuteur style Pomodoro qui sait dans quelle catégorie de vie vous travaillez — et qui alimente votre bilan de semaine. Module 2 de la suite calendrier.',
+    'soon5.desc': 'Un minuteur type Pomodoro qui s\'adapte à vos catégories de vie pour un meilleur équilibre.',
+
     'soon3.label': 'Analyse de données',
     'soon3.title': 'Données publiques → recommandation',
-    'soon3.desc': 'Un dataset ouvert, une synthèse structurée, une recommandation pour un décideur.',
+    'soon3.desc': 'D\'un jeu de données ouvertes à une décision concrète pour un décideur.',
+
     'soon4.label': 'Teardown UX',
     'soon4.title': 'Critique structurée d\'une appli',
-    'soon4.desc': '3 frictions identifiées, 1 solution détaillée avec hypothèse et métriques de succès.',
-    // Footer
-    'footer.linkedin': 'LinkedIn',
-    // About
+    'soon4.desc': '3 points de friction identifiés, 1 solution argumentée avec métriques d\'impact.',
+
+    // --- Page À propos (About) ---
     'about.label': 'À propos',
     'about.h1': 'Qui je suis',
-    'about.intro': 'Analyste fonctionnelle avec 3 ans entre SAP S/4HANA et Odoo. Je construis le pont entre ce dont les équipes métier ont besoin et ce que les systèmes techniques peuvent réellement faire — et je commence par écouter où ça casse.',
+    'about.intro': 'Analyste fonctionnelle avec 3 ans d\'expérience entre SAP S/4HANA et Odoo. Je fais le pont entre les besoins des équipes métier et la réalité des systèmes techniques — en commençant toujours par écouter où le flux casse.',
     'about.drives.h': 'Ce qui m\'anime',
-    'about.drives': 'Je construis pour résoudre, pas pour impressionner. Quand je vois une équipe commerciale contourner un système six fois par jour, ce n\'est pas de l\'incompétence — c\'est un signal que le processus était cassé dès le départ. Je pars de là. J\'aime transformer les frictions invisibles en flux qui marchent du premier coup, des flux que les gens choisissent d\'utiliser parce qu\'ils rendent leur travail plus facile, pas plus difficile.',
-    'about.three.years': 'Trois ans dans deux mondes ERP différents m\'ont appris une chose : la technologie de l\'implémentation n\'est presque jamais le goulot. C\'est la conversation. Comprendre ce qu\'une équipe fait réellement (vs. ce que l\'organigramme dit), cartographier exactement où un système crée des frictions, et construire un argumentaire pour le standard qui soit assez convaincant pour que les gens le préfèrent à leurs contournements.',
+    'about.drives': 'Je construis pour résoudre, pas pour impressionner. Quand je vois une équipe commerciale contourner un système six fois par jour, ce n\'est pas de l\'incompétence : c\'est le signe que le processus a été mal conçu dès le départ. J\'aime transformer ces frictions invisibles en flux fluides que les équipes choisissent d\'utiliser parce qu\'ils facilitent réellement leur quotidien.',
+    'about.three.years': 'Trois ans dans deux mondes ERP différents m\'ont appris une chose : la technologie est rarement le point de blocage. C\'est la conversation. Comprendre le travail réel (et non celui de l\'organigramme), localiser précisément les frottements et démontrer l\'intérêt du standard pour qu\'il devienne plus attractif que les contournements manuels.',
     'about.approach.h': 'Mon approche',
-    'about.ap1': 'Fit-to-standard d\'abord — challenger les exigences face au standard SAP ou Odoo avant d\'accepter une exception.',
-    'about.ap2': 'BPMN As-Is / To-Be systématique — pour que tout le monde, technique ou non, comprenne le processus.',
-    'about.ap3': 'Entre métier et technique — je traduis dans les deux sens, sans perdre la nuance.',
+    'about.ap1': 'Fit-to-standard d\'abord — éprouver les besoins face au standard SAP ou Odoo avant d\'envisager un développement spécifique.',
+    'about.ap2': 'Cartographie BPMN AS-IS / TO-BE systématique — pour que chacun, profil technique ou métier, partage la même vision.',
+    'about.ap3': 'Traduction bidirectionnelle — faire dialoguer le métier et l\'IT sans déperdition de nuance.',
     'about.parcours.h': 'Parcours',
     'about.p1title': 'Analyste fonctionnelle, Odoo — Grand-Rosière, Belgique · 2025–2026',
-    'about.p1': 'Implémentations ERP pour PME internationales : analyse des besoins, gap analysis et configuration Ventes, Stocks, Comptabilité et Site web. Accompagnement des migrations de version Odoo et résolution de problèmes fonctionnels complexes.',
+    'about.p1': 'Implémentations ERP pour PME internationales : cadrage des besoins, gap analysis et configuration (Ventes, Stocks, Comptabilité, Site web). Accompagnement aux migrations et résolution de problèmes fonctionnels par analyse de cause racine.',
     'about.p2title': 'Business Analyst SAP S/4HANA, Deloitte — Bruxelles & Oslo · 2023–2025',
-    'about.p2': 'Membre core du workstream SD pour une implémentation greenfield SAP S/4HANA Public Cloud chez un scale-up technologique norvégien. O2C complet, intégrations CRM/e-commerce/3PL/paiement, migration de données master (Business Partners, produits, prix), UAT et change management.',
+    'about.p2': 'Membre de l\'équipe SD sur une implémentation greenfield SAP S/4HANA Public Cloud pour une scale-up tech norvégienne. Périmètre Order-to-Cash complet, intégrations e-commerce/3PL, migration des données de base, UAT et conduite du changement.',
     'about.skills.h': 'Compétences',
     'about.contact.h': 'Me contacter',
     'about.contact.text': 'Pour échanger sur un projet ou une opportunité : ',
     'about.contact.link': 'mon profil LinkedIn',
-    // Project pages — shared
-    'proj.back': '← Retour aux projets',
-    'proj.note.anon': 'Les noms et données ont été anonymisés pour respecter la confidentialité.',
-    'proj.note.concept': 'Concept personnel, non affilié à l\'entreprise citée. Exercice de réflexion UX basé sur des informations publiques.',
-    // Project 1 — O2C
+    'about.contact.or': ' ou ',
+
+    // --- Projet 1 : Étude de cas SAP O2C ---
     'p1.label': 'Étude de cas',
-    'p1.h1': 'O2C sans détours : standardiser SAP SD pour une équipe B2B',
+    'p1.h1': 'O2C sans détour : standardiser SAP SD pour une équipe B2B',
     'p1.sub': 'Cartographier et corriger un processus de commandes défaillant lors d\'une implémentation SAP S/4HANA Public Cloud greenfield.',
     'p1.role': 'Rôle',
     'p1.role.v': 'Business Analyst SAP SD',
     'p1.context': 'Contexte',
     'p1.context.v': 'Scale-up tech, e-commerce hardware',
     'p1.duration': 'Durée',
-    'p1.duration.v': '18 mois (Go-live + rollout)',
+    'p1.duration.v': '18 mois (Go-live + déploiement)',
     'p1.tools': 'Outils',
     'p1.tools.v': 'SAP S/4HANA Public Cloud, Jira, Confluence, Visio',
     'p1.s1': 'Contexte',
-    'p1.s1.body': 'Implémentation greenfield SAP S/4HANA Public Cloud pour un scale-up technologique nordique. L\'équipe Ventes B2B gérait des comptes clients stratégiques avec des commandes personnalisées, des remises négociées et des délais spécifiques. Parties prenantes : Sales Operations, Customer Success, Finance et l\'équipe Deloitte.',
+    'p1.s1.body': 'Implémentation greenfield SAP S/4HANA Public Cloud pour une scale-up technologique nordique. L\'équipe Ventes B2B gérait des comptes stratégiques avec commandes sur mesure, remises négociées et délais spécifiques. Parties prenantes : Sales Operations, Customer Success, Finance et consultants Deloitte.',
     'p1.s2': 'Problème',
-    'p1.s2.body': 'Les commandes B2B étaient gérées entièrement hors SAP — par e-mail et tableurs. Aucun Sales Order n\'était créé avant l\'expédition. Conséquences : pas de contrôle de crédit, pas de validation des prix, pas de suivi du statut, facturation parfois oubliée, et aucune traçabilité en cas de litige.',
+    'p1.s2.body': 'Les commandes B2B étaient gérées entièrement hors SAP, par emails et tableurs. Aucune commande client (Sales Order) n\'était enregistrée avant expédition. Conséquences : pas de contrôle de crédit, pas de validation des prix, aucune visibilité sur le statut, facturation parfois oubliée et aucune piste d\'audit.',
     'p1.s3': 'Analyse',
-    'p1.s3.body': 'Workshops fit-gap avec les équipes Sales Operations et Customer Success. Cartographie du processus AS-IS : de la demande client à la livraison. Identification des écarts clés : absence de Sales Order systématique, contrôle de crédit manuel (ou inexistant), conditions tarifaires appliquées de mémoire.',
+    'p1.s3.body': 'Ateliers fit-gap avec Sales Operations et Customer Success. Cartographie AS-IS de la demande client jusqu\'à la livraison. Écarts identifiés : absence de Sales Order systématique, contrôle de crédit manuel ou inexistant, conditions tarifaires appliquées de mémoire.',
     'p1.s4': 'Processus AS-IS',
     'p1.s5': 'Solution proposée',
-    'p1.s5.b1': 'Adoption du flux O2C standard SAP : Devis → Commande client → Contrôle de crédit → Livraison → Sortie marchandises → Facturation → Paiement.',
-    'p1.s5.b2': 'Configuration des conditions tarifaires (remises B2B par client et par produit) dans SAP.',
-    'p1.s5.b3': 'Mise en place de la gestion des avoirs et des notes de débit pour les ajustements post-facturation.',
-    'p1.s5.b4': 'Documentation des processus et formation des key-users Sales Operations et Customer Success.',
-    'p1.s6': 'Processus TO-BE (SAP standard)',
+    'p1.s5.b1': 'Adoption du flux standard SAP O2C : Devis → Commande client → Contrôle de crédit → Livraison → Sortie marchandises → Facturation → Paiement.',
+    'p1.s5.b2': 'Configuration des conditions tarifaires (remises B2B par client et produit) directement dans SAP.',
+    'p1.s5.b3': 'Mise en place de la gestion des avoirs et notes de débit pour les ajustements post-facturation.',
+    'p1.s5.b4': 'Documentation des processus et formation des utilisateurs-clés Sales Operations et Customer Success.',
+    'p1.s6': 'Processus TO-BE (Standard SAP)',
     'p1.s7': 'Résultat',
-    'p1.s7.body': 'Traçabilité complète de chaque commande dans SAP. Les remises B2B sont systématiquement validées par les conditions de prix plutôt que par mémoire. Le contrôle de crédit bloque automatiquement les commandes dépassant les limites définies. L\'équipe Customer Success peut consulter le statut de chaque commande en temps réel sans solliciter Sales.',
+    'p1.s7.body': 'Traçabilité complète de bout en bout dans SAP. Validation automatique des remises via les fiches de prix. Blocage automatique des comptes dépassant leur limite de crédit. Consultation du statut de commande en direct par le Customer Success sans solliciter les commerciaux.',
     'p1.s8': 'Ce que j\'en retiens',
-    'p1.s8.body': 'La résistance au changement était plus forte que les lacunes techniques. L\'enjeu principal était de convaincre une équipe commerciale habituée à ses contournements que le standard SAP leur donnerait plus de visibilité, pas moins de flexibilité. Les workshops fit-gap n\'ont de valeur que si on challenge vraiment les exceptions — et qu\'on sait expliquer pourquoi le standard est préférable.',
-    // Project 2 — Planning app
-    'p2.label': 'Concept produit',
-    'p2.h1': 'Une app de planification qui respecte votre énergie',
-    'p2.sub': 'Les calendriers existants traitent toutes les tâches de la même façon. Ce concept repense la semaine autour du type d\'énergie qu\'elle demande.',
-    'p2.product': 'Concept',
-    'p2.product.v': 'Application mobile originale',
-    'p2.type': 'Type',
-    'p2.type.v': 'Concept personnel',
-    'p2.tools': 'Outils',
-    'p2.tools.v': '[Figma / à compléter]',
-    // Project 3 — Google Calendar
-    'p3.label': 'Concept UX',
-    'p3.h1': 'Sélection multiple d\'événements dans Google Agenda',
-    'p3.sub': 'Google Agenda force les utilisateurs à déplacer leurs événements un à un — une friction inutile quand un imprévu bouleverse tout un planning.',
-    // Project 4 — SNCB
-    'p4.label': 'Concept UX',
-    'p4.h1': 'SNCB : savoir où descendre avant d\'arriver',
-    'p4.sub': 'Un voyageur en correspondance ne sait pas sur quel quai il arrive, ni de quel côté sortir. La donnée existe — elle n\'est juste pas au bon endroit.',
-    // Project 5 — Odoo
+    'p1.s8.body': 'La technique ne représentait qu\'une petite partie de l\'enjeu : le vrai défi était la conduite du changement. Il a fallu écouter les besoins réels derrière les contournements manuels, prouver que le standard apportait visibilité et sérénité, puis accompagner l\'équipe pas à pas jusqu\'à ce que la nouvelle habitude s\'installe.',
+
+    // --- Projet 5 : Étude de cas Odoo ---
     'p5.label': 'Étude de cas',
-    'p5.h1': 'Odoo : un flux cohérent à la place de trois outils déconnectés',
-    'p5.sub': 'Implémenter Ventes, Stocks et Comptabilité pour une PME belge — et convaincre l\'équipe commerciale d\'arrêter de court-circuiter le flux de réservation de stock.',
+    'p5.h1': 'Odoo : trois outils déconnectés, un flux cohérent',
+    'p5.sub': 'Implémenter Ventes, Stocks et Comptabilité pour une PME belge — et amener l\'équipe commerciale à adopter la réservation de stock automatique.',
     'p5.role': 'Rôle',
     'p5.role.v': 'Analyste fonctionnelle Odoo',
     'p5.context': 'Contexte',
-    'p5.context.v': 'PME belge, B2B, clients BE/FR/NL',
+    'p5.context.v': 'PME belge B2B, clients BE/FR/NL',
     'p5.duration': 'Durée',
     'p5.duration.v': '~6 mois (implémentation + hypercare)',
     'p5.tools': 'Outils',
-    'p5.tools.v': 'Odoo 17, Jira, Confluence, Excel (migration)',
+    'p5.tools.v': 'Odoo 17, Jira, Confluence, Excel',
     'p5.s1': 'Contexte',
-    'p5.s1.body': 'PME belge d\'une vingtaine de collaborateurs — vente d\'équipements techniques à des clients B2B en Belgique, France et Pays-Bas. Avant l\'implémentation : QuickBooks pour la comptabilité, un classeur Excel partagé pour le suivi des commandes et des stocks, un outil CRM indépendant pour les données clients. La décision de passer à Odoo est venue d\'un constat simple : le volume de réconciliation manuelle entre les trois outils était devenu insoutenable.',
+    'p5.s1.body': 'Entreprise belge d\'une vingtaine de collaborateurs vendant du matériel technique en Belgique, France et Pays-Bas. Avant le projet : QuickBooks pour la compta, un tableur partagé pour le stock et les commandes, un CRM isolé. La réconciliation manuelle permanente était devenue un frein critique à la croissance.',
     'p5.s2': 'Problème',
-    'p5.s2.body': 'L\'articulation entre ventes et stock était entièrement manuelle — le commercial confirmait un devis, le marquait dans l\'Excel, envoyait un e-mail à l\'entrepôt pour réserver le stock. Sans contrôle automatique, plusieurs commandes pouvaient engager les mêmes références. L\'entrepôt ne découvrait le conflit qu\'au moment de la préparation.',
-    'p5.s2.b2': 'La facturation était le deuxième point de friction : Finance générait les factures manuellement dans QuickBooks à partir du PDF de devis, parfois plusieurs jours après la livraison. Les remises accordées au devis n\'étaient pas toujours répercutées.',
+    'p5.s2.body': 'La liaison ventes-entrepôt était manuelle : le commercial confirmait un devis sur papier, mettait à jour le fichier Excel et envoyait un email. Sans contrôle automatisé, plusieurs commandes pouvaient réserver les mêmes pièces, causant des ruptures découvertes au moment de l\'emballage.',
+    'p5.s2.b2': 'La facturation souffrait également : les factures étaient recréées manuellement dans QuickBooks parfois plusieurs jours après livraison, avec des oublis réguliers sur les remises promises.',
     'p5.s3': 'Analyse',
     'p5.s4': 'Processus AS-IS',
     'p5.s5': 'Solution proposée',
-    'p5.s5.b1': 'Flux standard Odoo : Devis → Confirmation → Réservation de stock automatique → Bon de livraison → Validation → Facture générée → Synchronisation bancaire.',
-    'p5.s5.b2': 'Configuration des règles de réapprovisionnement et des routes de stock pour les références critiques.',
-    'p5.s5.b3': 'Synchronisation bancaire et règles de rapprochement automatique par montant et partenaire.',
-    'p5.s5.b4': 'Documentation des processus et formation des key-users (commercial, entrepôt, comptabilité).',
-    'p5.s6': 'Processus TO-BE (Odoo standard)',
+    'p5.s5.b1': 'Flux Odoo standardisé : Devis → Bon de commande → Réservation automatique du stock → Bon de livraison → Facturation en un clic → Rapprochement bancaire.',
+    'p5.s5.b2': 'Mise en place de règles de réapprovisionnement automatique pour les pièces critiques.',
+    'p5.s5.b3': 'Synchronisation bancaire avec règles de lettrage automatique par montant et partenaire.',
+    'p5.s5.b4': 'Guides de procédures et formation personnalisée des équipes vente, entrepôt et comptabilité.',
+    'p5.s6': 'Processus TO-BE (Standard Odoo)',
     'p5.decision.h': 'Deux décisions expliquées',
     'p5.s7': 'Résultat',
-    'p5.s7.body': 'Les ruptures de stock à la livraison ont été éliminées dans le premier trimestre. La réconciliation de fin de mois est passée d\'une journée complète à moins de deux heures. L\'équipe commerciale a arrêté d\'utiliser l\'Excel dans les six semaines. Finance a fermé le compte QuickBooks quatre mois après le go-live.',
+    'p5.s7.body': 'Élimination totale des ruptures imprévues au premier trimestre. Clôture comptable mensuelle passée d\'une journée entière à moins de deux heures. Abandon définitif du fichier Excel en six semaines.',
     'p5.s8': 'Ce que j\'en retiens',
-    'p5.s8.body': 'L\'implémentation technique était simple. Le travail difficile était de convaincre des équipes que bien utiliser le système — plutôt que trouver des raccourcis — était la vraie solution. Les contournements de l\'équipe commerciale n\'étaient pas de la négligence : c\'étaient des adaptations à un processus qui n\'avait jamais été bien conçu. Odoo nous a fourni l\'outil ; les ateliers nous ont donné l\'adoption.',
-    // Home — card 5
-    'card5.label': 'Étude de cas',
-    // Home — card 6
-    'card6.label': 'Design pédagogique',
-    'card6.title': 'De l\'expert à l\'enseignant : structurer un cours qui tient',
-    'card6.desc': 'Transformer un corpus de savoir expert en cours structuré et scalable — avec une progression explicite, des points d\'entrée définis et des résultats mesurables.',
-    // Project 6 — Course architecture
-    'p6.label': 'Design pédagogique',
-    'p6.h1': 'De l\'expert à l\'enseignant : structurer un cours qui tient',
-    'p6.sub': 'Reconcevoir un cours d\'espagnol débutant à partir d\'un savoir expert vers un contenu structuré et enseignable — avec une progression explicite, des points d\'entrée définis et des résultats mesurables.',
-    'card5.title': 'Odoo : trois outils déconnectés, un flux cohérent',
-    'card5.desc': 'Implémentation Ventes, Stocks et Comptabilité pour une PME belge — et résoudre le problème de stock sur-engagé.',
-    // About — personal statement
-    'about.statement': 'Trois ans dans deux écosystèmes ERP très différents — SAP à grande échelle, Odoo en profondeur — ont renforcé une conviction : la partie technique d\'une implémentation est rarement ce qui détermine son succès. Ce qui compte, c\'est la conversation : comprendre ce qu\'une équipe fait réellement (pas ce que la carte de processus dit qu\'elle fait), cartographier là où le système crée des frictions, et défendre le standard assez clairement pour que les gens le choisissent plutôt que leur contournement.',
-    // Footer
-    'footer.email': 'E-mail',
-    'footer.linkedin': 'LinkedIn',
-    // About contact
-    'about.contact.or': ' ou ',
-    // Home — stats strip
-    'stat.years': 'ans ERP',
-    'stat.erp': 'écosystèmes',
-    'stat.markets': 'marchés',
-    'stat.projects': 'projets',
+    'p5.s8.body': 'L\'outil n\'était pas le problème : il fallait montrer aux équipes qu\'Odoo supprimait leurs contraintes au lieu d\'en ajouter. Dès lors que les commerciaux ont constaté qu\'ils perdaient moins de temps à gérer des litiges d\'expédition, l\'adoption s\'est faite naturellement.',
+
+    // --- Projet 2 (Antechamber) ---
+    'p2.label': 'Concept produit',
+    'p2.h1': 'Un calendrier qui dit quel genre de semaine vous vivez',
+    'p2.sub': 'La plupart des agendas affichent une grille uniforme. Ce concept impose une structure de couleurs par catégorie de vie pour évaluer son équilibre d\'un seul coup d\'œil.',
+
+    // --- Éléments partagés ---
+    'proj.back': '← Retour aux projets',
+    'proj.note.anon': 'Les noms et données ont été anonymisés pour respecter la confidentialité commerciale.',
+    'proj.note.concept': 'Concept personnel et indépendant. Démarche d\'analyse UX basée sur des sources publiques.',
+    'footer.linkedin': 'LinkedIn'
   };
 
-  const saved = localStorage.getItem('ncg-lang') || 'en';
+  const savedLang = localStorage.getItem('ncg-lang') || 'en';
   const originals = new Map();
 
   function apply(lang) {
     localStorage.setItem('ncg-lang', lang);
     document.documentElement.lang = lang === 'fr' ? 'fr' : 'en';
 
+    // Remplacement des textes simples
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       const key = el.dataset.i18n;
       if (!originals.has(el)) originals.set(el, el.textContent);
       el.textContent = (lang === 'fr' && FR[key]) ? FR[key] : originals.get(el);
     });
 
+    // Remplacement des blocs contenant du HTML (liens, gras, etc.)
     document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
       const key = el.dataset.i18nHtml;
       if (!originals.has(el)) originals.set(el, el.innerHTML);
       el.innerHTML = (lang === 'fr' && FR[key]) ? FR[key] : originals.get(el);
     });
 
+    // Mise à jour visuelle du bouton de langue
     document.querySelectorAll('.lang-toggle').forEach(function (btn) {
       btn.dataset.active = lang;
     });
   }
 
   function _isDark() {
-    var t = document.documentElement.dataset.theme;
-    if (t === 'dark') return true;
-    if (t === 'light') return false;
+    var currentTheme = document.documentElement.dataset.theme;
+    if (currentTheme === 'dark') return true;
+    if (currentTheme === 'light') return false;
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
   }
 
@@ -213,13 +204,16 @@
     });
   }
 
-  function setupTheme() {
+  function setup() {
+    // Écouteur pour le changement de langue
     document.querySelectorAll('.lang-toggle').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        apply(localStorage.getItem('ncg-lang') === 'fr' ? 'en' : 'fr');
+        var current = localStorage.getItem('ncg-lang') || 'en';
+        apply(current === 'fr' ? 'en' : 'fr');
       });
     });
 
+    // Écouteur pour le basculement de thème
     document.querySelectorAll('.theme-toggle').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var newTheme = _isDark() ? 'light' : 'dark';
@@ -230,12 +224,12 @@
     });
 
     _updateThemeIcons();
-    apply(saved);
+    apply(savedLang);
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupTheme);
+    document.addEventListener('DOMContentLoaded', setup);
   } else {
-    setupTheme();
+    setup();
   }
 })();
