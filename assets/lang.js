@@ -1,8 +1,8 @@
 (function () {
-  // 1. Thème (sombre / clair)
-  var savedTheme = localStorage.getItem('ncg-theme');
-  if (savedTheme) {
-    document.documentElement.dataset.theme = savedTheme;
+
+    // 1. Thème (sombre par défaut)
+  var savedTheme = localStorage.getItem('ncg-theme') || 'dark';
+  document.documentElement.dataset.theme = savedTheme;
   }
 
   // 2. Dictionnaire de traduction Français
@@ -192,11 +192,11 @@
   }
 
   function _isDark() {
-    var currentTheme = document.documentElement.dataset.theme;
-    if (currentTheme === 'dark') return true;
-    if (currentTheme === 'light') return false;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var currentTheme = document.documentElement.dataset.theme || 'dark';
+    return currentTheme === 'dark';
   }
+
+
 
   function _updateThemeIcons() {
     document.querySelectorAll('.theme-icon').forEach(function (el) {
