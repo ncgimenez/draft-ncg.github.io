@@ -46,15 +46,14 @@
     {% endif %}
   </footer>
 
-  <!------- Scripts ------->
-  
-  <script src="/assets/lang.js"></script>
-
-  ...
-  <script src="/assets/lang.js"></script>
-
+ 
   {% if page.mermaid %}
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  
+  <!------- Scripts Langues ------->
+  <script src="{{ '/assets/theme.js' | relative_url }}"></script>
+  <script src="{{ '/assets/lang.js' | relative_url }}"></script>
+
   <script>
     mermaid.initialize({
       startOnLoad: true,
