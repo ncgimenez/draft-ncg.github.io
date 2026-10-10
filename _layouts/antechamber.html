@@ -6,40 +6,42 @@
   <title>{{ page.title }} | Nadia Cañadas Giménez</title>
   <link rel="stylesheet" href="/assets/style.css">
 
-    <style>
-    /* Palette sombre par défaut pour l'Antichambre */
-    :root {
-      --fond: #0e0c1e;
-      --fond-carte: #1c1a35;
-      --texte: #f0eeff;
-      --texte-doux: #8b89b5;
-      --accent: #a78bfa;
-      --accent-fonce: #c4b5fd;
-      --ligne: #2d2b50;
+     <style>
+    /* ============================================================
+       Antichambre : Neon Workshop
+       ============================================================ */
+
+    /* 1. Mode sombre (PAR DÉFAUT) */
+    :root,
+    :root[data-theme="dark"] {
+      --fond: #0d0b14;
+      --fond-carte: #171324;
+      --texte: #f3e8ff;
+      --texte-doux: #9484b8;
+      --accent: #9d5cff;
+      --accent-fonce: #c084fc;
+      --ligne: #2e2646;
     }
 
-    /* Quand l'utilisateur clique sur le toggle pour forcer le thème clair */
+    /* 2. Mode clair (quand le visiteur bascule le bouton) */
     :root[data-theme="light"] {
-      --fond: #f5f0ff;
+      --fond: #f8f6fc;
       --fond-carte: #ffffff;
-      --texte: #0e0c1e;
-      --texte-doux: #5e5b8a;
+      --texte: #161224;
+      --texte-doux: #6b6182;
       --accent: #7c3aed;
       --accent-fonce: #6d28d9;
-      --ligne: #ddd6fe;
+      --ligne: #e5def0;
     }
 
-    /* Si l'utilisateur clique sur le toggle pour revenir en sombre */
-    :root[data-theme="dark"] {
-      --fond: #0e0c1e;
-      --fond-carte: #1c1a35;
-      --texte: #f0eeff;
-      --texte-doux: #8b89b5;
-      --accent: #a78bfa;
-      --accent-fonce: #c4b5fd;
-      --ligne: #2d2b50;
+    /* Halo d'ambiance en arrière-plan */
+    body {
+      background-color: var(--fond);
+      background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(157, 92, 255, 0.18), transparent);
+      background-repeat: no-repeat;
     }
   </style>
+
 
 </head>
 <body>
