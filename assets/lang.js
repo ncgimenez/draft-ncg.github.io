@@ -1,9 +1,8 @@
 (function () {
 
-    // 1. Thème (sombre par défaut)
+  // 1. Thème (sombre par défaut)
   var savedTheme = localStorage.getItem('ncg-theme') || 'dark';
   document.documentElement.dataset.theme = savedTheme;
-  }
 
   // 2. Dictionnaire de traduction Français
   const FR = {
