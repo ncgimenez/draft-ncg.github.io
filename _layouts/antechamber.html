@@ -8,10 +8,10 @@
 
      <style>
     /* ============================================================
-       Antichambre : Neon Workshop
+       Antichambre : Neon Workshop & Améthyste Douce
        ============================================================ */
 
-    /* 1. Mode sombre (PAR DÉFAUT) */
+    /* 1. Mode sombre (PAR DÉFAUT) : Nuit d'encre & Halo Ultraviolet */
     :root,
     :root[data-theme="dark"] {
       --fond: #0d0b14;
@@ -21,26 +21,30 @@
       --accent: #9d5cff;
       --accent-fonce: #c084fc;
       --ligne: #2e2646;
+      --halo-couleur: rgba(157, 92, 255, 0.18);
     }
 
-    /* 2. Mode clair (quand le visiteur bascule le bouton) */
+    /* 2. Mode clair adouci : Albâtre poudré, Ivoire & Améthyste fumée */
     :root[data-theme="light"] {
-      --fond: #f8f6fc;
-      --fond-carte: #ffffff;
-      --texte: #161224;
-      --texte-doux: #6b6182;
-      --accent: #7c3aed;
-      --accent-fonce: #6d28d9;
-      --ligne: #e5def0;
+      --fond: #f4f1f7;          /* Fond brume/lin clair très reposant */
+      --fond-carte: #faf8fc;    /* Cartes en ivoire soyeux (pas de blanc agressif) */
+      --texte: #231f2d;         /* Ardoise prune sombre, chaleureuse pour la lecture */
+      --texte-doux: #736c82;    /* Gris lilas fumé */
+      --accent: #6b46c1;        /* Améthyste feutrée, mate et chic (zéro néon criard) */
+      --accent-fonce: #55349e;  /* Survol profond */
+      --ligne: #e2dceb;         /* Délimitations très douces */
+      --halo-couleur: rgba(107, 70, 193, 0.08); /* Halo très discret et vaporeux */
     }
 
-    /* Halo d'ambiance en arrière-plan */
+    /* Halo d'ambiance adaptatif */
     body {
       background-color: var(--fond);
-      background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(157, 92, 255, 0.18), transparent);
+      background-image: radial-gradient(ellipse 80% 50% at 50% -20%, var(--halo-couleur), transparent);
       background-repeat: no-repeat;
+      transition: background-color 0.25s ease;
     }
   </style>
+
 
 
 </head>
