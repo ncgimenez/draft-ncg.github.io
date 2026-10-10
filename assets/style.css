@@ -5,16 +5,17 @@
    ============================================================ */
 
 :root {
-  --fond: #faf7f2;
-  --fond-carte: #ffffff;
-  --texte: #1f2430;
-  --texte-doux: #5b6272;
-  --accent: #b4502d;
+  --fond: #f7f3ec;        /* Fond crème chaud/lin doux au lieu de #faf7f2 */
+  --fond-carte: #fffcf7;   /* Blanc cassé ivoire très doux pour les blocs */
+  --texte: #24211d;        /* Brun très sombre et chaud au lieu de gris froid */
+  --texte-doux: #6c6459;   /* Sépia doux pour les sous-titres et métadonnées */
+  --accent: #b4502d;       /* Votre terracotta signature (inchangé) */
   --accent-fonce: #8f3d20;
-  --ligne: #e6dfd3;
+  --ligne: #e8ded1;        /* Bordure beige sableuse douce */
   --largeur: 760px;
   --rayon: 14px;
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
