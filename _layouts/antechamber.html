@@ -61,7 +61,6 @@
           <li><a href="{{ '/antechamber/projects/' | relative_url }}">Projects</a></li>
           <li><a href="{{ '/antechamber/notes/' | relative_url }}">Notes</a></li>
           <li><a href="{{ '/antechamber/about/' | relative_url }}">About</a></li>
-          <li><a href="{{ '/' | relative_url }}" style="color: var(--accent); font-weight: 600;">← Profolio</a></li>
         </ul>
       </nav>
       <div class="controles-header">
@@ -77,12 +76,15 @@
 
   {{ content }}
 
-  <footer>
+    <footer>
     <p>© 2026 Nadia Cañadas Giménez</p>
-    <p style="margin-top: 0.5rem;">
-      <a href="/" style="color: var(--texte-doux); text-decoration: none; font-size: 0.9rem;">💼</a>
+    {% if page.title == "Behind the Curtain" %}
+    <p style="margin-top: 0.5rem; text-align: center;">
+      <a href="{{ '/' | relative_url }}" style="color: var(--texte-doux); text-decoration: none; font-size: 1.1rem;" title="Retour au portfolio" aria-label="Retour au portfolio">💼</a>
     </p>
+    {% endif %}
   </footer>
+
 
   <script src="{{ '/assets/lang.js' | relative_url }}"></script>
 </body>
