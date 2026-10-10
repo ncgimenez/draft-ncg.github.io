@@ -4,40 +4,48 @@
    dans le bloc :root juste en dessous.
    ============================================================ */
 
+/* ============================================================
+   Site Pro : Palette Miroir Lin/Crème & Espresso Ardoise
+   ============================================================ */
+
+/* 1. Mode clair (Parchemin chaud & Encre espresso) */
 :root {
-  --fond: #f7f3ec;        /* Fond crème chaud/lin doux au lieu de #faf7f2 */
-  --fond-carte: #fffcf7;   /* Blanc cassé ivoire très doux pour les blocs */
-  --texte: #24211d;        /* Brun très sombre et chaud au lieu de gris froid */
-  --texte-doux: #6c6459;   /* Sépia doux pour les sous-titres et métadonnées */
-  --accent: #b4502d;       /* Votre terracotta signature (inchangé) */
+  --fond: #f7f3ec;        /* Fond lin/crème chaud doux */
+  --fond-carte: #fffcf7;   /* Cartes ivoire reposant */
+  --texte: #24211d;        /* Encre café noir/ardoise profonde */
+  --texte-doux: #6c6459;   /* Sépia patiné pour sous-titres et dates */
+  --accent: #b4502d;       /* Terracotta signature */
   --accent-fonce: #8f3d20;
-  --ligne: #e8ded1;        /* Bordure beige sableuse douce */
+  --ligne: #e8ded1;        /* Filets beige sable */
   --largeur: 760px;
   --rayon: 14px;
 }
 
+/* 2. Mode sombre (Fond café noir ardoisé & Encre lin/crème) */
+:root[data-theme="dark"],
+:root:not([data-theme="light"]) {
+  --fond: #181614;        /* Noir expresso / charbon très chaud (au lieu d'un gris bleuté froid) */
+  --fond-carte: #221f1c;  /* Carte légèrement surélevée, chaude */
+  --texte: #f7f3ec;        /* LE CRÈME DU MODE CLAIR devient la couleur du texte principal ! */
+  --texte-doux: #a89f91;   /* Teinte lin adoucie pour la hiérarchie secondaire */
+  --accent: #e0825c;       /* Terracotta illuminé pour rester lisible sur fond sombre */
+  --accent-fonce: #f0a283;
+  --ligne: #332f2a;        /* Bordure terreuse discrète */
+}
 
+/* Prise en compte de la préférence système si data-theme n'est pas encore posé */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --fond: #16181d;
-    --fond-carte: #1f232b;
-    --texte: #ece8e1;
-    --texte-doux: #a3a9b7;
+    --fond: #181614;
+    --fond-carte: #221f1c;
+    --texte: #f7f3ec;
+    --texte-doux: #a89f91;
     --accent: #e0825c;
     --accent-fonce: #f0a283;
-    --ligne: #2f3440;
+    --ligne: #332f2a;
   }
 }
 
-:root[data-theme="dark"] {
-  --fond: #16181d;
-  --fond-carte: #1f232b;
-  --texte: #ece8e1;
-  --texte-doux: #a3a9b7;
-  --accent: #e0825c;
-  --accent-fonce: #f0a283;
-  --ligne: #2f3440;
-}
 
 * { box-sizing: border-box; }
 
