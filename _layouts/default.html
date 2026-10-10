@@ -46,14 +46,11 @@
     {% endif %}
   </footer>
 
- 
-  {% if page.mermaid %}
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-  
-  <!------- Scripts Langues ------->
-  <script src="{{ '/assets/theme.js' | relative_url }}"></script>
+   <!-- Script global toujours actif -->
   <script src="{{ '/assets/lang.js' | relative_url }}"></script>
 
+  {% if page.mermaid %}
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script>
     mermaid.initialize({
       startOnLoad: true,
@@ -69,6 +66,6 @@
     });
   </script>
   {% endif %}
-  
+
 </body>
 </html>
