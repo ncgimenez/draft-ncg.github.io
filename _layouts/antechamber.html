@@ -8,42 +8,44 @@
 
      <style>
     /* ============================================================
-       Antichambre : Neon Workshop (Dark) & Parchemin Cendré (Light)
+       Antichambre : Sanctuarisation des couleurs (indépendant du site pro)
        ============================================================ */
 
-    /* 1. Mode sombre (PAR DÉFAUT) : Nuit d'encre & Halo Ultraviolet */
+    /* 1. Mode sombre (PAR DÉFAUT) : Neon Workshop & Ultraviolet */
     :root,
-    :root[data-theme="dark"] {
-      --fond: #0d0b14;
-      --fond-carte: #171324;
-      --texte: #f3e8ff;
-      --texte-doux: #9484b8;
-      --accent: #9d5cff;
-      --accent-fonce: #c084fc;
-      --ligne: #2e2646;
+    :root[data-theme="dark"],
+    :root:not([data-theme="light"]) {
+      --fond: #0d0b14 !important;
+      --fond-carte: #171324 !important;
+      --texte: #f3e8ff !important;
+      --texte-doux: #9484b8 !important;
+      --accent: #9d5cff !important;
+      --accent-fonce: #c084fc !important;
+      --ligne: #2e2646 !important;
       --halo-couleur: rgba(157, 92, 255, 0.18);
     }
 
-    /* 2. Mode clair mat : Grège lin, Ardoise & Myrtille sourde */
+    /* 2. Mode clair adouci : Grège lin & Myrtille sourde */
     :root[data-theme="light"] {
-      --fond: #e9e5ee;          /* Grège perle feutré, adieu la lumière blanche crue */
-      --fond-carte: #f2eef6;    /* Cartes en lin grisé, très faible contraste avec le fond */
-      --texte: #24202b;         /* Encre ardoise matte, douce pour la rétine */
-      --texte-doux: #6c6677;    /* Cendre violette */
-      --accent: #58437a;        /* Prune / myrtille poudrée (très peu saturée) */
-      --accent-fonce: #43325e;  /* Accent hover profond */
-      --ligne: #d6d0df;         /* Lignes de structure douces et patinées */
-      --halo-couleur: rgba(88, 67, 122, 0.05); /* Halo quasi imperceptible */
+      --fond: #e9e5ee !important;
+      --fond-carte: #f2eef6 !important;
+      --texte: #24202b !important;
+      --texte-doux: #6c6677 !important;
+      --accent: #58437a !important;
+      --accent-fonce: #43325e !important;
+      --ligne: #d6d0df !important;
+      --halo-couleur: rgba(88, 67, 122, 0.05);
     }
 
-    /* Halo d'ambiance adaptatif */
+    /* Halo lumineux d'ambiance */
     body {
-      background-color: var(--fond);
-      background-image: radial-gradient(ellipse 80% 50% at 50% -20%, var(--halo-couleur), transparent);
-      background-repeat: no-repeat;
+      background-color: var(--fond) !important;
+      background-image: radial-gradient(ellipse 80% 50% at 50% -20%, var(--halo-couleur), transparent) !important;
+      background-repeat: no-repeat !important;
       transition: background-color 0.25s ease;
     }
   </style>
+
 
 
 
